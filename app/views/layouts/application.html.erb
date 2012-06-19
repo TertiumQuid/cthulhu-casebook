@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Cthulhu Casebook: Trail of Secrets - a web-based, narrative adventure game">
+
+    <title>Cthulhu Casebook: Trail of Secrets</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="width">
+    <meta name="viewport" content="width=device-width">
+
+    <meta http-equiv="cleartype" content="on">
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="container">
+      <%= render :partial => 'layouts/header' %>	
+      <%= yield %>
+    </div>
+	
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

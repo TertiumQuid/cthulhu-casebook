@@ -1,0 +1,6 @@
+<% @encounters.each do |encounter| %>
+  <%= link_to encounter_path(encounter) do %>
+    <p><strong><%= encounter.title %><strong><p>
+    <p><%= truncate(encounter.description, :length => 100) %></p>
+  <% end %>
+<% end %>

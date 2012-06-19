@@ -1,0 +1,8 @@
+<%= form_for @character, :url => character_path do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p><%= f.submit 'Begin' %></p>
+<% end %>

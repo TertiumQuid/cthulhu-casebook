@@ -1,0 +1,1 @@
+CthulhuCasebook::Application.config.session_store :mongo_mapper_store, key: '_cthulhu_casebook_session'
