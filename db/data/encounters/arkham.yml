@@ -13,61 +13,82 @@ encounters:
                  
                  Yet the nonsense somehow rings true. Surely among the hidden places of Arkham, armed as you are with skill and insight unique to your age, you can uncover clues into the nature of the mysterious dispatch.
     paths:
-         - 
+         -  _id: 1
             title: Explore Arkham
             text: A quaint union of antiquity and modern life awaits in the city
             awards: 
-            plots_homecoming: -1
-    requires: 
-            - plots_homecoming: 1
+                  - 
+                    _id: plots.arkham
+                    value: 1
+    requirements: 
+                - 
+                  _id: plots.arkham
+                  value: 0
+                  
   suspicious_dock_work:
     _id: suspicious_dock_work
     title: Suspicious Dock Work
     location: arkham
     description: A shipment of discrete cargo is arriving from Kingsport and the teamster union boss is looking for some trusty help to unload it on the shy.
     paths: 
-         -
+         -  _id: 1
             title: Strongarm Tactics
             text: Briskly clear the dock of onlookers and transfer the (unaccountably heavy) goods with all due haste!
-         -
+         -  _id: 2
             title: Undercover
             text: Acquire some nearby tarpaulins to cover the mysterious boxes and carefully unload the shapelessly camouflaged cargo.
+    requirements: 
+                - 
+                  _id: plots.arkham
+                  value: 1
   potters_field_mandrakes:             
     _id: potters_field_mandrakes
     title: Potters Field Mandrake Roots
     description: A chance remark on the area's hoary landscape turns to a raport with a local pharmacist, leading him to confide in you an urgent need for some quantities of mandrake root. The most potent, he assures you, can be had from the fresh soil of potter's field.
     paths:
-        -
+         -  _id: 1
             title: Screaming Roots
             text: That disembodied childlike cry must just be the hill-split winds, you hope, gazing at the blood-red mud upon your hands.
-        -
+         -  _id: 2
             title: It's But Gardening
             text: Would that be the genus Mandragora of the nightshade family? Armed with gloves and spade, you'll harvest the bifurcated monstrosities safely.
-        -
+         -  _id: 3
             title: They Grow Fat in the Moon
             text: In fact, the sounds of a dirge beneath the light of a gibbous moon provokes the berries to blossom! You'll hum an ancient tune while plucking the roots in the dead of night.
+    requirements: 
+                - 
+                  _id: plots.arkham
+                  value: 1
   mr_toad:
     _id: mr_toad
     title: Mr. Toad's Wild Ride
     description: A dandy in a Harris tweed suit nearly runs you down with his thundering motor-car as you cross the street. Without hesitating he makes introduction by way of a whisky tumbler and pulls you into his automobile, careening down Garrison off along the winding banks of the Miskatonic at full chisvel like the devil's carriage itself.
     paths: 
-         -
+         -  _id: 1
             title: Travel! Change! Excitement!
             text: Not to be outdone by the reckless squire, you try commandeer the wheel and put the auto to race, reaching scarf-ripping speeds before steering home to Arkham sometime after sunset.
-         - 
+         -  _id: 2
             title: Is that Canadian whisky?
             text: The familiar motorist could not be more declasse, but his northern rum line is true stimulus in these dry times. Ask for a quick vendue on some bottles to keep for the days ahead.
+    requirements: 
+                - 
+                  _id: plots.arkham
+                  value: 1
   pickering_lights:             
-    _id: pickering_lights
-    title: Pickering Lights
-    description: On a night stroll up Federal Street you happen to notice lights in the cellar windows of the Pickering House flashing in fits and starts. Recalling its importance as the humble exhibit of the departed Captain's aboriginal treasures, you rush over expecting thieves only to peer inside upon shriveled naked brown men rifling the shelves in haste. Not on your watch, you nearly exclaim aloud!
-    paths: 
-         - 
+     _id: pickering_lights
+     title: Pickering Lights
+     description: On a night stroll up Federal Street you happen to notice lights in the cellar windows of the Pickering House flashing in fits and starts. Recalling its importance as the humble exhibit of the departed Captain's aboriginal treasures, you rush over expecting thieves only to peer inside upon shriveled naked brown men rifling the shelves in haste. Not on your watch, you nearly exclaim aloud!
+     paths: 
+          -  _id: 1
              title: Are They Children, or Something Older?
              description: With a sinister interest in the wizened, childlike intruders you hug the window frame and attempt to observe the little folk from the shadows outside.
-         - 
+          -  _id: 2
              title: A Nearby Cutlass
              description: Throwing open the window you'll leap upon the thieves in an instant brandishing a wicked cutlass snatched from the wall.
-         - 
+          -  _id: 3
              title: No Escape
              description: The labyrinthine halls of the exhibit rooms admit but single egress. You'll sneak inside and lay an ambush for these hideous bandits while they fill their shrunken arms with loot.
+     requirements: 
+                 - 
+                   _id: plots.arkham
+                   value: 1

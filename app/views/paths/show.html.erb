@@ -1,0 +1,9 @@
+<h1><%= @encounter.title %></h1>
+<p><%= @encounter.description %></p>
+	
+<p><strong>You. . . <strong> <%= @path.text %></p>
+
+<p><big><%= @success ? 'Success' : 'Failure' %></big></p>
+<p><%= @success ? @path.success_text : @path.failure_text %></p>
+
+<p><%= link_to 'Carry on', location_path %></p>

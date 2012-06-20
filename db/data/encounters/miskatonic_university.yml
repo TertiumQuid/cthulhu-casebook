@@ -1,0 +1,8 @@
+encounters:
+  the_deans_tour:
+    _id: the_deans_tour
+    title: The Dean's Tour
+    location: miskatonic_university
+    description: The former Dartmouth dean Harvey Wainscott now presides over the prestigous Arkham U., and the surest way to its secrets is through an introduction to Dr. Wainscott.
+    paths:
+    requires: 

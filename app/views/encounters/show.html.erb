@@ -1,7 +1,8 @@
+<h1><%= @encounter.title %></h1>
 <p><%= @encounter.description %></p>
 	
 <% @encounter.paths.each do |path| %>
-  <%= link_to encounter_path_path(path), :method => :put do %>
+  <%= link_to encounter_path_path(@encounter, path) do %>
     <p><strong><%= path.title %><strong><p>
     <p><%= path.text %></p>
   <% end %>  

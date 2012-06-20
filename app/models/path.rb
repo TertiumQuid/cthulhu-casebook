@@ -3,5 +3,8 @@ class Path
   
   key :title, String, :required => true
   key :text, String
-  key :description, String  
+  key :success_text, String
+  key :failure_text, String  
+  
+  many :awards
 end

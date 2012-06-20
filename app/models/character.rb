@@ -7,4 +7,16 @@ class Character
   
   belongs_to :user
   has_one :profile
+  
+  after_create :populate_profile
+  
+  def location
+    profile.get 'location', 'current'
+  end
+  
+  private 
+  
+  def populate_profile
+    self.profile = Profile.create(:character => self)
+  end
 end

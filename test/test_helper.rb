@@ -10,9 +10,11 @@ class ActiveSupport::TestCase
   end
 
   def load_encounters
-    docs = YAML.load_file( File.expand_path('../../db/data/encounters/arkham.yml', __FILE__) )
-    data = docs['encounters'].values
-    Encounter.collection.insert data
+    ['arkham', 'miskatonic_university'].each do |loc|
+      docs = YAML.load_file( File.expand_path("../../db/data/encounters/#{loc}.yml", __FILE__) )
+      data = docs['encounters'].values
+      Encounter.collection.insert data
+    end
   end
   
   def load_locations
@@ -23,5 +25,11 @@ class ActiveSupport::TestCase
   
   def mock_character(character_id=1)
     @controller.session[:character_id] = character_id
+  end
+  
+  def login!
+    chr = Character.create(:name => 'test')
+    mock_character(chr._id)
+    chr
   end
 end

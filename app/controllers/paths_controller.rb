@@ -1,8 +1,7 @@
 class PathsController < ApplicationController
-  def update
+  def show
     @encounter = Encounter.find(params[:encounter_id])
-    @encounter.play(params[:id])
-    
-    redirect_to location_path
-  end  
+    @success = @encounter.play(current_character, params[:id])
+    @path = @encounter.find_path(params[:id])
+  end
 end
