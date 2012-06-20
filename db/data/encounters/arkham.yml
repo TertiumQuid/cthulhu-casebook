@@ -34,9 +34,17 @@ encounters:
          -  _id: 1
             title: Strongarm Tactics
             text: Briskly clear the dock of onlookers and transfer the (unaccountably heavy) goods with all due haste!
+            awards: 
+                  - 
+                    _id: traits.athletic
+                    value: 1            
          -  _id: 2
             title: Undercover
             text: Acquire some nearby tarpaulins to cover the mysterious boxes and carefully unload the shapelessly camouflaged cargo.
+            awards: 
+                  - 
+                    _id: traits.clandestine
+                    value: 1
     requirements: 
                 - 
                   _id: plots.arkham
@@ -49,12 +57,24 @@ encounters:
          -  _id: 1
             title: Screaming Roots
             text: That disembodied childlike cry must just be the hill-split winds, you hope, gazing at the blood-red mud upon your hands.
+            awards: 
+                  - 
+                    _id: traits.athletic
+                    value: 1
          -  _id: 2
             title: It's But Gardening
             text: Would that be the genus Mandragora of the nightshade family? Armed with gloves and spade, you'll harvest the bifurcated monstrosities safely.
+            awards: 
+                  - 
+                    _id: traits.educated
+                    value: 1
          -  _id: 3
             title: They Grow Fat in the Moon
             text: In fact, the sounds of a dirge beneath the light of a gibbous moon provokes the berries to blossom! You'll hum an ancient tune while plucking the roots in the dead of night.
+            awards: 
+                  - 
+                    _id: traits.weird
+                    value: 1
     requirements: 
                 - 
                   _id: plots.arkham
@@ -62,14 +82,23 @@ encounters:
   mr_toad:
     _id: mr_toad
     title: Mr. Toad's Wild Ride
+    location: arkham
     description: A dandy in a Harris tweed suit nearly runs you down with his thundering motor-car as you cross the street. Without hesitating he makes introduction by way of a whisky tumbler and pulls you into his automobile, careening down Garrison off along the winding banks of the Miskatonic at full chisvel like the devil's carriage itself.
     paths: 
          -  _id: 1
             title: Travel! Change! Excitement!
             text: Not to be outdone by the reckless squire, you try commandeer the wheel and put the auto to race, reaching scarf-ripping speeds before steering home to Arkham sometime after sunset.
+            awards: 
+                  - 
+                    _id: traits.athletic
+                    value: 1
          -  _id: 2
             title: Is that Canadian whisky?
             text: The familiar motorist could not be more declasse, but his northern rum line is true stimulus in these dry times. Ask for a quick vendue on some bottles to keep for the days ahead.
+            awards: 
+                  - 
+                    _id: traits.persuasive
+                    value: 1
     requirements: 
                 - 
                   _id: plots.arkham
@@ -77,18 +106,129 @@ encounters:
   pickering_lights:             
      _id: pickering_lights
      title: Pickering Lights
+     location: arkham         
      description: On a night stroll up Federal Street you happen to notice lights in the cellar windows of the Pickering House flashing in fits and starts. Recalling its importance as the humble exhibit of the departed Captain's aboriginal treasures, you rush over expecting thieves only to peer inside upon shriveled naked brown men rifling the shelves in haste. Not on your watch, you nearly exclaim aloud!
      paths: 
           -  _id: 1
              title: Are They Children, or Something Older?
-             description: With a sinister interest in the wizened, childlike intruders you hug the window frame and attempt to observe the little folk from the shadows outside.
+             text: With a sinister interest in the wizened, childlike intruders you hug the window frame and attempt to observe the little folk from the shadows outside.
+             awards: 
+                   - 
+                     _id: traits.weird
+                     value: 1
           -  _id: 2
              title: A Nearby Cutlass
-             description: Throwing open the window you'll leap upon the thieves in an instant brandishing a wicked cutlass snatched from the wall.
+             text: Throwing open the window you'll leap upon the thieves in an instant brandishing a wicked cutlass snatched from the wall.
+             awards: 
+                   - 
+                     _id: traits.dangerous
+                     value: 1
           -  _id: 3
              title: No Escape
-             description: The labyrinthine halls of the exhibit rooms admit but single egress. You'll sneak inside and lay an ambush for these hideous bandits while they fill their shrunken arms with loot.
+             text: The labyrinthine halls of the exhibit rooms admit but single egress. You'll sneak inside and lay an ambush for these hideous bandits while they fill their shrunken arms with loot.
+             awards: 
+                   - 
+                     _id: traits.clandestine
+                     value: 1
      requirements: 
                  - 
                    _id: plots.arkham
                    value: 1
+  service_at_the_first_baptist:             
+    _id: service_at_the_first_baptist
+    title: Service at the First Baptist
+    location: arkham    
+    description: Arkham's oldest church, it's very foundation stones ripped from pagan altars and shipped over with crafty freemasons in 1743. Beneath its towering steeple one bear witness to the Reverend Charles Noyes and his ominous sermons. "Get the devil behind you", whispers a concerned proselyte when you slip into the braying congregation.
+    paths: 
+         -  _id: 1
+            title: A Sin to Be Poor; Poor Are the Sinners
+            text: You can't help but overhear the sound of old money rattling in the pews, and make some pious effort to mix with your betters in their sunday clothes. Perhaps the right line about redemption and opportunity would grant you company among the influential Christian leaders of Arkham's godly masses.
+            awards: 
+                  - 
+                    _id: traits.persuasive
+                    value: 1
+                  - 
+                    _id: plots.earnest_proselyte
+                    value: 1
+         -  _id: 2
+            title: Anything You Can Give
+            text: Nothing weighs for the soul's crimes like money, collected from believers by a hooded cripple  holding a bowl which reflects your face. "What you give will be returned in the afterlife" whispers a voice from somewhere in the steeple, and before you know it you've handed a day's wage to the smiling grotesque.
+            awards: 
+                  - 
+                    _id: traits.resourceful
+                    value: 2
+                  - 
+                    _id: plots.earnest_proselyte
+                    value: 2
+         -  _id: 3
+            title: These Rites Were Different Then
+            text: What a perfect place for blasphemy! Creeping over to baptismal basin you dip your fingers into the water, performing a ritual half-remembered from a dream wherein you slept enthralled by bloodthirsty watery gods.
+            awards: 
+                 - 
+                   _id: traits.weird
+                   value: 1
+                 - 
+                   _id: plots.earnest_proselyte
+                   value: 1
+    requirements: 
+                - 
+                  _id: plots.arkham
+                  value: 1
+
+  glimpse_in_the_first_baptist_church_archives:             
+    _id: glimpse_in_the_first_baptist_church_archives
+    title: A Glimpse in the First Baptist Church Archives
+    location: arkham    
+    description: The First Baptist gained much its wealth and prestige under the stewardship of Reverend Ward Phillips over 100 years ago. When he died, his considerable collection of early mystic Christian literature and personal research was transferred to the private church vault. Among this collection is the Reverend's own work - Thaumaturgical Prodigies in the New England Canaan - which represents only a summary of the curious scholar's meticulous legacy. A friend of the church such as yourself can request a private reading (with chaparone).
+    paths: 
+        -  _id: 1
+           title: Interesting Notions, for a Priest
+           text: You can hardly trust the scholarship of a man who seeks to control angels and demons, but the value of the endless biblical notes to the understanding of mystic Christianity and it's place in New England cannot be ignored.
+           awards: 
+                 - 
+                   _id: traits.educated
+                   value: 1
+        -  _id: 2
+           title: The Names of God
+           text: Encoded in the in the maze of the Reverend Ward's records lay the names of God and His angels. This is knowledge best stolen under the instruction of the church, and you take in good faith what incantations you're able to piece together from the cypher in Ward's bibles and essays.
+           awards: 
+                 - 
+                   _id: traits.weird
+                   value: 2
+        -  _id: 3
+           title: The Black Market Bible Trade
+           text: Select items from the esoteric Reverend's collection should fetch a handsome price from the right buyer. You say a prayer at the end of the day's reading, walking slowly as you're escorted out so as to keep your stolen prize concealed.
+           awards: 
+                - 
+                  _id: traits.clandestine
+                  value: 1
+    requirements: 
+                - 
+                  _id: plots.earnest_proselyte
+                  is: gt
+                  value: 14
+  moaning_coffin:
+    _id: moaning_coffin
+    title: The Moaning Coffin
+    location: arkham    
+    description: Today the rotten West Church hides sealed behind sagging buttressed scaffolds that no spiritual man could mistake as a real prison for the force within. When the ancient pastor Trisham Goddard died in 1878, nobody morned his passing, but when wicked moans were heard from his sarcophagus in the West Church, they cursed his name in fear and abandoned the building. Reverend Noyes desires to put the matter to rest and bids you investigate the church so long shunned by Arkham's good sons and daughters.
+    paths: 
+        -  _id: 1
+           title: Two Voices Below
+           text: You climb up the belfry and with some trouble descend the church into Trishard's personal crypt. Sealed as it is, you're able to hear the ghastly noise and come to realize that the moans are being guided by a hateful whisper.
+           awards: 
+                 - 
+                   _id: traits.athletic
+                   value: 2
+        -  _id: 2
+           title: The West Church Wanderer
+           text: Under the moon's wan light you're surprised to observe a cloaked stranger slip against the church shadows and unlock the stairs to the crypt. Running silently you try catch the closing door, just as you catch the sound of supulchral moans.
+           awards: 
+                 - 
+                   _id: traits.clandestine
+                   value: 2
+    requirements: 
+                - 
+                  _id: plots.earnest_proselyte
+                  is: gt
+                  value: 24

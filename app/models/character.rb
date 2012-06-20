@@ -11,7 +11,7 @@ class Character
   after_create :populate_profile
   
   def location
-    profile.get 'location', 'current'
+    profile.get('location', 'current') if profile
   end
   
   private 

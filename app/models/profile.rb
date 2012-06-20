@@ -20,12 +20,12 @@ class Profile
     end
   end
   
-  private
-  
   def find_tagging(tagging_id)
     taggings.select{|t| t._id == tagging_id }.first
   end
   
+  private
+    
   def populate
     location = Tagging.new(:_id => 'location')
     location.tags << Tag.new(:_id => 'current', :value => 'arkham')
@@ -34,8 +34,7 @@ class Profile
     traits.tags << Tag.new(:_id => 'athletic', :value => 1)
     traits.tags << Tag.new(:_id => 'clandestine', :value => 1)
     traits.tags << Tag.new(:_id => 'dangerous', :value => 1)
-    traits.tags << Tag.new(:_id => 'educated', :value => 1)    
-    traits.tags << Tag.new(:_id => 'logical', :value => 1)
+    traits.tags << Tag.new(:_id => 'educated', :value => 1)
     traits.tags << Tag.new(:_id => 'persuasive', :value => 1)
     traits.tags << Tag.new(:_id => 'resourceful', :value => 1)
     traits.tags << Tag.new(:_id => 'weird', :value => 1)

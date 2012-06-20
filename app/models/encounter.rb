@@ -3,11 +3,20 @@ class Encounter
   
   key :title, String, :required => true
   key :text, String, :required => true
+  key :location, String
   
   many :paths
   many :requirements  
   
+  def self.find_location(location)
+    where(:location => location)
+  end  
+  
   def self.cost; 1; end
+  
+  def requirement_display
+    requirements.select { |r| ['traits','pathology','belongings'].include?(r.tagging) }.map {|r| r.text }.join(', ')
+  end
   
   def play(character, path_id)
     if character.moxie >= Encounter.cost && path = find_path(path_id)
@@ -22,7 +31,7 @@ class Encounter
   end
   
   def available_for?(character)
-    requirements.select{ |r| r.met_by? character.profile }.size > 0
+    requirements.size == 0 || requirements.select{ |r| r.met_by? character.profile }.size > 0
   end
   
   def find_path(path_id)

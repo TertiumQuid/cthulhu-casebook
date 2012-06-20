@@ -7,6 +7,14 @@ class EncounterTest < ActiveModel::TestCase
     @character.profile.save!
   end
   
+  def test_find_location
+    load_encounters
+    encounters = Encounter.find_location('arkham')
+    assert_operator encounters.size, ">", 0, 'expected to find location encounters'
+    assert_operator encounters.size, "<", Encounter.count, 'expected locational subset of all encounters'
+    assert_operator encounters.size, "==", encounters.select{ |l| l.location != 'arkahm'}.size, 'expected only location encounters'
+  end
+  
   def test_cost
     assert_equal 1, Encounter.cost, 'expected default cost of 1 moxie'
   end
@@ -43,6 +51,11 @@ class EncounterTest < ActiveModel::TestCase
     assert_equal false, encounter.play(@character, 'miss'), 'expected unsuccessful (false) play from missing path id'
   end  
   
+  def test_available_for_no_requirements
+    encounter = Encounter.new
+    assert_equal true, encounter.available_for?(@character), 'expected available encounter without requirements'        
+  end
+  
   def test_available_for_matching_profile
     @character.profile.set('test', 'count', 1)
     @character.profile.save!
@@ -73,4 +86,19 @@ class EncounterTest < ActiveModel::TestCase
     encounter.paths << path2    
     assert_equal path1, encounter.find_path('test'), 'expected to find path with id'
   end  
+  
+  def test_requirement_display
+    encounter = Encounter.new
+    trait = Requirement.new(:_id => 'traits.trait_test', :value => 1)
+    pathology = Requirement.new(:_id => 'pathology.path_test', :value => 1)    
+    belonging = Requirement.new(:_id => 'belongings.belonging_test', :value => 1)
+    junk = Requirement.new(:_id => 'junk.junk_test', :value => 1)        
+    [trait,pathology,belonging,junk].each { |r| encounter.requirements << r }
+      
+    requirements = encounter.requirement_display.split(', ')
+    [trait,pathology,belonging].each do |requirement|
+      assert requirements.include?(requirement.text), 'expected requirement in display'
+    end
+    assert !requirements.include?(junk.text), 'expected requirement hidden from display'    
+  end
 end

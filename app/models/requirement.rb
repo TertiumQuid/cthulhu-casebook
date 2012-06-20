@@ -4,6 +4,10 @@ class Requirement
   key :value, String, :default => 1, :required => true
   key :is, String
   
+  def text
+    "#{value} #{tag}"
+  end
+  
   def tag
     _id.to_s.split('.').last if _id
   end

@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
   def edit
+    @character = current_character
   end
   
   def new

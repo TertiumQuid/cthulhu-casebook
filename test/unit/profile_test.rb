@@ -33,8 +33,8 @@ class ProfileTest < ActiveModel::TestCase
     profile.send(:populate)
     
     ['location','traits','pathology','plots'].each do |tagging|
-      assert !profile.send(:find_tagging, tagging).blank?, "expected tagging for #{tagging}"
-      assert !profile.send(:find_tagging, tagging).tags.blank?, "expected populated tags for #{tagging}"
+      assert !profile.find_tagging(tagging).blank?, "expected tagging for #{tagging}"
+      assert !profile.find_tagging(tagging).tags.blank?, "expected populated tags for #{tagging}"
     end
   end
   
@@ -42,9 +42,9 @@ class ProfileTest < ActiveModel::TestCase
     profile = Profile.new
     tagging1 = Tagging.new(:_id => 'test')
     tagging2 = Tagging.new(:_id => 'pass')
-    assert_nil profile.send(:find_tagging, 'test'), 'expected nil when profile has no taggings'
+    assert_nil profile.find_tagging('test'), 'expected nil when profile has no taggings'
     profile.taggings << tagging1
     profile.taggings << tagging2    
-    assert_equal tagging1, profile.send(:find_tagging, 'test'), 'expected to find tagging with id'
+    assert_equal tagging1, profile.find_tagging('test'), 'expected to find tagging with id'
   end
 end

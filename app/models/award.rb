@@ -11,6 +11,10 @@ class Award
     _id.to_s.split('.').first if _id
   end
   
+  def display?
+    tagging != 'plots'
+  end
+  
   def apply_to!(character)
     character.profile.set tagging, tag, value
   end

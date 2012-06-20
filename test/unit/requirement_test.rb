@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class RequirementTest < ActiveModel::TestCase
+  def test_text
+    requirement = Requirement.new(:_id => 'traits.clandestine', :value => 10)
+    assert_equal "10 clandestine", requirement.text, 'expected value and tag mapped to display text'
+  end
+  
   def test_tag
     requirement = Requirement.new(:_id => 'first.middle.last')
     assert_equal 'last', requirement.tag, 'expected last id part for tag'
