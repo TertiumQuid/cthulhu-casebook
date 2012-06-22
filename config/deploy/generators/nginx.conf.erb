@@ -1,0 +1,29 @@
+worker_processes  2;
+
+error_log  <%= nginx_log_path %>/error.log;
+pid        /var/run/nginx.pid;
+
+events {
+  worker_connections  1024;
+  multi_accept on;
+  use epoll;
+}
+
+http {
+  include <%= nginx_remote_passenger_config %>;
+
+  include       mime.types;
+  default_type  application/octet-stream;
+    
+  keepalive_timeout  65;
+  tcp_nopush         on;
+  tcp_nodelay        off;    
+
+  include       <%= nginx_remote_gzip_config %>;
+    
+  log_format main '$remote_addr - $remote_user [$time_local] '
+                  '"$request" $status $body_bytes_sent "$http_referer" '
+                  '"$http_user_agent" "$http_x_forwarded_for"' ;
+    
+  include <%= nginx_path_prefix %>/conf/sites-enabled/*;
+}

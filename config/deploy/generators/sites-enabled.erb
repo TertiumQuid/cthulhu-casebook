@@ -1,0 +1,56 @@
+<% if nginx_tld.to_s.split('.').size == 2 %>
+server {
+  listen 80;
+  server_name <%= nginx_tld %>;
+  rewrite ^ http://www.<%= nginx_tld %>$request_uri;
+}
+<% end %>
+
+server {
+  listen   *:80 default_server;
+  listen   [::]:80 ipv6only=on;        
+
+  server_name _;
+  access_log  <%= nginx_log_path %>/access.log;
+  error_log  <%= nginx_log_path %>/error.log;
+
+  root <%= nginx_public_root_path %>;
+  passenger_enabled on;
+
+  location ~ ^/(assets)/  {
+    gzip_static on;
+    expires max;
+    add_header Cache-Control public;
+  }
+
+  location = /favicon.ico {
+    expires    max;
+    add_header Cache-Control public;
+  }
+  
+
+  if ($request_method != GET) { break; }
+  if (-f $document_root/cache/$uri.html) {
+    rewrite (.*) /cache/$1.html break;  
+  }    
+
+
+  <%= nginx_rewrites %>
+}
+
+<% if nginx_ssl == true %>
+<% if nginx_tld.to_s.split('.').size == 2 %>
+server {
+  listen 443 ssl;
+  server_name <%= nginx_tld %>;
+  rewrite ^ https://www.<%= nginx_tld %>$request_uri;
+}
+<% end %>
+
+server {
+  listen       443 ssl;
+  ssl          on;
+  
+  include      <%= nginx_remote_ssl_config %>;
+}
+<% end %>
