@@ -4,3 +4,16 @@ locations:
     short_name: Arkham
     long_name: Arkham, Massachusetts, United States
     text: The ancient, mouldering, and subtly fearsome town - witch-cursed, legend-haunted Arkham, whose huddled, sagging gambrel roofs and crumbling Georgian balustrades brood out the centuries beside the darkly muttering Miskatonic.
+    passages: 
+            - _id: miskatonic_university
+              requirements: 
+                          - 
+                            _id: plots.arkham
+                            value: 1
+  miskatonic_university:
+    _id: miskatonic_university
+    short_name: M.U.
+    long_name: Miskatonic University
+    text: Cloistered in a shady Georgian neighborhood, the vibrant Miskatonic U is the pride of the New England intellectual tradition, not the least for its specialist library, learned faculty, and esoteric research programs. But as many promising young students have discovered, you can just as easily lose your mind as enlighten it treading carelessly in the halls of knowledge.
+    passages: 
+            - _id: arkham

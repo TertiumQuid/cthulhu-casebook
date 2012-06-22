@@ -20,4 +20,12 @@ class LocationsControllerTest < ActionController::TestCase
     assert_operator assigns(:encounters).size, "<", Encounter.count, 'expected locational subset of all encounters'
     assert assigns(:encounters).select {|e| e.location != location}.blank?, "expected encounters only for #{location}"
   end
+  
+  test 'get index' do
+    get :index
+    assert_response :success, 'expected http success'
+    assert_template :index, 'expected index template'
+    
+    assert !assigns(:location).blank?, 'expected location assigned'    
+  end  
 end

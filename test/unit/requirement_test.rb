@@ -4,6 +4,9 @@ class RequirementTest < ActiveModel::TestCase
   def test_text
     requirement = Requirement.new(:_id => 'traits.clandestine', :value => 10)
     assert_equal "10 clandestine", requirement.text, 'expected value and tag mapped to display text'
+    
+    requirement.is = 'gt'
+    assert_equal "11+ clandestine", requirement.text, 'expected "greater than" indicated in text'    
   end
   
   def test_tag
@@ -18,7 +21,7 @@ class RequirementTest < ActiveModel::TestCase
   
   def test_met_by_empty
     assert_equal false, Requirement.new.met_by?(nil), 'expected false for nil profile'
-    profile = Profile.new(:taggings => [{:_id => 'test', :tags => [] }])    
+    profile = Profile.new(:taggings => [{:_id => 'test', :tags => [] }])
     assert_equal false, Requirement.new.met_by?(profile), 'expected false for tagless profile'    
   end
   
