@@ -1,18 +1,29 @@
 <h1><%= @encounter.title %></h1>
 <p><%= @encounter.description %></p>
 	
-<p><%= @path.text %></p>
+<p><%= @path.title %></p>
 
 <p><big><%= @success ? 'Success' : 'Failure' %></big></p>
 <p><%= @success ? @path.success_text : @path.failure_text %></p>
 
 <% if @success && !@path.awards.select {|a| a.display? }.blank?  %>
-  <h4>You earned:</h4>
-  <ul>
-	<% @path.awards.select {|a| a.display? }.each do |award| %>
-      <li><%= "+#{award.value} #{award.tag}" %></li>
-	<% end %>
-  </ul>	
+  <% unless @path.awards_gained.blank? %>
+    <h4>You gained:</h4>
+    <ul>
+	  <% @path.awards_gained.select {|a| a.display? }.each do |award| %>
+        <li><%= "+#{award.value} #{award.tag.titleize}" %></li>
+      <% end %>
+    </ul>	
+  <% end %>
+
+  <% unless @path.awards_lost.blank? %>
+    <h4>You lost:</h4>
+    <ul>
+	  <% @path.awards_lost.select {|a| a.display? }.each do |award| %>
+        <li><%= "#{award.value} #{award.tag.titleize}" %></li>
+      <% end %>
+    </ul>	
+  <% end %>
 <% end %>
 
 <p><%= link_to 'Carry on', location_path %></p>

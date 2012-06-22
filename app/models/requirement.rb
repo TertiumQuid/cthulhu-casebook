@@ -1,19 +1,14 @@
+require 'active_model/tagged_support'
+
 class Requirement
   include MongoMapper::EmbeddedDocument
+  include ActiveModel::TaggedSupport   
   
   key :value, String, :default => 1, :required => true
   key :is, String
   
   def text
-    "#{value} #{tag}"
-  end
-  
-  def tag
-    _id.to_s.split('.').last if _id
-  end
-  
-  def tagging
-    _id.to_s.split('.').first if _id
+    "#{(is == 'gt' ? "#{(value.to_i+1)}+" : value)} #{tag}"
   end
   
   def met_by?(profile)

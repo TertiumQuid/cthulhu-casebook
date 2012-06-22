@@ -1,17 +1,26 @@
-<p>
-  <label><%= @character.gender == 'female' ? 'Ms' : 'Mr' %>. <strong><%= @character.name %></strong>, a curious <%= @character.gender == 'female' ? 'lady' : 'gentleman' %></label>
+<p><big>
+  <label><%= @character.gender == 'female' ? 'Ms' : 'Mr' %>. <strong><%= @character.name %></strong></big>, a curious <%= @character.gender == 'female' ? 'lady' : 'gentleman' %></label>
 </p>
+
+<h3>Moxie: <%= @character.moxie %></h3>
 
 <h4>Traits</h4>
 <ul>
   <% @character.profile.find_tagging('traits').tags.each do |tag| %>
-    <li><%= tag._id %> <%= tag.value %></li>
+    <li><%= tag._id.titleize  %> <%= tag.value %></li>
   <% end %>
 </ul>
 
 <h4>Pathology</h4>
 <ul>
   <% @character.profile.find_tagging('pathology').tags.each do |tag| %>
-    <li><%= tag._id %> <%= tag.value %></li>
+    <li><%= tag._id.titleize  %> <%= tag.value %></li>
+  <% end %>
+</ul>
+
+<h4>Belongings</h4>
+<ul>
+  <% @character.profile.find_tagging('belongings').tags.each do |tag| %>
+    <li><%= tag._id.titleize  %> <%= tag.value %></li>
   <% end %>
 </ul>

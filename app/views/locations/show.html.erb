@@ -1,3 +1,6 @@
+<h1><%= @location.long_name %></h1>
+<p><%= @location.text %></p>
+
 <% @encounters.each do |encounter| %>
   <% if encounter.available_for?(current_character) %>
     <%= link_to encounter_path(encounter), :rel => 'nofollow' do %>

@@ -16,6 +16,7 @@ encounters:
          -  _id: 1
             title: Explore Arkham
             text: A quaint union of antiquity and modern life awaits in the city
+            success_text: Each step into the long shadows of Arkham feels as if crossing the threshold of dream, though you cannot say in which direction.
             awards: 
                   - 
                     _id: plots.arkham
@@ -34,16 +35,32 @@ encounters:
          -  _id: 1
             title: Strongarm Tactics
             text: Briskly clear the dock of onlookers and transfer the (unaccountably heavy) goods with all due haste!
+            success_text: Even the strapping seamen struggle with the cargo and inquisitive faces stare from windows above, but all in all you make quick and licit work of the matter.
+            failure_text: As you hoist one of the boxes you're sure something convulses within, causing you to drop the weight with a start! The contents are only visible for a moment before they slither over the dock's edge into the Miskatonic, and though the air is filled with screams none is louder than yours.
+            challenge:
+                _id: traits.athletic
+                difficulty: 1
             awards: 
                   - 
                     _id: traits.athletic
-                    value: 1            
+                    value: 1
+                  - 
+                    _id: belongings.american_dollars
+                    value: 1                             
          -  _id: 2
             title: Undercover
             text: Acquire some nearby tarpaulins to cover the mysterious boxes and carefully unload the shapelessly camouflaged cargo.
+            success_text: Just before wrapping the last tarpaulin over the cargo you catch a terrifying shudder of motion from behind a box's broken plank. Keeping your cool you manage to cover it before prying eyes take notice.
+            failure_text: As you transfer the nondescript boxes you're charged by a crew of angry sailers. Before they can finish beating you, however, those who rip back their tarpaulins uncover something too horrible to behold and flee screaming from the scene.
+            challenge:
+                _id: traits.clandestine
+                difficulty: 1
             awards: 
                   - 
                     _id: traits.clandestine
+                    value: 1
+                  - 
+                    _id: belongings.american_dollars
                     value: 1
     requirements: 
                 - 
@@ -56,7 +73,12 @@ encounters:
     paths:
          -  _id: 1
             title: Screaming Roots
-            text: That disembodied childlike cry must just be the hill-split winds, you hope, gazing at the blood-red mud upon your hands.
+            text: That disembodied childlike cry must just be the hill-split winds, you hope, gazing at the crimson mud upon your hands.
+            success_text: You do the work of 100 old crones and in no time at all return with an honest harvest for the strange pharmacist.
+            failure_text: You're sure you left them somewhere, but everytime you turn around the roots you've harvested have disappeared, until at the end of the day even the last remaining mandrake goes unaccountably missing from your bag.
+            challenge:
+                _id: traits.athletic
+                difficulty: 1
             awards: 
                   - 
                     _id: traits.athletic
@@ -64,13 +86,23 @@ encounters:
          -  _id: 2
             title: It's But Gardening
             text: Would that be the genus Mandragora of the nightshade family? Armed with gloves and spade, you'll harvest the bifurcated monstrosities safely.
+            success_text: The humanoid characteristics of the plant are outragoues, and you even find one resembling the pharmacist himself! Your final harvest comprises a full study of the human form incarnated in poisonous herbs.
+            failure_text: On your hands and kness in the mud, your skin begins to burn, and you're rapidly overcome with vivid hallucinations of bonfire rituals attended by dancing mandrakes. When you come to beneath the stars, your harvest has vanished.
+            challenge:
+                _id: traits.educated
+                difficulty: 1
             awards: 
                   - 
                     _id: traits.educated
-                    value: 1
+                    value: 2
          -  _id: 3
             title: They Grow Fat in the Moon
             text: In fact, the sounds of a dirge beneath the light of a gibbous moon provokes the berries to blossom! You'll hum an ancient tune while plucking the roots in the dead of night.
+            success_text: The amusement is endless as you find the forms and faces of childhood friends captured in the likeness of the mandrakes, swollen with the precious venomous juice within.
+            failure_text: As you clutch a shrieking root the ground around you erupts with hand-like roots that grab your wrists and pull you into the frothing mud. It's also you can do to avoid being smothered as you pull free and flee without looking back.
+            challenge:
+                _id: traits.weird
+                difficulty: 1
             awards: 
                   - 
                     _id: traits.weird
@@ -88,6 +120,11 @@ encounters:
          -  _id: 1
             title: Travel! Change! Excitement!
             text: Not to be outdone by the reckless squire, you try commandeer the wheel and put the auto to race, reaching scarf-ripping speeds before steering home to Arkham sometime after sunset.
+            success_text: 
+            failure_text: 
+            challenge:
+                _id: traits.athletic
+                difficulty: 2            
             awards: 
                   - 
                     _id: traits.athletic
@@ -95,9 +132,15 @@ encounters:
          -  _id: 2
             title: Is that Canadian whisky?
             text: The familiar motorist could not be more declasse, but his northern rum line is true stimulus in these dry times. Ask for a quick vendue on some bottles to keep for the days ahead.
+            challenge:
+                _id: traits.persuasive
+                difficulty: 2            
             awards: 
                   - 
                     _id: traits.persuasive
+                    value: 1
+                  -                     
+                    _id: belongings.whisky
                     value: 1
     requirements: 
                 - 
@@ -112,6 +155,9 @@ encounters:
           -  _id: 1
              title: Are They Children, or Something Older?
              text: With a sinister interest in the wizened, childlike intruders you hug the window frame and attempt to observe the little folk from the shadows outside.
+             challenge:
+                 _id: traits.weird
+                 difficulty: 2             
              awards: 
                    - 
                      _id: traits.weird
@@ -119,6 +165,9 @@ encounters:
           -  _id: 2
              title: A Nearby Cutlass
              text: Throwing open the window you'll leap upon the thieves in an instant brandishing a wicked cutlass snatched from the wall.
+             challenge:
+                 _id: traits.dangerous
+                 difficulty: 3
              awards: 
                    - 
                      _id: traits.dangerous
@@ -126,6 +175,9 @@ encounters:
           -  _id: 3
              title: No Escape
              text: The labyrinthine halls of the exhibit rooms admit but single egress. You'll sneak inside and lay an ambush for these hideous bandits while they fill their shrunken arms with loot.
+             challenge:
+                 _id: traits.clandestine
+                 difficulty: 3            
              awards: 
                    - 
                      _id: traits.clandestine
@@ -160,6 +212,9 @@ encounters:
                   - 
                     _id: plots.earnest_proselyte
                     value: 2
+                  - 
+                    _id: belongings.american_dollars
+                    value: -1
          -  _id: 3
             title: These Rites Were Different Then
             text: What a perfect place for blasphemy! Creeping over to baptismal basin you dip your fingers into the water, performing a ritual half-remembered from a dream wherein you slept enthralled by bloodthirsty watery gods.
@@ -170,6 +225,24 @@ encounters:
                  - 
                    _id: plots.earnest_proselyte
                    value: 1
+         -  _id: 4
+            title: In The Beginning There Was the Light
+            text: An esteemed guest, the Reverend invites you to the lectern to read a passage for the congregation. Oddly, in all your years of religious study you can't recall the ominous verses from any bible you've ever seen.
+            requirements: 
+                        - 
+                          _id: plots.earnest_proselyte
+                          is: gt
+                          value: 49
+            awards: 
+               - 
+                 _id: belongings.american_dollars
+                 value: 2
+               - 
+                 _id: belongings.holy_water
+                 value: 1
+               - 
+                 _id: pathology.madness
+                 value: -1
     requirements: 
                 - 
                   _id: plots.arkham
@@ -184,6 +257,9 @@ encounters:
         -  _id: 1
            title: Interesting Notions, for a Priest
            text: You can hardly trust the scholarship of a man who seeks to control angels and demons, but the value of the endless biblical notes to the understanding of mystic Christianity and it's place in New England cannot be ignored.
+           challenge:
+               _id: traits.educated
+               difficulty: 2        
            awards: 
                  - 
                    _id: traits.educated
@@ -191,6 +267,9 @@ encounters:
         -  _id: 2
            title: The Names of God
            text: Encoded in the in the maze of the Reverend Ward's records lay the names of God and His angels. This is knowledge best stolen under the instruction of the church, and you take in good faith what incantations you're able to piece together from the cypher in Ward's bibles and essays.
+           challenge:
+               _id: traits.weird
+               difficulty: 3           
            awards: 
                  - 
                    _id: traits.weird
@@ -198,10 +277,16 @@ encounters:
         -  _id: 3
            title: The Black Market Bible Trade
            text: Select items from the esoteric Reverend's collection should fetch a handsome price from the right buyer. You say a prayer at the end of the day's reading, walking slowly as you're escorted out so as to keep your stolen prize concealed.
+           challenge:
+               _id: traits.clandestine
+               difficulty: 3
            awards: 
                 - 
                   _id: traits.clandestine
-                  value: 1
+                  value: 2
+                - 
+                  _id: belongings.american_dollars
+                  value: 3
     requirements: 
                 - 
                   _id: plots.earnest_proselyte
@@ -216,13 +301,19 @@ encounters:
         -  _id: 1
            title: Two Voices Below
            text: You climb up the belfry and with some trouble descend the church into Trishard's personal crypt. Sealed as it is, you're able to hear the ghastly noise and come to realize that the moans are being guided by a hateful whisper.
+           challenge:
+               _id: traits.athletic
+               difficulty: 2    
            awards: 
                  - 
                    _id: traits.athletic
                    value: 2
         -  _id: 2
            title: The West Church Wanderer
-           text: Under the moon's wan light you're surprised to observe a cloaked stranger slip against the church shadows and unlock the stairs to the crypt. Running silently you try catch the closing door, just as you catch the sound of supulchral moans.
+           text: Under the moon's wan light you're startled to observe a cloaked stranger slip against the church shadows and unlock the stairwell to the crypt. Running silently you rush to reach the closing hatch, only then catching the sound of supulchral moans.
+           challenge:
+               _id: traits.clandestine
+               difficulty: 2           
            awards: 
                  - 
                    _id: traits.clandestine

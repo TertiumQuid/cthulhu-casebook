@@ -33,7 +33,7 @@ class CharactersControllerTest < ActionController::TestCase
   end
   
   test 'get edit' do
-    mock_character
+    login!
     get :edit
     assert_response :success, 'expected http success'
     assert_template :edit, 'expected edit template'
