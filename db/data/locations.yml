@@ -1,19 +1,93 @@
 locations:
-  arkham:
-    _id: arkham
-    short_name: Arkham
-    long_name: Arkham, Massachusetts, United States
-    text: The ancient, mouldering, and subtly fearsome town - witch-cursed, legend-haunted Arkham, whose huddled, sagging gambrel roofs and crumbling Georgian balustrades brood out the centuries beside the darkly muttering Miskatonic.
+  arkham_northside:
+    _id: arkham_northside
+    short_name: Northside Arkham
+    long_name: Northside Arkham, Massachusetts, United States
+    text: 
     passages: 
+            - _id: arkham_downtown
+            - _id: arkham_merchant_district
+  arkham_miskatonic_university:
+    _id: arkham_miskatonic_university
+    short_name: Miskatonic University
+    long_name: Miskatonic University, Arkham Massachusetts, United States
+    text: 
+    passages: 
+            - _id: arkham_southside
+            - _id: arkham_uptown
+            - _id: arkham_merchant_district
+            - _id: arkham_french_hill
+  arkham_downtown:
+    _id: arkham_downtown
+    short_name: Downtown Arkham
+    long_name: Downtown Arkham, Massachusetts, United States
+    text: 
+    passages:
+            - _id: arkham_northside
+            - _id: arkham_merchant_district
+            - _id: arkham_rivertown  
+  arkham_merchant_district:
+    _id: arkham_merchant_district
+    short_name: Arkham Merchant District
+    long_name: Merchant District, Arkham, Massachusetts, United States
+    text: 
+    passages:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.arkham
-                            value: 1
-  miskatonic_university:
-    _id: miskatonic_university
-    short_name: M.U.
-    long_name: Miskatonic University
-    text: Cloistered in a shady Georgian neighborhood, the vibrant Miskatonic U is the pride of the New England intellectual tradition, not the least for its specialist library, learned faculty, and esoteric research programs. But as many promising young students have discovered, you can just as easily lose your mind as enlighten it treading carelessly in the halls of knowledge.
-    passages: 
-            - _id: arkham
+                            _id: plots.arkham_scion
+                            value: 10
+            - _id: arkham_northside
+            - _id: arkham_downtown
+            - _id: arkham_rivertown
+            - _id: arkham_french_hill
+  arkham_rivertown:
+    _id: arkham_rivertown
+    short_name: Arkham Rivertown
+    long_name: Arkham Rivertown, Massachusetts, United States
+    text: 
+    passages:
+            - _id: arkham_downtown
+            - _id: arkham_merchant_district
+            - _id: arkham_french_hill
+  arkham_french_hill:
+    _id: arkham_french_hill
+    short_name: French Hill
+    long_name: French Hill, Arkham, Massachusetts, United States
+    text: 
+    passages:
+            - _id: miskatonic_university
+              requirements: 
+                          - 
+                            _id: plots.arkham_scion
+                            value: 10
+            - _id: arkham_uptown
+            - _id: arkham_rivertown
+            - _id: arkham_merchant_district
+            - _id: arkham_southside
+  arkham_southside:
+    _id: arkham_southside
+    short_name: Arkham Southside
+    long_name: Arkham Southside, Massachusetts, United States
+    text: 
+    passages:
+            - _id: miskatonic_university
+              requirements: 
+                          - 
+                            _id: plots.arkham_scion
+                            value: 10
+            - _id: arkham_french_hill
+            - _id: arkham_uptown
+  arkham_uptown:
+    _id: arkham_uptown
+    short_name: Uptown Arkham
+    long_name: Uptown Arkham, Massachusetts, United States
+    text: 
+    passages:
+            - _id: miskatonic_university
+              requirements: 
+                          - 
+                            _id: plots.arkham_scion
+                            value: 10
+            - _id: arkham_french_hill
+            - _id: arkham_southside            

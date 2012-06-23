@@ -13,9 +13,9 @@ gem 'mongo_mapper', :git => 'git://github.com/jnunemaker/mongomapper.git', :ref 
 gem 'bson_ext'
 gem 'mongo_session_store-rails3'
 
-
 gem 'exception_notification'
 gem 'aws-sdk'
+gem 'fb_graph'
 
 group :development do
   gem 'thin'

@@ -5,8 +5,8 @@ class MessagesControllerTest < ActionController::TestCase
   
   def setup
     @character = login!
-    Message.create!(:type => 'type', :title => 'title', :text => 'text', :sender => 'sender')    
-    @message = Message.create!(:type => 'type', :title => 'title', :text => 'text', :sender => 'sender', :character => @character)    
+    Message.create!(:title => 'title', :text => 'text', :sender => 'sender', :character => Character.new)    
+    @message = Message.create!(:title => 'title', :text => 'text', :sender => 'sender', :character => @character)    
   end
   
   test 'get index' do

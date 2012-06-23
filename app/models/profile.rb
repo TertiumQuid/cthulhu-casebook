@@ -28,7 +28,7 @@ class Profile
     
   def populate
     location = Tagging.new(:_id => 'location')
-    location.tags << Tag.new(:_id => 'current', :value => 'arkham')
+    location.tags << Tag.new(:_id => 'current', :value => 'arkham_northside')
 
     traits = Tagging.new(:_id => 'traits')
     traits.tags << Tag.new(:_id => 'athletic', :value => 1)

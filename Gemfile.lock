@@ -40,6 +40,7 @@ GEM
       multi_json (~> 1.0)
     ansi (1.4.2)
     arel (3.0.2)
+    attr_required (0.0.5)
     aws-sdk (1.5.4)
       httparty (~> 0.7)
       json (~> 1.4)
@@ -71,11 +72,16 @@ GEM
       actionmailer (>= 3.0.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fb_graph (2.4.17)
+      httpclient (>= 2.2.0.2)
+      rack-oauth2 (>= 0.14.4)
+      tzinfo
     highline (1.6.13)
     hike (1.2.1)
     httparty (0.8.3)
       multi_json (~> 1.0)
       multi_xml
+    httpclient (2.2.5)
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.0.2)
@@ -86,7 +92,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.18)
+    mime-types (1.19)
     mongo (1.6.4)
       bson (~> 1.6.4)
     mongo_session_store-rails3 (3.0.6)
@@ -108,6 +114,13 @@ GEM
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-oauth2 (0.14.4)
+      activesupport (>= 2.3)
+      attr_required (>= 0.0.5)
+      httpclient (>= 2.2.0.2)
+      i18n
+      json (>= 1.4.3)
+      rack (>= 1.1)
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.1)
@@ -155,9 +168,9 @@ GEM
     turn (0.9.5)
       ansi
     tzinfo (0.3.33)
-    uglifier (1.2.4)
+    uglifier (1.2.5)
       execjs (>= 0.3.0)
-      multi_json (>= 1.0.2)
+      multi_json (~> 1.3)
     uuidtools (2.1.2)
 
 PLATFORMS
@@ -170,6 +183,7 @@ DEPENDENCIES
   capistrano-ext
   coffee-rails (~> 3.2.1)
   exception_notification
+  fb_graph
   jquery-rails
   mongo_mapper!
   mongo_session_store-rails3

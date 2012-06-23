@@ -30,5 +30,9 @@ module ActionPack
     def require_character
       redirect_to new_character_path and return false unless has_character? || requested_new_character_path?
     end
+    
+    def require_no_monster
+      redirect_to monster_path and return false if current_character && current_character.fighting_monster?
+    end
   end
 end

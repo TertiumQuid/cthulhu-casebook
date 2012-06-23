@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_filter :require_no_monster  
   before_filter :load_location
   
   def show

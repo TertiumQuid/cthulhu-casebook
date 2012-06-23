@@ -1,0 +1,10 @@
+<h1>Messages from people, as well as Other Things</h1>
+
+<ul>
+  <% @messages.each do |message| %>
+    <li>
+      <big><%= link_to message.title, message_path(message) %></big><br />
+      <small>From: <%= message.sender %></small>
+    </li>
+  <% end %>
+</ul>

@@ -10,7 +10,7 @@ class LocationsControllerTest < ActionController::TestCase
   end
   
   test 'get show' do
-    location = 'arkham'
+    location = 'arkham_northside'
     get :show
     assert_response :success, 'expected http success'
     assert_template :show, 'expected show template'

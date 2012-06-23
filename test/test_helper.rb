@@ -17,6 +17,12 @@ class ActiveSupport::TestCase
     end
   end
   
+  def load_monsters
+    docs = YAML.load_file( File.expand_path('../../db/data/monsters.yml', __FILE__) )
+    data = docs['monsters'].values
+    Monster.collection.insert data
+  end
+  
   def load_locations
     docs = YAML.load_file( File.expand_path('../../db/data/locations.yml', __FILE__) )
     data = docs['locations'].values
@@ -28,8 +34,8 @@ class ActiveSupport::TestCase
   end
   
   def login!
-    chr = Character.create(:name => 'test')
-    mock_character(chr._id)
-    chr
+    character = Character.create(:name => 'test')
+    mock_character(character._id)
+    character
   end
 end

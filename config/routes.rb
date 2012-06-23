@@ -5,6 +5,8 @@ CthulhuCasebook::Application.routes.draw do
   end
   resources :messages, :only => [:index, :show]
   resources :locations, :only => [:index]
+  resource  :monster, :only => [:show], :controller => 'monsters'
+  resources :monster, :only => [:delete]
   resources :encounters, :only => [:show] do
     resources :paths, :only => [:show]
   end

@@ -5,6 +5,6 @@ class MessagesController < ApplicationController
   end
   
   def show
-    @message = current_character.messages.find(params[:id])
+    @message = Message.find_readable(current_character, params[:id])
   end
 end

@@ -1,0 +1,10 @@
+<h1>Messages from people, as well as Other Things</h1>
+
+<div>
+  <big><%= link_to @message.title, message_path(@message) %></big><br />
+  <small>From: <%= @message.sender %></small>
+
+  <p><%= @message.text %></p>
+  <br />
+  <p><%= link_to 'return to other concerns', messages_path %></p>
+</div>

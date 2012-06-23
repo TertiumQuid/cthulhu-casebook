@@ -1,0 +1,21 @@
+monsters:
+  lunatic:
+    _id: lunatic
+    name: Lunatic
+    locations: [arkham_northside, arkham_downtown, arkham_rivertown, arkham_southside, arkham_uptown]
+  witch:
+    _id: witch
+    name: Witch
+    locations: [arkham_french_hill, arkham_miskatonic_university]
+    lures :
+          - 
+            _id: knowledge.unspeakable_names
+            factor: 0.25
+  warlock:
+    _id: warlock
+    name: Warlock
+    locations: [arkham_french_hill]
+    lures :
+          - 
+            _id: knowledge.unspeakable_names
+            factor: 0.1
