@@ -1,5 +1,5 @@
 module ActiveModel
-  module TaggedSupport
+  module TaggableSupport
     extend ActiveSupport::Concern
     
     def tag

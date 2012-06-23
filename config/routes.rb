@@ -5,12 +5,13 @@ CthulhuCasebook::Application.routes.draw do
   end
   resources :messages, :only => [:index, :show]
   resources :locations, :only => [:index]
-  resource  :monster, :only => [:show], :controller => 'monsters'
-  resources :monster, :only => [:delete]
+  resource  :monster, :only => [:new], :controller => 'monsters', :path_names => { :new => 'strategy' }
+  resources :monster, :only => [:show], :controller => 'monsters'
+  
   resources :encounters, :only => [:show] do
     resources :paths, :only => [:show]
   end
   
   resource :application,  :only => [:show]  
-  root :to => 'application#show'  
+  root :to => 'application#show'
 end

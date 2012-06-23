@@ -8,7 +8,7 @@ class PassagesController < ApplicationController
       
       if @monster = Monster.encounters_monster_at?(current_character, location)
         current_character.encounter_monster! @monster._id
-        redirect_to monster_path and return
+        redirect_to new_monster_path and return
       end
       
       current_character.profile.save

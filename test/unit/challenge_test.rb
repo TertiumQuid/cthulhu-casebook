@@ -31,28 +31,8 @@ class ChallengeTest < ActiveModel::TestCase
     assert_equal 'first', @challenge.tagging, 'expected first id part for tagging'
   end
   
-  def test_chance_of_success
-    chance = @challenge.send(:chance_of_success)
-    assert_equal (50 - (@challenge.difficulty * 10)), chance, 'expected modified chance of success'
-  end
-  
-  def test_chance_of_success_with_character_tag
-    tag = Tag.new(:value => 'test')
-    chance = @challenge.send(:chance_of_success)
-    assert_equal (50 - (@challenge.difficulty * 10)), chance, 'expected unmodified chance of success with non-numeric tag'
-    
-    tag = Tag.new(:value => 10)
-    chance = @challenge.send(:chance_of_success, tag)
-    assert_equal (50 - (@challenge.difficulty * 10) + tag.value.to_i), chance, 'expected modified chance of success with tag'
-  end  
-  
   def test_difficulty_text
     assert_nil Challenge.new.difficulty_text, 'expected nil without difficulty'
     assert_not_nil @challenge.difficulty_text, 'expected text for difficulty'
-  end
-  
-  def test_check_success
-    assert_equal false, @challenge.send(:check_success, 0, 100000), 'expected failed check'
-    assert_equal true, @challenge.send(:check_success, 100000, 0), 'expected successful check'    
   end
 end

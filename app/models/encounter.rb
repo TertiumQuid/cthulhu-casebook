@@ -17,13 +17,13 @@ class Encounter
   def self.cost; 1; end
   
   def play(character, path_id)
-    if character.moxie >= Encounter.cost && path = find_path(path_id)
+    if character.clues >= Encounter.cost && path = find_path(path_id)
       succeeded = path.challenge ? path.play(character) : true
       
       path.awards.each do |award|
         award.apply_to! character
       end
-      character.moxie = character.moxie - Encounter.cost
+      character.clues = character.clues - Encounter.cost
       character.profile.save && character.save
     else
       false

@@ -32,7 +32,7 @@ class ProfileTest < ActiveModel::TestCase
     profile = Profile.new
     profile.send(:populate)
     
-    ['location','traits','pathology','plots'].each do |tagging|
+    ['location','traits','pathology','plots','skills'].each do |tagging|
       assert !profile.find_tagging(tagging).blank?, "expected tagging for #{tagging}"
       assert !profile.find_tagging(tagging).tags.blank?, "expected populated tags for #{tagging}"
     end

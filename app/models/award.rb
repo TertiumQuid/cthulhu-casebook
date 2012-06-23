@@ -1,8 +1,8 @@
-require 'active_model/tagged_support'
+require 'active_model/taggable_support'
 
 class Award
   include MongoMapper::EmbeddedDocument
-  include ActiveModel::TaggedSupport   
+  include ActiveModel::TaggableSupport   
   
   key :value, String, :required => true
   

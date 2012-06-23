@@ -8,7 +8,7 @@ class PathTest < ActiveModel::TestCase
     @path.awards << Award.new(:value => 'test')
     @path.awards << Award.new(:value => '-3')    
 
-    @character = Character.create!(:name => 'available', :moxie => Encounter.cost)
+    @character = Character.create!(:name => 'available', :clues => Encounter.cost)
     @character.profile.taggings << Tagging.new(:id => 'test')
     @character.profile.save!    
   end

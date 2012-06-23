@@ -30,6 +30,14 @@ class Profile
     location = Tagging.new(:_id => 'location')
     location.tags << Tag.new(:_id => 'current', :value => 'arkham_northside')
 
+    skills = Tagging.new(:_id => 'skills')
+    skills.tags << Tag.new(:_id => 'adventure', :value => 1)
+    skills.tags << Tag.new(:_id => 'clandestinity', :value => 1)
+    skills.tags << Tag.new(:_id => 'conflict', :value => 1)
+    skills.tags << Tag.new(:_id => 'scholarship', :value => 1)
+    skills.tags << Tag.new(:_id => 'sorcery', :value => 1)
+    skills.tags << Tag.new(:_id => 'underworld', :value => 1)
+
     traits = Tagging.new(:_id => 'traits')
     traits.tags << Tag.new(:_id => 'athletic', :value => 1)
     traits.tags << Tag.new(:_id => 'clandestine', :value => 1)
@@ -49,6 +57,7 @@ class Profile
     plots = Tagging.new(:_id => 'plots')
     plots.tags << Tag.new(:_id => 'arkham', :value => 0)
 
+    taggings << skills
     taggings << traits
     taggings << location  
     taggings << pathology 

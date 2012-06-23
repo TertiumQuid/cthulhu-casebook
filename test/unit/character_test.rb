@@ -40,4 +40,13 @@ class CharacterTest < ActiveModel::TestCase
     @character.monster_id = 'test'
     assert_equal true, @character.fighting_monster?, 'expected to be fighting monster after monster id set'
   end
+  
+  def test_spend_clues
+    assert_difference '@character.clues', -1 do
+      @character.spend_clues
+    end
+    assert_difference '@character.clues', -2 do
+      @character.spend_clues(2)
+    end
+  end
 end

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class EncounterTest < ActiveModel::TestCase
   def setup
-    @character = Character.create!(:name => 'available', :moxie => Encounter.cost)
+    @character = Character.create!(:name => 'available', :clues => Encounter.cost)
     @character.profile.taggings << Tagging.new(:id => 'test')
     @character.profile.save!
   end
@@ -16,15 +16,15 @@ class EncounterTest < ActiveModel::TestCase
   end
   
   def test_cost
-    assert_equal 1, Encounter.cost, 'expected default cost of 1 moxie'
+    assert_equal 1, Encounter.cost, 'expected default cost of 1 clue'
   end
   
-  def test_play_moxie_cost
+  def test_play_clues_cost
     path = Path.new(:title => 'test')
     encounter = Encounter.create!(:title => 'test', :text => 'test', :paths => [path])
     assert_equal true, encounter.play(@character, path._id), 'expected successful (true) play'
     @character.reload
-    assert_equal 0, @character.moxie, 'expected moxie reduced from encounter cost'
+    assert_equal 0, @character.clues, 'expected clues reduced from encounter cost'
   end
   
   def test_play_awards
@@ -38,11 +38,11 @@ class EncounterTest < ActiveModel::TestCase
     assert_equal '1', @character.profile.get('test', 'test').value
   end
   
-  def test_play_without_moxie
-    @character.moxie = 0
+  def test_play_without_clues
+    @character.clues = 0
     path = Path.new(:title => 'test')    
     encounter = Encounter.create!(:title => 'test', :text => 'test', :paths => [path])
-    assert_equal false, encounter.play(@character, path._id), 'expected unsuccessful (false) play with 0 moxie'
+    assert_equal false, encounter.play(@character, path._id), 'expected unsuccessful (false) play with 0 clues'
   end  
   
   def test_play_with_missing_path

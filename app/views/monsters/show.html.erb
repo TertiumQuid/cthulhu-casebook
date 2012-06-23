@@ -1,0 +1,13 @@
+<% if params[:id] == 'confront' %>
+  <h1>You put the monster to a spectacular end with the power of cosmic knowledge</h1>
+  <ul><li>You used 1 clue</li></ul>
+<% else %>
+  <h1>You faced the <%= @monster.name %> with <strong><%= params[:id] %></strong></h1>
+
+  <% if @success %>
+    <h2>Success!</h2>
+  <% else %>
+    <h2>Doom!</h2>
+  <% end %>
+<% end %>
+<p><%= link_to 'continue your investigations', location_path %></p>

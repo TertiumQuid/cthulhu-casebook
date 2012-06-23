@@ -2,7 +2,7 @@ class Character
   include MongoMapper::Document
   
   key :name, String, :required => true
-  key :moxie, Integer, :required => true, :default => 100
+  key :clues, Integer, :required => true, :default => 100
   key :gender, String
   key :messages_count, Integer, :default => 1
   
@@ -12,6 +12,10 @@ class Character
   has_many   :messages
   
   after_create :populate_profile
+  
+  def spend_clues(amount=1)
+    self.clues = self.clues - amount
+  end
   
   def encounter_monster!(monster_id)
     self.monster_id = monster_id

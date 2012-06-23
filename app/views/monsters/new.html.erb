@@ -1,0 +1,27 @@
+<h1>A <%= @monster.name%> appears!</h1>
+<p><%= @monster.description %></p>
+
+<p>You must choose how to deal with the threat before continuing.</p>
+
+<ul>
+  <li>
+    <%= link_to 'Fight!', monster_path('fight'), :rel => 'nofollow' %><br />
+    Fight the monster with <strong>conflict (<%= current_character.profile.get('skills', 'conflict') %>)</strong>
+  </li>
+  <li>
+    <%= link_to 'Escape!',  monster_path('escape'), :rel => 'nofollow' %><br />
+    Escape the monster with <strong>adventure (<%= current_character.profile.get('skills', 'adventure') %>)</strong>
+  </li>
+  <li>
+    <%= link_to 'Hide',  monster_path('stealth'), :rel => 'nofollow' %><br />
+    Hide from the monster with <strong>clandestinity (<%= current_character.profile.get('skills', 'clandestinity') %>)</strong>
+  </li>
+  <li>
+    <%= link_to 'Sorcery', monster_path('magic'), :rel => 'nofollow' %><br />
+    Overpower the monster with the lore of <strong>sorcery (<%= current_character.profile.get('skills', 'sorcery') %>)</strong>
+  </li>
+  <li>
+    <%= link_to 'Confront!', monster_path('confront'), :rel => 'nofollow' %><br />
+    Outmaneuver the monster by using your <strong>clues</strong>
+  </li>
+</ul>

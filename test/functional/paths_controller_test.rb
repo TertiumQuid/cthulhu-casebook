@@ -10,7 +10,7 @@ class PathsControllerTest < ActionController::TestCase
   
   test 'get show' do
     encounter = Encounter.find('homecoming')
-    assert_difference '@character.reload.moxie', -Encounter.cost do    
+    assert_difference '@character.reload.clues', -Encounter.cost do    
       get :show, :encounter_id => encounter._id, :id => encounter.paths.first._id
     end
     assert_equal encounter, assigns(:encounter), 'expected encounter assigned'

@@ -1,8 +1,8 @@
-require 'active_model/tagged_support'
+require 'active_model/taggable_support'
 
 class Requirement
   include MongoMapper::EmbeddedDocument
-  include ActiveModel::TaggedSupport   
+  include ActiveModel::TaggableSupport   
   
   key :value, String, :default => 1, :required => true
   key :is, String
