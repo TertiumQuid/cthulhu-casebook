@@ -38,6 +38,19 @@ class EncounterTest < ActiveModel::TestCase
     assert_equal '1', @character.profile.get('test', 'test').value
   end
   
+  def test_play_requirements
+    path = Path.new(:title => 'test')
+    path.requirements << Requirement.new(:id => 'test.test', :cost => true, :value => -1)
+    path.save!
+    @character.profile.set('test', 'test', 1)
+    @character.profile.save!
+    
+    encounter = Encounter.create!(:title => 'test', :text => 'test', :paths => [path])
+    assert_difference "@character.reload.profile.get('test', 'test').value.to_i", -1, 'expected requirement cost deducted' do
+      assert encounter.play(@character, path._id), 'expected successful (true) play'
+    end
+  end  
+  
   def test_play_without_clues
     @character.clues = 0
     path = Path.new(:title => 'test')    

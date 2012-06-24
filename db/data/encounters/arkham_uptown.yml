@@ -1,0 +1,27 @@
+encounters:
+  st_marys_hospital: 
+    _id: st_marys_hospital
+    title: St. Mary's Hospital
+    location: arkham_uptown
+    paths: 
+         -  _id: 1
+            title: The School of Medicine
+            awards: 
+                  - 
+                    _id: pathology.wounds
+                    value: -2
+         -  _id: 2
+            title: A matter of life and death!
+            awards: 
+                  - 
+                    _id: pathology.wounds
+                    value: -10
+            requirements: 
+                  - 
+                    _id: pathology.wounds
+                    is: gt
+                    value: 24
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -1

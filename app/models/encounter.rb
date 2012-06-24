@@ -20,9 +20,8 @@ class Encounter
     if character.clues >= Encounter.cost && path = find_path(path_id)
       succeeded = path.challenge ? path.play(character) : true
       
-      path.awards.each do |award|
-        award.apply_to character
-      end
+      path.awards.each { |a| a.apply_to(character) }
+      path.requirements.each { |r| r.apply_to(character) if r.cost }
       
       character.spend_clues Encounter.cost
       character.profile.save && character.save

@@ -6,6 +6,7 @@ class Requirement
   
   key :value, String, :default => 1, :required => true
   key :is, String
+  key :cost, Boolean
   
   def text
     "#{(is == 'gt' ? "#{(value.to_i+1)}+" : value)} #{tag}"
