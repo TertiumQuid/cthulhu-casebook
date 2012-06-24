@@ -24,5 +24,7 @@ class PassagesControllerTest < ActionController::TestCase
     assert !assigns(:monster).blank?, 'expected monster assigned'
     assert_redirected_to new_monster_path, 'expected redirected to monster path for combat'
     assert_not_nil character.reload.monster_id, 'exepected character monster id set'
+    
+    Monster.const_set('ENCOUNTER_CHANCE_RANGE', range)
   end
 end

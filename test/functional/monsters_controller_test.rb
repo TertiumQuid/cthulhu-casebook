@@ -39,6 +39,7 @@ class MonstersControllerTest < ActionController::TestCase
       assert_template :show, 'expected show template'
     end
     assert_equal @monster, assigns(:monster), 'expected monster assigned'    
+    assert_nil @character.reload.monster_id, 'expected character no longer associated with monster'
   end
   
   test 'get show' do
@@ -46,5 +47,6 @@ class MonstersControllerTest < ActionController::TestCase
     get :show, :id => 'confront'
     assert_equal @monster, assigns(:monster), 'expected monster assigned'    
     assert_equal true, assigns(:success), 'expected success'
+    assert_nil @character.reload.monster_id, 'expected character no longer associated with monster'
   end 
 end

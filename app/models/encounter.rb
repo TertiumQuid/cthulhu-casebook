@@ -21,7 +21,7 @@ class Encounter
       succeeded = path.challenge ? path.play(character) : true
       
       path.awards.each do |award|
-        award.apply_to! character
+        award.apply_to character
       end
       character.clues = character.clues - Encounter.cost
       character.profile.save && character.save

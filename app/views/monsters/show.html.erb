@@ -8,6 +8,12 @@
     <h2>Success!</h2>
   <% else %>
     <h2>Doom!</h2>
+    <p>You gained:</p>
+    <ul>
+      <% @monster.penalties.each do |penalty| %>
+        <li><%= "+#{penalty.value} #{penalty.tag}" %></li>
+      <% end %>
+    </ul>
   <% end %>
 <% end %>
-<p><%= link_to 'continue your investigations', location_path %></p>
+<p><%= link_to 'continue your journey', locations_path %></p>

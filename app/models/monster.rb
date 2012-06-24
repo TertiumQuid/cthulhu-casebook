@@ -12,6 +12,7 @@ class Monster
   
   many :requirements
   many :lures  
+  many :penalties
   
   ENCOUNTER_CHANCE = 5
   ENCOUNTER_CHANCE_RANGE = 10
@@ -22,12 +23,15 @@ class Monster
   
   def self.encounters_monster_at?(character, location, monster_chance=ENCOUNTER_CHANCE)
     return unless character && location
-    if rand(ENCOUNTER_CHANCE_RANGE) <= monster_chance
+    score = rand(ENCOUNTER_CHANCE_RANGE)
+    if score <= monster_chance
       if monsters = find_location(location._id).all
         random_monster = monsters[ rand(monsters.size-1) ]
       end
     end
   end
+  
+  def difficulty; 1; end
   
   def fight(character, strategy)
     skills = character.profile.find_tagging('skills')
@@ -43,9 +47,15 @@ class Monster
     when 'confront'
       character.spend_clues && true
     end
+    penalize(character) && character.profile.save unless succeeded
+    character.monster_id = nil
     character.save
     succeeded
   end
   
-  def difficulty; 1; end
+  def penalize(character)
+    penalties.each do |penalty|
+      penalty.apply_to(character)
+    end
+  end
 end

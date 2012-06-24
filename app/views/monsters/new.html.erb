@@ -5,23 +5,23 @@
 
 <ul>
   <li>
-    <%= link_to 'Fight!', monster_path('fight'), :rel => 'nofollow' %><br />
-    Fight the monster with <strong>conflict (<%= current_character.profile.get('skills', 'conflict') %>)</strong>
+	<br /><big>Fight!</big><br />
+    <%= link_to raw("Fight the monster with <strong>conflict (#{current_character.profile.get('skills', 'conflict').value})</strong>"), monster_path('fight'), :rel => 'nofollow' %>
   </li>
   <li>
-    <%= link_to 'Escape!',  monster_path('escape'), :rel => 'nofollow' %><br />
-    Escape the monster with <strong>adventure (<%= current_character.profile.get('skills', 'adventure') %>)</strong>
+	<br /><big>Escape!</big><br />	
+    <%= link_to raw("Escape the monster with <strong>adventure (#{current_character.profile.get('skills', 'adventure').value})</strong>"), monster_path('escape'), :rel => 'nofollow' %>
   </li>
   <li>
-    <%= link_to 'Hide',  monster_path('stealth'), :rel => 'nofollow' %><br />
-    Hide from the monster with <strong>clandestinity (<%= current_character.profile.get('skills', 'clandestinity') %>)</strong>
+	<br /><big>Hide!</big><br />
+    <%= link_to raw("Hide from the monster with <strong>clandestinity (#{current_character.profile.get('skills', 'clandestinity').value})</strong>"),  monster_path('stealth'), :rel => 'nofollow' %>
   </li>
   <li>
-    <%= link_to 'Sorcery', monster_path('magic'), :rel => 'nofollow' %><br />
-    Overpower the monster with the lore of <strong>sorcery (<%= current_character.profile.get('skills', 'sorcery') %>)</strong>
+	<br /><big>Sorcery!</big><br />
+    <%= link_to raw("Overpower the monster with the lore of <strong>sorcery (#{current_character.profile.get('skills', 'sorcery').value})</strong>"), monster_path('magic'), :rel => 'nofollow' %>
   </li>
   <li>
-    <%= link_to 'Confront!', monster_path('confront'), :rel => 'nofollow' %><br />
-    Outmaneuver the monster by using your <strong>clues</strong>
+	<br /><big>Confront!</big><br />
+    <%= link_to raw("Outmaneuver the monster by using your <strong>clues (#{current_character.clues})</strong>"), monster_path('confront'), :rel => 'nofollow' %>
   </li>
 </ul>

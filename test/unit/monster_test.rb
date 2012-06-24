@@ -28,16 +28,27 @@ class MonsterTest < ActiveModel::TestCase
   end
   
   def test_fight_with_confront
-    character = Character.create!(:name => 'test@example.com')
+    monster = Monster.first
+    character = Character.create!(:name => 'test@example.com', :monster => monster)
     assert_difference 'character.reload.clues', -1 do
-      assert_equal true, Monster.first.fight(character, :confront), 'expected success with clues'
+      assert_equal true, monster.fight(character, :confront), 'expected success with clues'
     end
+    assert_nil character.monster_id, 'expected character no longer associated with monster'
   end
   
   def test_fight_with_tag
-    character = Character.create!(:name => 'test@example.com')
+    monster = Monster.first
+    character = Character.create!(:name => 'test@example.com', :monster => monster)
     character.profile.set('skills', 'conflict', 1000)
     
-    assert_equal true, Monster.first.fight(character, 'fight'), 'expected success with high-valued tag'
+    assert_equal true, monster.fight(character, 'fight'), 'expected success with high-valued tag'
+    assert_nil character.monster_id, 'expected character no longer associated with monster' 
+  end
+  
+  def test_penalize
+    character = Character.create!(:name => 'test@example.com')
+    monster = Monster.find('lunatic')
+    monster.penalize(character)
+    assert_equal '1', character.profile.get('pathology', 'wounds').value, 'expected wounds added'
   end
 end

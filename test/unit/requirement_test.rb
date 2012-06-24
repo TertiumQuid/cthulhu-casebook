@@ -9,16 +9,6 @@ class RequirementTest < ActiveModel::TestCase
     assert_equal "11+ clandestine", requirement.text, 'expected "greater than" indicated in text'    
   end
   
-  def test_tag
-    requirement = Requirement.new(:_id => 'first.middle.last')
-    assert_equal 'last', requirement.tag, 'expected last id part for tag'
-  end
-  
-  def test_tagging
-    requirement = Requirement.new(:_id => 'first.middle.last')
-    assert_equal 'first', requirement.tagging, 'expected first id part for tagging'
-  end
-  
   def test_met_by_empty
     assert_equal false, Requirement.new.met_by?(nil), 'expected false for nil profile'
     profile = Profile.new(:taggings => [{:_id => 'test', :tags => [] }])

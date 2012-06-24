@@ -3,11 +3,25 @@ monsters:
     _id: lunatic
     name: Lunatic
     locations: [arkham_northside, arkham_downtown, arkham_rivertown, arkham_southside, arkham_uptown]
+    penalties:
+              -
+                _id: pathology.wounds
+                value: 1
   witch:
     _id: witch
     name: Witch
     locations: [arkham_french_hill, arkham_miskatonic_university]
-    lures :
+    penalties:
+              -
+                _id: pathology.wounds
+                value: 10
+              -
+                _id: pathology.madness
+                value: 3
+              -
+                _id: pathology.cursed
+                value: 5
+    lures:
           - 
             _id: knowledge.unspeakable_names
             factor: 0.25
@@ -15,7 +29,17 @@ monsters:
     _id: warlock
     name: Warlock
     locations: [arkham_french_hill]
-    lures :
+    penalties:
+              -
+                _id: pathology.wounds
+                value: 25
+              -
+                _id: pathology.madness
+                value: 10
+              -
+                _id: pathology.cursed
+                value: 10
+    lures:
           - 
             _id: knowledge.unspeakable_names
             factor: 0.1

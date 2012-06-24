@@ -23,14 +23,6 @@ class ChallengeTest < ActiveModel::TestCase
     assert_equal challenge.difficulty, mongo_data[:difficulty], 'exepected difficulty from challenge data'
   end  
   
-  def test_tag
-    assert_equal 'last', @challenge.tag, 'expected last id part for tag'
-  end
-  
-  def test_tagging
-    assert_equal 'first', @challenge.tagging, 'expected first id part for tagging'
-  end
-  
   def test_difficulty_text
     assert_nil Challenge.new.difficulty_text, 'expected nil without difficulty'
     assert_not_nil @challenge.difficulty_text, 'expected text for difficulty'
