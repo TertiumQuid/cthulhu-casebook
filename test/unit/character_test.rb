@@ -5,6 +5,25 @@ class CharacterTest < ActiveModel::TestCase
     @character = Character.new(:name => 'test')
   end
   
+  def test_find_for_users
+    c1 = Character.create!(:name => 'c1', :user_id => '123')
+    c2 = Character.create!(:name => 'c2', :user_id => 'abc')
+    c3 = Character.create!(:name => 'c3', :user_id => 'fail')
+    
+    assert Character.find_for_users([]).blank?, 'expected no characters with no given user ids'
+    assert_equal [c1,c2], Character.find_for_users(['123', 'abc']).all, 'expected all characters with given user ids'
+  end
+  
+  def test_new_for_user
+    name = 'test'
+    assert_difference 'User.count', +1 do
+      character = Character.new_for_user :name => name
+      assert character.new?, 'expected character to be new, not saved'
+      assert_equal name, character.name, 'expected character params assigned'
+      assert_not_nil character.user_id, 'expected user assigned'
+    end
+  end
+  
   def test_location
     assert_nil @character.location, 'expected no default location'    
     

@@ -1,0 +1,25 @@
+<h1>Your Friends.</h1>
+<p>They can help with your investigations in various ways (*if* they can be trusted).</p>
+
+<% if @friends.blank? %>
+  <p>And yet you are alone - Are friends a liability, getting in the way or plotting treachery? Or are they too simple-minded for the task at hand? Perhaps you're just protecting those you hold dear from the influence of cosmic horror.</p>
+
+  <p>Whatever the reason, you can always <u>invite a friend to join</u> if your burden grows too heavy for one individual to carry alone.</p>
+<% else %>
+  <p>Several persons of some talent and expertise are known to you:</p>
+  <ul>
+    <% @characters.each do |character| %>
+      <% user = @user.select{|u| u._id == character.user_id } %>
+      <li>
+        <big><%= link_to character.name, character_path(character._id) %></big><br />
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<hr />
+<p>If you know the <strong>cosmic identifier</strong> of a stranger of some talent and expertise, you can importune their friendship by entering it here:</p>
+
+<%= form_tag importunity_index_path do |f| %>
+  <p><%= text_field_tag :user_id, nil, :placeholder => 'cosmic identifier' %></p>
+  <p><%= submit_tag 'Importune' %></p>
+<% end %>

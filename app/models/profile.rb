@@ -35,6 +35,7 @@ class Profile
     skills.tags << Tag.new(:_id => 'bureaucracy', :value => 1)
     skills.tags << Tag.new(:_id => 'clandestinity', :value => 1)
     skills.tags << Tag.new(:_id => 'conflict', :value => 1)
+    skills.tags << Tag.new(:_id => 'psychology', :value => 1)
     skills.tags << Tag.new(:_id => 'scholarship', :value => 1)
     skills.tags << Tag.new(:_id => 'sorcery', :value => 1)
     skills.tags << Tag.new(:_id => 'underworld', :value => 1)

@@ -4,6 +4,7 @@
     <%= link_to 'Profile', edit_character_path %>
     <%= link_to 'Story', location_path %>
     <%= link_to 'Map', locations_path %>
+    <%= link_to 'Friends', friends_path %>
     <% if has_character? && current_character.messages_count > 0 %>
       <%= link_to "Messages (#{current_character.messages_count})", messages_path %>
     <% else %>

@@ -23,7 +23,8 @@ class Encounter
       path.awards.each do |award|
         award.apply_to character
       end
-      character.clues = character.clues - Encounter.cost
+      
+      character.spend_clues Encounter.cost
       character.profile.save && character.save
     else
       false

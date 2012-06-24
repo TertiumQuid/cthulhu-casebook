@@ -8,8 +8,9 @@ class CharactersController < ApplicationController
   end
   
   def create
-    @character = Character.new(params[:character])
+    @character = Character.new_for_user params[:character]
     if @character.save
+      session[:user_id] = @character.user_id
       authenticate_character @character._id
       redirect_to location_path
     else

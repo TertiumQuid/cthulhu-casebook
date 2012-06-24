@@ -13,6 +13,16 @@ class Character
   
   after_create :populate_profile
   
+  def self.find_for_users(user_ids)
+    where(:user_id => {'$in' => user_ids} )
+  end
+  
+  def self.new_for_user(params)
+    params ||= {}
+    params[:user_id] ||= User.create(:email => "#{rand(1000000)}@example.com")._id
+    Character.new params
+  end
+  
   def spend_clues(amount=1)
     self.clues = self.clues - amount
   end

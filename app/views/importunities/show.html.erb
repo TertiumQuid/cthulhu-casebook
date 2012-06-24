@@ -1,0 +1,8 @@
+<% if @importunity.errors.blank? %>
+  <h1>Your importunity begins</h1>
+  <p>If and when the stranger deigns to reply, you will be sent a message with their response.</p>
+<% else %>  
+  <h1>There was an error in your importunity</h1>
+  <p><%= @importunity.errors.values.join(', ') %></p>
+<% end %>
+<p><%= link_to 'review your current friends', friends_path %></p>

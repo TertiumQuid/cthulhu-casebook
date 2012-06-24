@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ApplicationControllerLocalizationSupportTest < ActionController::TestCase
+class ApplicationControllerCharacterSupportTest < ActionController::TestCase
   tests ApplicationController
   
   def test_current_character_id

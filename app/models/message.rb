@@ -4,6 +4,7 @@ class Message
   key :sender, String, :required => true
   key :title, String, :required => true
   key :text, String, :required => true
+  key :created_at, Date
   
   belongs_to :character
   
