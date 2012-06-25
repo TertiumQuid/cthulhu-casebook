@@ -1,0 +1,40 @@
+encounters:
+  arkham_sanitarium: 
+    _id: arkham_sanitarium
+    title: Arkham Sanitarium
+    location: arkham_downtown
+    paths: 
+         -  _id: 1
+            title: Psychoanalysis Session
+            awards: 
+                  - 
+                    _id: pathology.madness
+                    value: -1 
+         -  _id: 2
+            title: Electroshock Therapy
+            awards: 
+                  - 
+                    _id: pathology.madness
+                    value: -5
+                  - 
+                    _id: pathology.wounds
+                    value: 1
+            requirements: 
+                  - 
+                    _id: pathology.madness
+                    is: gt
+                    value: 14
+         -  _id: 3
+            title: Extremely Experimental Treatments
+            awards: 
+                  - 
+                    _id: pathology.madness
+                    value: -10
+            challenge:
+                _id: skills.psychology
+                difficulty: 3                    
+            requirements: 
+                  - 
+                    _id: pathology.madness
+                    is: gt
+                    value: 24

@@ -40,30 +40,23 @@ class Profile
     skills.tags << Tag.new(:_id => 'sorcery', :value => 1)
     skills.tags << Tag.new(:_id => 'underworld', :value => 1)
 
-    traits = Tagging.new(:_id => 'traits')
-    traits.tags << Tag.new(:_id => 'athletic', :value => 1)
-    traits.tags << Tag.new(:_id => 'clandestine', :value => 1)
-    traits.tags << Tag.new(:_id => 'dangerous', :value => 1)
-    traits.tags << Tag.new(:_id => 'educated', :value => 1)
-    traits.tags << Tag.new(:_id => 'persuasive', :value => 1)
-    traits.tags << Tag.new(:_id => 'resourceful', :value => 1)
-    traits.tags << Tag.new(:_id => 'weird', :value => 1)
-
     pathology = Tagging.new(:_id => 'pathology')
     pathology.tags << Tag.new(:_id => 'madness', :value => 0)
     pathology.tags << Tag.new(:_id => 'wounds', :value => 0)
 
     belongings = Tagging.new(:_id => 'belongings')
-    belongings.tags << Tag.new(:_id => 'american_dollars', :value => 10)
+    belongings.tags << Tag.new(:_id => 'american_dollars', :value => 200)
 
     plots = Tagging.new(:_id => 'plots')
     plots.tags << Tag.new(:_id => 'arkham', :value => 0)
+    
+    equipment = Tagging.new(:_id => 'equipment')    
 
     taggings << skills
-    taggings << traits
     taggings << location  
     taggings << pathology 
     taggings << belongings     
     taggings << plots
+    taggings << equipment
   end  
 end

@@ -4,9 +4,9 @@
 
 <h3>Moxie: <%= @character.clues %></h3>
 
-<h4>Traits</h4>
+<h4>Skills</h4>
 <ul>
-  <% @character.profile.find_tagging('traits').tags.each do |tag| %>
+  <% @character.profile.find_tagging('skills').tags.each do |tag| %>
     <li><%= tag._id.titleize  %> <%= tag.value %></li>
   <% end %>
 </ul>
@@ -25,7 +25,19 @@
   <% end %>
 </ul>
 
-<br /><br />
+<h4>Equipment</h4>
+<ul>
+  <% @character.profile.find_tagging('equipment').tags.each do |tag| %>
+    <li>
+      <%= tag._id.titleize %><br />
+      <% if equipment = @equipment.select{|e| e._id == tag._id}.first %>
+        <em><%= equipment.modifier_display %></em>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<br />
 <em>
 <h4>Cosmic Identifier:</h4>
 <blockquote><%= @character.user_id %></blockquote>

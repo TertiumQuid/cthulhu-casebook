@@ -1,0 +1,31 @@
+equipment:
+  winchester_shotgun:
+    _id: winchester_shotgun
+    title: Winchester Shotgun
+    modifiers:
+             - 
+               _id: 'skills.conflict'
+               value: 10
+             - 
+               _id: 'skills.underworld'
+               value: 3    
+  38_revolver:
+    _id: 38_revolver      
+    title: .38 Revolver
+    modifiers:
+             - 
+               _id: 'skills.conflict'
+               value: 4
+             - 
+               _id: 'skills.adventure'
+               value: 1
+  sword_cane:
+    _id: sword_cane
+    title: Sword Cane
+    modifiers:
+             - 
+               _id: 'skills.conflict'
+               value: 2
+             - 
+               _id: 'skills.clandestinity'
+               value: 4

@@ -1,0 +1,39 @@
+encounters:
+  arkham_rivertown:
+    _id: arkham_general_store
+    title: Arkham General Store
+    location: arkham_rivertown
+    paths: 
+         -  _id: 1
+            title: Winchester Shotgun
+            awards: 
+                  - 
+                    _id: equipment.winchester_shotgun
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -60
+         -  _id: 2
+            title: .38 Reolver
+            awards:
+                  - 
+                    _id: equipment.38_revolver
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -20
+         -  _id: 3
+            title: Sword Cane
+            awards: 
+                  - 
+                    _id: equipment.sword_cane
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -10

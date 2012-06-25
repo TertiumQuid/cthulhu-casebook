@@ -28,6 +28,12 @@ class ActiveSupport::TestCase
     data = docs['locations'].values
     Location.collection.insert data
   end
+
+  def load_equipment
+    docs = YAML.load_file( File.expand_path('../../db/data/equipment.yml', __FILE__) )
+    data = docs['equipment'].values
+    Equipment.collection.insert data
+  end
   
   def mock_character(character_id=1)
     @controller.session[:character_id] = character_id

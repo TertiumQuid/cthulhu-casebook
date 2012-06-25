@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
   def edit
     @character = current_character
+    @equipment = Equipment.find_for @character.profile.find_tagging('equipment')
   end
   
   def new

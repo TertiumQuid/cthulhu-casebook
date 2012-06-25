@@ -47,5 +47,16 @@ class RequirementTest < ActiveModel::TestCase
     
     assert_equal true, requirement.met_by?(lesser_profile), 'expected true for profile with matching count less than'
     assert_equal false, requirement.met_by?(greater_profile), 'expected false for profile with matching count greater than'
-  end  
+  end 
+  
+  def test_met_by_cost
+    tags = [{:_id => 'text', :value => 'test'}, {:_id => 'count', :value => 2}]
+    profile = Profile.new(:taggings => [{:_id => 'test', :tags => tags }])
+    
+    requirement = Requirement.new(:_id => 'test.count', :value => 2, :cost => true)
+    assert_equal true, requirement.met_by?(profile), 'expected true for profile with value equal to cost'
+    
+    profile.set('test', 'count', 5)
+    assert_equal true, requirement.met_by?(profile), 'expected true for profile with value greater than cost'
+  end   
 end
