@@ -5,7 +5,7 @@ class Encounter
   include ActiveModel::RequirementSupport
   
   key :title, String, :required => true
-  key :description, String, :required => true
+  key :description, String
   key :location, String
   
   many :paths

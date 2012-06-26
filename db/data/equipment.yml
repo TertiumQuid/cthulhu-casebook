@@ -2,6 +2,7 @@ equipment:
   winchester_shotgun:
     _id: winchester_shotgun
     title: Winchester Shotgun
+    location: hand
     modifiers:
              - 
                _id: 'skills.conflict'
@@ -12,6 +13,7 @@ equipment:
   38_revolver:
     _id: 38_revolver      
     title: .38 Revolver
+    location: hand    
     modifiers:
              - 
                _id: 'skills.conflict'
@@ -22,6 +24,7 @@ equipment:
   sword_cane:
     _id: sword_cane
     title: Sword Cane
+    location: hand    
     modifiers:
              - 
                _id: 'skills.conflict'

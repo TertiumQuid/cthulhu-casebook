@@ -14,7 +14,7 @@ class Monster
   many :lures  
   many :penalties
   
-  ENCOUNTER_CHANCE = 5
+  ENCOUNTER_CHANCE = 4
   ENCOUNTER_CHANCE_RANGE = 10
   
   def self.find_location(location)

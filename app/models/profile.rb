@@ -1,6 +1,7 @@
 class Profile
   include MongoMapper::Document
   
+  one  :trappings, :class_name => 'Trappings'
   many :taggings
   belongs_to :character
   
@@ -58,5 +59,7 @@ class Profile
     taggings << belongings     
     taggings << plots
     taggings << equipment
+    
+    self.trappings = Trappings.new
   end  
 end

@@ -4,6 +4,7 @@ class Equipment
   set_collection_name 'equipment'
 
   key :title, String, :required => true
+  key :location, String
     
   many :modifiers, :class_name => 'Tag'
   
