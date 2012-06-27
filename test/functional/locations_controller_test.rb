@@ -21,6 +21,14 @@ class LocationsControllerTest < ActionController::TestCase
     assert assigns(:encounters).select {|e| e.location != location}.blank?, "expected encounters only for #{location}"
   end
   
+  test 'get show with friends' do
+    friend = Character.create!(:name => 'test')
+    @controller.current_character.befriend! friend
+
+    get :show
+    assert !assigns(:friends).blank?, 'expected local friends assigned'
+  end
+  
   test 'get index' do
     get :index
     assert_response :success, 'expected http success'

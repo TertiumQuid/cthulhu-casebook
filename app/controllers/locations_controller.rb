@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
   
   def show
     @encounters = Encounter.find_location( @location._id ) if @location
+    @friends = current_character.local_friends
   end
   
   def index

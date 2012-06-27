@@ -14,6 +14,12 @@ class User
     unless user.blank? || facebook_friend_ids.include?(user.facebook_id)
       self.facebook_friend_ids << user.facebook_id
       save
+      
+      characters.each do |c1|
+        user.characters.each do |c2|
+          c1.befriend!(c2) && c2.befriend!(c1)
+        end
+      end
     end
   end
   

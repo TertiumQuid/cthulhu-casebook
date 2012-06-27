@@ -10,3 +10,13 @@
     <% end %>
   <% end %>
 <% end %>
+
+<% unless @friends.blank? %>
+  <h3>Nearby Friends</h3>
+  <p>Some of your trusted friends have also come to <%= @location.short_name %> to investigate</p>
+  <ul>
+	<% @friends.each do |friend| %>
+      <li><%= friend.name %></li>
+    <% end %>
+  </ul>	
+<% end %>

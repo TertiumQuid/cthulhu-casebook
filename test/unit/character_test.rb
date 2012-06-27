@@ -68,4 +68,26 @@ class CharacterTest < ActiveModel::TestCase
       @character.spend_clues(2)
     end
   end
+  
+  def test_befriend
+    @character.save!
+    friend = Character.create!(:name => 'test')
+    assert_difference '@character.reload.character_friend_ids.size', +1, 'expected friend added' do
+      @character.befriend!(friend)
+    end
+    assert_no_difference '@character.reload.character_friend_ids.size', 'expected duplicate friend not added' do
+      @character.befriend!(friend)
+    end
+    assert @character.character_friend_ids.include?(friend._id.to_s), 'expected friend id string in character_friend_ids'
+  end
+  
+  def test_local_friends
+    @character.save!
+    friend = Character.create!(:name => 'test')
+    assert_equal @character.location, friend.location, 'expected identical starting locations'
+    @character.befriend! friend
+    
+    friends = @character.local_friends
+    assert_equal [friend], friends, 'expected all and only local friends returned'
+  end
 end
