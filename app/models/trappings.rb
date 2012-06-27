@@ -44,8 +44,19 @@ class Trappings
         end
       end
     end
-    Rails.logger.info self.inspect
     save
+  end
+
+  def modifier_for(*tags)
+    modifiers = []
+    tags.each do |tag|
+      locations.each do |location|
+        if get(location)
+          modifiers = modifiers + get(location).modifiers.select{ |m| m._id == tag }
+        end
+      end        
+    end
+    modifiers.map{ |m| m.value.to_i }.sum || 0
   end
   
   def location_of(equipment)

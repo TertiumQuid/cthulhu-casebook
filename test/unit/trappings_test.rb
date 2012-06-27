@@ -59,4 +59,17 @@ class TrappingsTest < ActiveModel::TestCase
     @trappings.equip! Equipment.create! :_id => 'test', :title => 'test', :location => 'hand'
     assert_equal 'right_hand', @trappings.location_of('test'), 'expected equipment in right hand'
   end
+  
+  def test_modifier_for
+    assert_equal 0, @trappings.modifier_for('fail'), 'expected 0 without trappings'
+    
+    equipment = Equipment.new(:title => 'test', :location => 'hand')
+    equipment.modifiers << Tag.new(:_id => 'test.pass', :value => 3)
+    equipment.modifiers << Tag.new(:_id => 'test.other', :value => 1)
+    assert_equal 0, @trappings.modifier_for('fail'), 'expected 0 without matching tag'
+    
+    @trappings.equip! equipment
+    assert_equal 3, @trappings.modifier_for('test.pass'), 'expected 3 for matching tag modifer'
+    assert_equal 4, @trappings.modifier_for('test.pass', 'test.other'), 'expected 4 for multiple matching tags'
+  end
 end

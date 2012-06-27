@@ -51,4 +51,44 @@ class MonsterTest < ActiveModel::TestCase
     monster.penalize(character)
     assert_equal '1', character.profile.get('pathology', 'wounds').value, 'expected wounds added'
   end
+  
+  def test_combined_chance_of_success
+    monster = Monster.first
+    character = Character.create!(:name => 'test@example.com')
+    
+    base_chance = monster.send(:combined_chance_of_success, 
+                  character.profile.find_tagging('skills'), 
+                  character.profile.trappings, 
+                  'conflict', 'fight')
+
+    character.profile.set('skills', 'conflict', 10) && character.profile.save
+    assert_difference 'base_chance', +10, 'expected skill value calculated' do
+      base_chance = monster.send(:combined_chance_of_success, 
+                    character.profile.find_tagging('skills'), 
+                    character.profile.trappings, 
+                    'conflict', 'fight')
+    end
+    
+    skill_equipment = Equipment.new(:title => 'skills', :location => 'hand')
+    skill_equipment.modifiers << Tag.new(:_id => 'skills.conflict', :value => 10)
+    skill_equipment.save!
+    character.profile.trappings.equip!(skill_equipment) && character.profile.save
+    assert_difference 'base_chance', +10, 'expected equipment skill value calculated' do
+      base_chance = monster.send(:combined_chance_of_success, 
+                    character.profile.find_tagging('skills'), 
+                    character.profile.trappings, 
+                    'conflict', 'fight')
+    end
+
+    skill_equipment = Equipment.new(:title => 'skills', :location => 'hand')
+    skill_equipment.modifiers << Tag.new(:_id => 'fight', :value => 10)
+    skill_equipment.save!
+    character.profile.trappings.equip!(skill_equipment) && character.profile.save
+    assert_difference 'base_chance', +10, 'expected equipment strategy value calculated' do
+      base_chance = monster.send(:combined_chance_of_success, 
+                    character.profile.find_tagging('skills'), 
+                    character.profile.trappings, 
+                    'conflict', 'fight')
+    end
+  end
 end

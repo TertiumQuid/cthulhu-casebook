@@ -34,19 +34,7 @@ class Monster
   def difficulty; 1; end
   
   def fight(character, strategy)
-    skills = character.profile.find_tagging('skills')
-    succeeded = case strategy.to_s
-    when 'fight'
-      check_success chance_of_success(skills.get('conflict'))
-    when 'escape'
-      check_success chance_of_success(skills.get('adventure'))
-    when 'stealth'
-      check_success chance_of_success(skills.get('clandestinity'))
-    when 'magic'      
-      check_success chance_of_success(skills.get('sorcery'))
-    when 'confront'
-      character.spend_clues && true
-    end
+    succeeded = defeats_monster?(character, strategy)
     penalize(character) && character.profile.save unless succeeded
     character.monster_id = nil
     character.save
@@ -57,5 +45,31 @@ class Monster
     penalties.each do |penalty|
       penalty.apply_to(character)
     end
+  end
+  
+  private
+  
+  def defeats_monster?(character, strategy)
+    skills = character.profile.find_tagging('skills')
+    trappings = character.profile.trappings
+    
+    case strategy.to_s
+    when 'fight'
+      check_success combined_chance_of_success skills, trappings, 'conflict', 'fight'
+    when 'escape'
+      check_success combined_chance_of_success skills, trappings, 'adventure', 'escape'      
+    when 'stealth'
+      check_success combined_chance_of_success skills, trappings, 'clandestinity', 'stealth'
+    when 'magic'      
+      check_success combined_chance_of_success skills, trappings, 'sorcery', 'magic'
+    when 'confront'
+      character.spend_clues && true
+    end    
+  end
+  
+  def combined_chance_of_success(skills, trappings, skill, strategy)
+    skill_chance = chance_of_success( skills.get(skill) )
+    equipment_bonus = trappings.modifier_for("skills.#{skill}", strategy)
+    skill_chance + equipment_bonus
   end
 end
