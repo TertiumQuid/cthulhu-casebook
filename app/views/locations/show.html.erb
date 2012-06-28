@@ -16,7 +16,14 @@
   <p>Some of your trusted friends have also come to <%= @location.short_name %> to investigate</p>
   <ul>
 	<% @friends.each do |friend| %>
-      <li><%= friend.name %></li>
+      <li>
+        <%= friend.name %>
+        <% if @conferences && @conferences.map {|c| c.character_ids }.flatten.include?(friend._id) %>
+          <em>recently conferred</em>
+        <% else %>
+          <%= link_to '[confer]', character_conferences_path(friend._id), 'rel' => 'nofollow' %> (gain 1 clue each)
+        <% end %>
+      </li>
     <% end %>
   </ul>	
 <% end %>

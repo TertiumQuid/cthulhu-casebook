@@ -18,7 +18,7 @@ class Importunity
     elsif sender.facebook_friend_ids.include?( user.facebook_id )
       importunity.errors.add(:user_id, "You have already befriended that person")
     else
-      importunity.pending_user_ids << sender._id
+      importunity.pending_user_ids << sender._id.to_s
       importunity.message_user(sender, user) if importunity.save 
     end
     importunity

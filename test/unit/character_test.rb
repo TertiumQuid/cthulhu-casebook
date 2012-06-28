@@ -67,6 +67,7 @@ class CharacterTest < ActiveModel::TestCase
     assert_difference '@character.clues', -2 do
       @character.spend_clues(2)
     end
+    assert_not_nil @character.last_seen_at, 'expected last seen at set when spending clues'
   end
   
   def test_befriend
@@ -83,10 +84,14 @@ class CharacterTest < ActiveModel::TestCase
   
   def test_local_friends
     @character.save!
-    friend = Character.create!(:name => 'test')
+    friend = Character.create!(:name => 'test', :last_seen_at => Time.now.utc - 7.hours)
     assert_equal @character.location, friend.location, 'expected identical starting locations'
     @character.befriend! friend
     
+    friends = @character.local_friends
+    assert_equal [], friends, 'expected no recently seen friends'
+    
+    friend.update_attribute(:last_seen_at, Time.now.utc - 5.hours)
     friends = @character.local_friends
     assert_equal [friend], friends, 'expected all and only local friends returned'
   end

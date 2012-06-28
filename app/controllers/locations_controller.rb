@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
   def show
     @encounters = Encounter.find_location( @location._id ) if @location
     @friends = current_character.local_friends
+    @conferences = Conference.recent(current_character._id) unless @friends.blank?
   end
   
   def index

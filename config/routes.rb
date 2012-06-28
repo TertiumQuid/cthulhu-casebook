@@ -1,6 +1,8 @@
 CthulhuCasebook::Application.routes.draw do
   resource  :character, :only => [:edit, :new, :create], :controller => 'characters', :path_names => { :edit => 'profile' }
-  resources :characters, :only => [:show]
+  resources :characters, :only => [:show] do
+    resources :conferences, :only => [:create]
+  end
   resources :equipment, :only => [] do
     resources :trappings, :only => [:update, :destroy]
   end

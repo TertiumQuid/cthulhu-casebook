@@ -6,7 +6,8 @@ class Character
   key :gender, String
   key :messages_count, Integer, :default => 1
   key :character_friend_ids, Array  
-  
+  key :last_seen_at, Time
+    
   belongs_to :user
   belongs_to :monster
   has_one    :profile
@@ -31,11 +32,14 @@ class Character
       friends = Profile.where('character_id' => {'$in' => character_friend_ids} )
       friends = friends.where('taggings._id' => 'location', 'taggings.tags' => {:_id => 'current', :value => location.value})
       friends = friends.map{ |p| p.character }
+      friends = friends.select{ |c| c.last_seen_at && c.last_seen_at >= (Time.now.utc - 6.hours) }
+      friends
     end
   end
   
   def spend_clues(amount=1)
     self.clues = self.clues - amount
+    self.last_seen_at = Time.now.utc
   end
   
   def encounter_monster!(monster_id)

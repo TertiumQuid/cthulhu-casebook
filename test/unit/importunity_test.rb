@@ -13,9 +13,9 @@ class ImportunityTest < ActiveModel::TestCase
     assert_difference 'Importunity.count', +1 do
       importunity = Importunity.request(@u1, @u2._id)
     end
-    assert_equal false, importunity.new?, 'expected importunity to be save'
+    assert_equal false, importunity.new?, 'expected importunity to be saved'
     assert_equal importunity.user_id, @u2._id, 'expected user assigned'
-    assert importunity.pending_user_ids.include?(@u1._id), 'expected sender assigned'
+    assert importunity.pending_user_ids.include?(@u1._id.to_s), 'expected sender assigned'
   end
   
   def test_existing_request  

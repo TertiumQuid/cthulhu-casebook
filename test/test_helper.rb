@@ -43,10 +43,10 @@ class ActiveSupport::TestCase
     @controller.session[:user_id] = user_id
   end
   
-  def login!
-    user = User.create(:email => 'char@example.com')    
+  def login!(user=nil, character=nil)
+    user ||= User.create(:email => 'char@example.com')    
     mock_user user._id
-    character = Character.create(:name => 'test', :user_id => user._id)
+    character ||= Character.create(:name => 'test', :user_id => user._id)
     mock_character(character._id)
     character
   end

@@ -26,6 +26,17 @@ locations:
             - _id: arkham_northside
             - _id: arkham_merchant_district
             - _id: arkham_rivertown  
+            - _id: arkham_easttown  
+  arkham_easttown:
+    _id: arkham_easttown
+    short_name: Arkham Easttown
+    long_name: Arkham Easttown, Massachusetts, United States
+    text: 
+    passages:
+            - _id: arkham_downtown
+            - _id: arkham_rivertown  
+            
+            
   arkham_merchant_district:
     _id: arkham_merchant_district
     short_name: Arkham Merchant District
@@ -50,6 +61,7 @@ locations:
             - _id: arkham_downtown
             - _id: arkham_merchant_district
             - _id: arkham_french_hill
+            - _id: arkham_easttown            
   arkham_french_hill:
     _id: arkham_french_hill
     short_name: French Hill

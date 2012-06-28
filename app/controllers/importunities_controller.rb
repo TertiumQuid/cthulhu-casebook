@@ -5,12 +5,12 @@ class ImportunitiesController < ApplicationController
   end
   
   def accept
-    current_user.importunity.accept(params[:id])
+    current_user.importunity.accept!(params[:id])
     redirect_to friends_path
   end
   
   def reject
-    current_user.importunity.reject(params[:id])
+    current_user.importunity.reject!(params[:id])
     redirect_to friends_path
   end
 end
