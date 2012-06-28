@@ -3,17 +3,15 @@ class PassagesController < ApplicationController
   
   def update
     location = Location.find current_character.location.value
-    if passage = location.passages.select{ |p| p._id == params[:id]}
-      current_character.profile.set('location', 'current', params[:id])
+    if passage = location.passage_to(params[:id])
       
       if @monster = Monster.encounters_monster_at?(current_character, location)
         current_character.encounter_monster! @monster._id
-        redirect_to new_monster_path and return
+        redirect_to new_location_monster_path(params[:id]) and return
       end
       
-      current_character.profile.save
+      current_character.relocate!(params[:id])
     end
-    
     redirect_to location_path
   end
 end

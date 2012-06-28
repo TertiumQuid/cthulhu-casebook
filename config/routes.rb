@@ -11,7 +11,10 @@ CthulhuCasebook::Application.routes.draw do
     resources :passage, :only => [:update], :controller => 'passages'
   end
   resources :messages, :only => [:index, :show]
-  resources :locations, :only => [:index]
+  resources :locations, :only => [:index] do
+    resource  :monster, :only => [:new], :controller => 'monsters', :path_names => { :new => 'strategy' }
+    resources :monster, :only => [:show], :controller => 'monsters'    
+  end
   resource  :monster, :only => [:new], :controller => 'monsters', :path_names => { :new => 'strategy' }
   resources :monster, :only => [:show], :controller => 'monsters'
   

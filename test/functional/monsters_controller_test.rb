@@ -49,4 +49,14 @@ class MonstersControllerTest < ActionController::TestCase
     assert_equal true, assigns(:success), 'expected success'
     assert_nil @character.reload.monster_id, 'expected character no longer associated with monster'
   end 
+  
+  test 'get show and relocate' do
+    load_locations
+    setup_fight
+    get :show, :id => 'confront', :location_id => 'arkham_merchant_district'
+    
+    assert_equal @monster, assigns(:monster), 'expected monster assigned'
+    assert_equal true, assigns(:success), 'expected success'
+    assert_equal 'arkham_merchant_district', @controller.current_character.location.value, 'expected character location updated'
+  end
 end

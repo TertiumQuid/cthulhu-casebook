@@ -95,4 +95,10 @@ class CharacterTest < ActiveModel::TestCase
     friends = @character.local_friends
     assert_equal [friend], friends, 'expected all and only local friends returned'
   end
+  
+  def test_relocate
+    @character.save!    
+    @character.relocate!('arkham_southside')
+    assert_equal 'arkham_southside', @character.reload.location.value, 'expected updated location saved'
+  end
 end

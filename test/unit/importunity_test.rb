@@ -18,7 +18,7 @@ class ImportunityTest < ActiveModel::TestCase
     assert importunity.pending_user_ids.include?(@u1._id.to_s), 'expected sender assigned'
   end
   
-  def test_existing_request  
+  def test_existing_request
     importunity = Importunity.create(:user_id => @u2._id)
     assert_no_difference 'Importunity.count' do
       assert_difference 'importunity.reload.pending_user_ids.count', +1 do

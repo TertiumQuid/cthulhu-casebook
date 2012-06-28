@@ -55,6 +55,13 @@ class Character
     profile.get('location', 'current') if profile
   end
   
+  def relocate!(current_location)
+    if profile    
+      profile.set('location', 'current', current_location) 
+      profile.save
+    end
+  end
+  
   def reset_messages_count
     return if messages_count == 0
     
