@@ -21,6 +21,17 @@ class Profile
     end
   end
   
+  def deduct!(tagging_id, tag_id, value=1)
+    if tag = get(tagging_id, tag_id)
+      if tag.numeric? && tag.value.to_i > value
+        tag.set(-value)
+      else
+        find_tagging(tagging_id).tags.delete_if{ |t| t._id == tag_id }
+      end  
+      save
+    end
+  end
+  
   def find_tagging(tagging_id)
     taggings.select{|t| t._id == tagging_id }.first
   end

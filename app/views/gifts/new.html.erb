@@ -1,0 +1,27 @@
+<h1>A Shrewd Gift</h1>
+<p>Select just the right article from your inventory to give your friend <strong><%= @character.name %></strong>.</p>
+
+<h4>Equipment</h4>
+<% if current_character.profile.find_tagging('equipment').tags.blank? %>
+  <p>You don't own any equipment which you can give your friend.</p>
+<% else %>
+  <ul>
+    <% current_character.profile.find_tagging('equipment').tags.each do |tag| %>
+      <li>
+        <%= tag._id.titleize %><br />
+        <%= link_to '[gift]', character_gift_path(params[:character_id], tag._id), :method => :post %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h4>Belongings</h4>
+<% if current_character.profile.find_tagging('belongings').tags.blank? %>
+  <p>You don't posses any belongings which you can give your friend.</p>
+<% else %>
+  <ul>
+    <% current_character.profile.find_tagging('belongings').tags.each do |tag| %>
+      <li><%= tag._id.titleize  %> <%= tag.value %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -49,4 +49,21 @@ class ProfileTest < ActiveModel::TestCase
     profile.taggings << tagging2    
     assert_equal tagging1, profile.find_tagging('test'), 'expected to find tagging with id'
   end
+  
+  def test_deduct
+    profile = Profile.new
+    tagging = Tagging.new(:_id => 'test', :tags => [{:_id => 'number', :value => 2}, {:_id => 'text', :value => 'test'}])
+    profile.taggings << tagging 
+    profile.save!
+   
+    assert_nil profile.deduct!('first', 'second'), 'expected nil result for missing tag' 
+    
+    assert_equal true, profile.deduct!('test', 'number'), 'expected profile to be saved'     
+    assert_equal '1', profile.reload.get('test', 'number').value, 'expected 1 deducted from value'
+    assert_equal true, profile.deduct!('test', 'number'), 'expected profile to be saved'    
+    assert_nil profile.reload.get('test', 'number'), 'expected tag removed after reaching 0 value'
+    
+    assert_equal true, profile.deduct!('test', 'text'), 'expected profile to be saved'    
+    assert_nil profile.reload.get('test', 'text'), 'expected text tag removed immediately'
+  end
 end

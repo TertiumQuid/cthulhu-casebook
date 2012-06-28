@@ -26,6 +26,15 @@ class MonstersControllerTest < ActionController::TestCase
     end
   end
   
+  test 'get new with location' do  
+    setup_fight
+    load_locations
+    get :new, :location_id => 'arkham_merchant_district'
+    [:fight, :escape, :stealth, :magic, :confront].each do |s| 
+      assert_select "a[href=?]", location_monster_path('arkham_merchant_district', s)
+    end
+  end
+  
   test 'get new without monster' do  
     login!    
     get :new
