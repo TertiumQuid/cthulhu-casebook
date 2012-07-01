@@ -28,7 +28,7 @@ module ActionPack
     end
     
     def require_character
-      redirect_to new_character_path and return false unless has_character? || requested_new_character_path?
+      redirect_to new_character_path and return false unless has_character? || requested_new_character_path? || allow_unauthenticated?
     end
 
     def require_monster

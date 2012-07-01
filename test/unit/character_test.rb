@@ -101,4 +101,14 @@ class CharacterTest < ActiveModel::TestCase
     @character.relocate!('arkham_southside')
     assert_equal 'arkham_southside', @character.reload.location.value, 'expected updated location saved'
   end
+  
+  def test_friends
+    @character.save!
+    assert_equal [], @character.friends, 'expected no default friends'
+    
+    c1 = Character.create!(:name => 'c1')
+    c2 = Character.create!(:name => 'c2')
+    @character.update_attribute(:character_friend_ids, [c1._id.to_s])
+    assert_equal [c1], @character.friends.all, 'expected characters from character_friend_ids'
+  end
 end

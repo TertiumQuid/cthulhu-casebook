@@ -7,8 +7,9 @@ class Monster
   include ActiveModel::ContestableSupport  
   
   key :name, String, :required => true
-  key :description, String  
+  key :description, String
   key :locations, Array
+  key :prevalence, Integer
   
   many :requirements
   many :lures  

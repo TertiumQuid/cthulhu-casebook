@@ -17,11 +17,11 @@
   <ul>
 	<% @friends.each do |friend| %>
       <li>
-        <%= friend.name %>
+        <%= link_to friend.name, "characters/#{friend._id}" %>&nbsp;&nbsp;&nbsp;
         <% if @conferences && @conferences.map {|c| c.character_ids }.flatten.include?(friend._id) %>
           <em>recently conferred</em>
         <% else %>
-          <%= link_to '[confer]', character_conferences_path(friend._id), 'rel' => 'nofollow' %> (gain 1 clue each)
+          <%= link_to 'confer with them to gain a clue', character_conferences_path(friend._id), 'rel' => 'nofollow' %>
         <% end %>
       </li>
     <% end %>

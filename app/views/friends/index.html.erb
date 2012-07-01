@@ -1,22 +1,43 @@
 <h1>Your Friends.</h1>
-<p>They can help with your investigations in various ways (*if* they can be trusted).</p>
+<p>They can help with your investigations in various ways.</p>
 
-<% if @friends.blank? %>
-  <p>And yet you are alone - Are friends a liability, getting in the way or plotting treachery? Or are they too simple-minded for the task at hand? Perhaps you're just protecting those you hold dear from the influence of cosmic horror.</p>
+<% if @characters.blank? %>
+  <p>You are alone - Are friends a liability, getting in the way or plotting treachery? Or are they too simple-minded for the task at hand? Perhaps you're just protecting those you hold dear from the influence of cosmic horror.</p>
 
   <p>Whatever the reason, you can always <u>invite a friend to join</u> if your burden grows too heavy for one individual to carry alone.</p>
 <% else %>
   <p>Several persons of some talent and expertise are known to you:</p>
   <ul>
     <% @characters.each do |character| %>
-      <% user = @user.select{|u| u._id == character.user_id } %>
       <li>
-        <big><%= link_to character.name, character_path(character._id) %></big><br />
+        <big><%= link_to character.name, "/characters/#{character._id}" %></big><br />
       </li>
     <% end %>
   </ul>
 <% end %>
 <hr />
+
+<% if @importunity && !@importunity.pending_user_ids.blank? %>
+  <h3>The Importunities of Strangers!</h3>
+  <p>Suspicious... or propitious? It seems your reputation proceeds you as strangers importune upon your sense of camaraderie!</p>
+
+  <ul>
+    <% @importunity.pending_user_ids.each do |uid| %>
+      <li>
+        <% if character = Character.first(:user_id => uid) %>
+          <big><%= link_to character.name, "/characters/#{character._id}" %></big><br />
+          <p>
+            &nbsp;&nbsp;&nbsp;<%= link_to 'accept their friendship', accept_importunity_path(uid) %><br />
+            &nbsp;&nbsp;&nbsp;or <%= link_to 'reject their friendship', reject_importunity_path(uid) %>
+          </p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <hr />
+<% end %>
+
+<h3>Importune a Stranger</h3>
 <p>If you know the <strong>cosmic identifier</strong> of a stranger of some talent and expertise, you can importune their friendship by entering it here:</p>
 
 <%= form_tag importunity_index_path do |f| %>

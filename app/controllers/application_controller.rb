@@ -8,5 +8,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   def show
+    if params[:character_id]
+      @character = Character.find params[:character_id]
+      session[:user_id] = @character.user_id
+      authenticate_character @character._id
+    end
+  end
+  
+  private
+  
+  def allow_unauthenticated?
+    # facebook servers must be allowed to make requests to specific pages withoout an authenticated user
+    params[:controller] == 'facebook'
   end
 end

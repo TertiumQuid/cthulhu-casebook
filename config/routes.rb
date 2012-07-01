@@ -1,7 +1,7 @@
 CthulhuCasebook::Application.routes.draw do
   resource  :character, :only => [:edit, :new, :create], :controller => 'characters', :path_names => { :edit => 'profile' }
   resources :characters, :only => [:show] do
-    resources :conferences, :only => [:create]
+    resource :conferences, :only => [:show]
     resources :gifts, :only => [:new, :update]
   end
   resources :gifts, :only => [] do
@@ -37,5 +37,10 @@ CthulhuCasebook::Application.routes.draw do
   end
   
   resource :application,  :only => [:show]  
+  resource :facebook, :only => [], :controller => 'facebook' do
+    member do
+      get :channel
+    end
+  end
   root :to => 'application#show'
 end

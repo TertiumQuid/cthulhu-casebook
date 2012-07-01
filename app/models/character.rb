@@ -25,6 +25,11 @@ class Character
     Character.new params
   end
   
+  
+  def friends
+    character_friend_ids.blank? ? [] : Character.where(:_id => {'$in' => character_friend_ids })
+  end  
+  
   def local_friends
     if character_friend_ids.blank?
       []
