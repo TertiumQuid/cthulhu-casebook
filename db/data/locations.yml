@@ -35,8 +35,6 @@ locations:
     passages:
             - _id: arkham_downtown
             - _id: arkham_rivertown  
-            
-            
   arkham_merchant_district:
     _id: arkham_merchant_district
     short_name: Arkham Merchant District

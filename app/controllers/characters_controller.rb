@@ -13,9 +13,15 @@ class CharactersController < ApplicationController
     if @character.save
       session[:user_id] = @character.user_id
       authenticate_character @character._id
-      redirect_to location_path
+      redirect_to intro_encounter_path
     else
       render 'new'
     end
   end  
+  
+  private
+  
+  def intro_encounter_path
+    encounter_path(:homecoming)
+  end
 end

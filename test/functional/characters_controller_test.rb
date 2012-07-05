@@ -21,7 +21,7 @@ class CharactersControllerTest < ActionController::TestCase
       assert_equal true, @controller.has_character?, 'expected character after creation'
     end
     assert !assigns(:character).blank?, 'expected character assigned'    
-    assert_redirected_to location_path, 'expected redirect to location'
+    assert_redirected_to @controller.send(:intro_encounter_path), 'expected redirect to location'
   end
   
   test 'post create fail' do
@@ -37,5 +37,9 @@ class CharactersControllerTest < ActionController::TestCase
     get :edit
     assert_response :success, 'expected http success'
     assert_template :edit, 'expected edit template'
+  end
+  
+  test 'intro_encounter_path' do
+    assert_equal encounter_path(:homecoming), @controller.send(:intro_encounter_path), 'expected encounter with the key HOMECOMING'
   end
 end

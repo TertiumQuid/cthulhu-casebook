@@ -1,7 +1,7 @@
 encounters:
-  the_deans_tour:
-    _id: the_deans_tour
-    title: The Dean's Tour
+  miskatonic_university_library:
+    _id: miskatonic_university_library
+    title: Miskatonic University Library
     location: miskatonic_university
-    paths:
-    requires: 
+    type: fixed
+    paths: 

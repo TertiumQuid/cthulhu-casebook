@@ -1,8 +1,34 @@
 encounters:
+  long_lost_blood:
+    _id: long_lost_blood
+    title: Long Lost Blood
+    location: arkham_uptown
+    type: plot    
+    paths:
+         -  _id: 1
+            title: 33 Degrees of Separation
+            awards: 
+                  - 
+                    _id: plots.estranged
+                    value: 1
+         -  _id: 2
+            title: It Is I
+            awards: 
+                  - 
+                    _id: plots.estranged
+                    value: 1
+    requirements: 
+                - 
+                  _id: plots.arkham
+                  value: 1
+                - 
+                  _id: plots.estranged
+                  value: 1
   st_marys_hospital: 
     _id: st_marys_hospital
     title: St. Mary's Hospital
     location: arkham_uptown
+    type: fixed    
     paths: 
          -  _id: 1
             title: The School of Medicine

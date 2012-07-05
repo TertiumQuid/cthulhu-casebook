@@ -2,4 +2,7 @@
  *= require_self
  *= require h5bp
  *= require hotfix
+ *= require layout
+ *= require ui
+ *= require theme
  */

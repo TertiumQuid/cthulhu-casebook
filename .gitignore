@@ -8,6 +8,7 @@ capybara-*.html
 /log/*
 /tmp/*
 /config/mongo.yml
+/config/facebook.yml
 /public/system/*
 /coverage/
 /spec/tmp/*

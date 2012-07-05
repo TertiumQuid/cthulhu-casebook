@@ -31,6 +31,14 @@ class CharacterTest < ActiveModel::TestCase
     assert_not_nil @character.location, 'expected location to be set'
     assert_equal @character.profile.get('location', 'current'), @character.location, 'expected location from profile tag'
   end
+
+  def test_lodgings
+    assert_nil @character.lodgings, 'expected no default lodgings'    
+    
+    @character.send(:populate_profile)
+    assert_not_nil @character.lodgings, 'expected lodgings to be set'
+    assert_equal @character.profile.get('lodgings', 'current'), @character.lodgings, 'expected lodgings from profile tag'
+  end
   
   def test_populate_profile
     assert_nil @character.profile, 'expected no default profile'

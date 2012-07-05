@@ -1,8 +1,18 @@
+<h1>Dreadful Adventure is Just Around the Corner...</h1>
+<p class='flavor-text'>Cthulhu Casebook is a <strong>browser-based horror RPG</strong> where you investigate (or consummate) Lovecraftian plots and period intrigue in the roaring '20s. You'll pursue the Great Old Ones and their minions through storied mystery and obtain deadly Mythos lore empowering you in mankind's secret battle against cosmic extinction. In a world of occult horror, victorian attire, and pulp adventure, Cthulhu Casebook remains faithful to the literature of <strong>H. P. Lovecraft</strong> and less faithful to history as your investigations take you through sleepy Arkham, Miskatonic Valley, and beyond.</p>
+
+<p>Cthulhu Casebook is <strong>completely free to play</strong> and you can login immediately from your <strong>Book of Faces</strong>. Be forewarned, however, that the game is in an archean stage, and exists under the rule of violent, ceaseless,  erratic development, and that your progress may at times be lost as updates are deployed.</p>
+
+<h4>Choose a name and title to start playing:</h4>
+
 <%= form_for @character, :url => character_path do |f| %>
   <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= label_tag 'gender_male', 'Mr.' %>
+    <%= f.radio_button :gender, :male %>
+    <%= label_tag 'gender_female', 'Mrs.' %>
+    <%= f.radio_button :gender, :female %>
+    &nbsp;&nbsp;&nbsp;
+    <%= f.text_field :name, :placeholder => 'Type a Name' %>
   </p>
-
-  <p><%= f.submit 'Begin' %></p>
+  <p><%= f.submit 'Continue On' %></p>
 <% end %>

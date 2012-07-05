@@ -41,6 +41,9 @@ class Profile
   def populate
     location = Tagging.new(:_id => 'location')
     location.tags << Tag.new(:_id => 'current', :value => 'arkham_northside')
+    
+    lodgings = Tagging.new(:_id => 'lodgings')
+    lodgings.tags << Tag.new(:_id => 'current', :value => 'displaced')
 
     skills = Tagging.new(:_id => 'skills')
     skills.tags << Tag.new(:_id => 'adventure', :value => 1)
@@ -65,7 +68,8 @@ class Profile
     equipment = Tagging.new(:_id => 'equipment')    
 
     taggings << skills
-    taggings << location  
+    taggings << location 
+    taggings << lodgings
     taggings << pathology 
     taggings << belongings     
     taggings << plots

@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   private
   
   def allow_unauthenticated?
-    # facebook servers must be allowed to make requests to specific pages withoout an authenticated user
-    params[:controller] == 'facebook'
+    params[:controller] == 'facebook' || # facebook servers must be allowed to make requests to specific pages withoout an authenticated user
+    params[:controller] == 'help'        # anonymous visitors should be allowed to see the help pages
   end
 end

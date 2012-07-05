@@ -7,6 +7,7 @@ class Encounter
   key :title, String, :required => true
   key :description, String
   key :location, String
+  key :type, String  
   
   many :paths
   

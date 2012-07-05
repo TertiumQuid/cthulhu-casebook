@@ -1,8 +1,9 @@
 encounters:
-  arkham_rivertown:
+  arkham_general_store:
     _id: arkham_general_store
     title: Arkham General Store
     location: arkham_rivertown
+    type: fixed
     paths: 
          -  _id: 1
             title: Winchester Shotgun

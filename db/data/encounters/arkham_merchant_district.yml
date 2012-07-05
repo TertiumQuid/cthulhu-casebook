@@ -1,0 +1,91 @@
+encounters:
+  caleb_markhem_locksmith:
+    _id: caleb_markhem_locksmith
+    title: Calbem Markhem, Locksmith
+    location: arkham_merchant_district
+    type: fixed      
+    paths: 
+         -  _id: 1
+            title: Padlock
+            awards: 
+                  - 
+                    _id: belongings.padlock
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -1
+         -  _id: 1
+            title: Lockpicks
+            awards: 
+                  - 
+                    _id: belongings.lockpicks
+                    value: 5
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -10
+  main_street_tobacconist:
+    _id: main_street_tobacconist
+    title: Main St. Tobacconist
+    location: arkham_merchant_district
+    type: fixed      
+    paths: 
+         -  _id: 1
+            title: Lucky Strike Cigarettes
+            awards: 
+                  - 
+                    _id: belongings.lucky_strike_cigarettes
+                    value: 20
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -1
+         -  _id: 1
+            title: Egyptian Cigarettes
+            awards: 
+                  - 
+                    _id: belongings.egyptian_cigarettes
+                    value: 20
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -2
+  sears_roebuck_catalog_store:
+    _id: sears_roebuck_catalog_store
+    title: Sears-Roebuck Catalog Store
+    location: arkham_merchant_district
+    type: fixed      
+    paths: 
+         -  _id: 1
+            title: Remington Typewriter
+            awards: 
+                  - 
+                    _id: belongings.remington_typewriter
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -5
+  pikes_haberdashery:
+    _id: pikes_haberdashery
+    title: Pike's Haberdashery
+    location: arkham_merchant_district
+    type: fixed      
+    paths: 
+         -  _id: 1
+            title: Gentleman's Chesterfield Overcoat
+            awards: 
+                  - 
+                    _id: coat.chesterfield_overcoat
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -10

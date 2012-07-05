@@ -1,0 +1,17 @@
+defaults: &defaults
+  namespace: : ???
+  canvas_page: : ???
+  app_id: ???
+  app_secret: : ???
+
+development:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+test:
+  <<: *defaults

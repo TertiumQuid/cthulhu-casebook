@@ -1,14 +1,26 @@
 <div id='header'>
-  <img id='logo' src='' />
-  <ul id='main-navigation'>
-    <%= link_to 'Profile', edit_character_path %>
-    <%= link_to 'Story', location_path %>
-    <%= link_to 'Map', locations_path %>
-    <%= link_to 'Friends', friends_path %>
-    <% if has_character? && current_character.messages_count > 0 %>
-      <%= link_to "Messages (#{current_character.messages_count})", messages_path %>
-    <% else %>
-      <%= link_to 'Messages', messages_path %>
-    <% end %>
-  </ul>
+  <div class='clues'><strong>☌</strong><%= has_character? ? current_character.clues : 0 %> clues</div>
+
+  <div id='header-title'>
+    <%= link_to 'Cthulhu Casebook', root_path %><br />
+	<dfn>Trail of Secrets</dfn>
+  </div>
+
+  <div id='header-navigation'>
+    <ul class='horizontal'>
+      <li><%= link_to 'Profile', edit_character_path %></li>
+      <li><%= link_to 'Story', location_path %></li>
+      <li><%= link_to 'Map', locations_path %></li>
+      <li><%= link_to 'Arcana', '' %></li>
+      <li><%= link_to 'Friends', friends_path %></li>
+      <li>
+        <% if has_character? && current_character.messages_count > 0 %>
+          <%= link_to "Messages (#{current_character.messages_count})", messages_path %>
+        <% else %>
+          <%= link_to 'Messages', messages_path %>
+        <% end %>
+      </li>
+      <li><%= link_to '?', '' %></li>
+    </ul>
+  </div>
 </div>

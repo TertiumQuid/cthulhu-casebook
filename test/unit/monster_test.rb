@@ -17,9 +17,11 @@ class MonsterTest < ActiveModel::TestCase
     character = Character.create!(:name => 'available', :clues => Encounter.cost)
     location = Location.find('arkham_miskatonic_university')
 
-    assert_nil Monster.encounters_monster_at?(character, location, -1), 'expected no monster from failed random chance test'
-    
-    monster = Monster.encounters_monster_at?(character, location, 100)
+    Monster.set({}, :prevalence => 0)
+    assert_nil Monster.encounters_monster_at?(character, location), 'expected no monster from failed random chance test'
+
+    Monster.set({}, :prevalence => 100)
+    monster = Monster.encounters_monster_at?(character, location)
     assert monster.is_a?(Monster), 'expected monster from passed random chance test'    
   end
   

@@ -1,15 +1,56 @@
-<h1><%= @location.long_name %></h1>
-<p><%= @location.text %></p>
+<h1>
+  <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
+  <%= @location.long_name %>
+</h1>
+<p><%= @location.text %><br />&nbsp;</p>
 
-<% @encounters.each do |encounter| %>
-  <% if encounter.available_for?(current_character) %>
-    <%= link_to encounter_path(encounter), :rel => 'nofollow' do %>
-      <p><strong><%= encounter.title %></strong><p>
-      <p><%= truncate(encounter.description, :length => 100) %></p>
-      <p><%= encounter.requirement_display %></p>
-    <% end %>
-  <% end %>
+<% unless fixed_encounters.blank? %>
+  <hr />
+  <div>
+    <hgroup>
+      <h3>Fixed Encounters</h3>
+      <h5>Sisyphean concerns which you may pursue with the guarantee of near-limitless iterance.</h5>
+    </hgroup>
+    <ul class='horizontal polaroids'>
+      <% fixed_encounters.each do |encounter| %>
+        <li>
+          <%= link_to encounter_path(encounter), :rel => 'nofollow' do %>
+            <%= image_tag 'placeholder96x96.png' %>
+            <%= simple_format word_wrap(encounter.title, :line_width => 15) %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>	
+  </div>
 <% end %>
+
+<% unless plot_encounters.blank? %>
+  <hr />
+  <div>
+    <hgroup>
+      <h3>Plot Encounters</h3>
+      <h5>Mysteries branching like a weald above the circumstances of your soul; explore them through mazy boughs that intrigue to the vanishing point yet promise no retracing steps.</h5>
+    </hgroup>
+    <ul class='horizontal polaroids'>
+      <% plot_encounters.each do |encounter| %>
+        <li>
+          <%= link_to encounter_path(encounter), :rel => 'nofollow' do %>
+            <%= image_tag 'placeholder96x96.png' %>
+            <%= simple_format word_wrap(encounter.title, :line_width => 15) %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
 
 <% unless @friends.blank? %>
   <h3>Nearby Friends</h3>

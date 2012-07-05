@@ -1,0 +1,50 @@
+encounters:
+  homecoming:
+    _id: homecoming
+    title: Homecoming
+    location: arkham_northside
+    type: plot
+    description: It has been many years since you left your redolent childhood home and the interval has weakened you to its strange power. With doubts troubling you at every thought, the portents and signs of recent weeks refuse to abandon their hold upon your conviction and have finally moved you to action. 
+
+
+                 Now, in the pursuit of the unaccountable, brought to all-standing and then to your proverbial knees, you find yourself at the city train station hounded by the lawless shadow of allegorical dreams and suspicious memories.
+
+
+                 There is only one road ahead - you intend to grave your sleepless dread by investigating the preternatural aura which imbues sleepy Arkham, where the sycamore shadows crawl like snakes and the moon is always hiding behind a steeple.
+    paths:
+         -  _id: 1
+            title: Into the Mouth of Madness
+            awards: 
+                  - 
+                    _id: plots.arkham
+                    value: 1
+    requirements: 
+                - 
+                  _id: plots.arkham
+                  value: 0
+  estranged_connections:
+    _id: estranged_connections
+    title: Estranged Connections
+    location: arkham_northside
+    type: plot    
+    paths:
+         -  _id: 1
+            title: Births & Deaths
+            awards: 
+                  - 
+                    _id: plots.estranged
+                    value: 1
+         -  _id: 2                    
+            title: A Familiar Blood
+            awards: 
+                  - 
+                    _id: plots.estranged
+                    value: 1
+                    
+    requirements: 
+                - 
+                  _id: plots.arkham
+                  value: 1
+                - 
+                  _id: plots.estranged
+                  value: 0

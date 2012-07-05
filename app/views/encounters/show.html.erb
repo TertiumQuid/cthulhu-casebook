@@ -1,21 +1,26 @@
-<h1><%= @encounter.title %></h1>
-<p><%= @encounter.description %></p>
+<h1>
+  <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
+  <%= @encounter.title %>
+</h1>
+<p><%= simple_format @encounter.description %><br />&nbsp;</p>
 	
 <% @encounter.paths.each do |path| %>
-  <br />
   <% if path.available_for?(current_character) %>
-    <%= link_to encounter_path_path(@encounter, path) do %>
-      <p><strong><%= path.title %></strong><p>
-      <p><%= truncate(path.text, :length => 40) %></p>
+    <%= link_to encounter_path_path(@encounter, path), :class => 'copperplate' do %>
+      <strong><%= path.title %></strong>
+      <br />
+      <span><%= truncate(path.text, :length => 40) %></span>
       <% unless path.challenge.blank? %>
-        <p><em><small><%= "#{path.challenge.difficulty_text} #{path.challenge.tag.titleize}" %> challenge</small></em></p>
+        <span><em><small><%= "#{path.challenge.difficulty_text} #{path.challenge.tag.titleize}" %> challenge</small></em></span>
       <% end %>  	 
-    <% end %>  
+
+      <span class='button continue'>Continue</span>
+    <% end %>
   <% else %>  
     <p><strong><%= path.title %></strong> (UNAVAILABLE)<p>
 	<p>Requires: <%= path.requirement_display(true).titleize %></p>	
   <% end %>  
 <% end %>
 
-<br />
-<p><%= link_to 'Perhaps another time', location_path %></p>
+<br /><br /><br />
+<p>Perhaps another time<br /><%= link_to 'Cancel', location_path, :class => 'button cancel' %></p>

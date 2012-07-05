@@ -35,8 +35,9 @@ CthulhuCasebook::Application.routes.draw do
       get 'reject'
     end
   end
-  
-  resource :application,  :only => [:show]  
+
+  resources :help, :only => [:show], :controller => 'help'
+  resource :application,  :only => [:show]
   resource :facebook, :only => [], :controller => 'facebook' do
     member do
       get :channel

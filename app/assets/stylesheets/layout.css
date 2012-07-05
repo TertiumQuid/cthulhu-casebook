@@ -1,0 +1,52 @@
+#header {
+background:#ccc;
+white-space:nowrap;
+margin-bottom:1.75em;
+}
+
+#header-title {
+max-width:22em;
+}
+#header-title a {
+color:inherit;
+font-size:2.5em;
+font-weight:bold;
+line-height:1.1em;
+}
+#header-title dfn {
+font-size:1.3em;
+position:relative;
+top:-0.4em;
+}
+
+#header .clues {
+float: right;
+margin-right:0.25em;
+}
+
+#header-navigation {
+float:right;
+position:relative;
+left:-50%;
+text-align:left;
+}
+#header-navigation ul {
+position:relative;
+left:50%;
+top:-0.7em;
+}
+#header-navigation li {
+background:#eee;
+padding:.2em .3em;
+}
+
+#footer .plain {
+display:inline-block;
+}
+
+p.flavor-text:first-letter {
+float:left;
+font-size:4.25em;
+line-height:0.8em;;
+margin-right:0.07em;
+}

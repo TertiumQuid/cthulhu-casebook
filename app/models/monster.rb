@@ -15,21 +15,23 @@ class Monster
   many :lures  
   many :penalties
   
-  ENCOUNTER_CHANCE = 4
-  ENCOUNTER_CHANCE_RANGE = 10
+  ENCOUNTER_CHANCE_RANGE = 100
   
   def self.find_location(location)
     where(:locations => location)
   end  
   
-  def self.encounters_monster_at?(character, location, monster_chance=ENCOUNTER_CHANCE)
+  def self.encounters_monster_at?(character, location)
     return unless character && location
-    score = rand(ENCOUNTER_CHANCE_RANGE)
-    if score <= monster_chance
-      if monsters = find_location(location._id).all
-        random_monster = monsters[ rand(monsters.size-1) ]
+    if monsters = find_location(location._id).all
+      has_encounter = false
+      monsters.sort_by{ |m| m.prevalence }.each do |monster|
+        score = rand(ENCOUNTER_CHANCE_RANGE)
+        has_encounter = (score <= monster.prevalence)
+        return monster if has_encounter
       end
     end
+    nil
   end
   
   def difficulty; 1; end

@@ -2,6 +2,7 @@ monsters:
   lunatic:
     _id: lunatic
     name: Lunatic
+    prevalence: 25
     locations: [arkham_northside, arkham_downtown, arkham_rivertown, arkham_southside, arkham_uptown]
     penalties:
               -
@@ -10,6 +11,7 @@ monsters:
   witch:
     _id: witch
     name: Witch
+    prevalence: 10    
     locations: [arkham_french_hill, arkham_miskatonic_university]
     penalties:
               -
@@ -28,6 +30,7 @@ monsters:
   warlock:
     _id: warlock
     name: Warlock
+    prevalence: 3    
     locations: [arkham_french_hill]
     penalties:
               -
