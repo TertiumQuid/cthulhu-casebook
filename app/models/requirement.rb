@@ -20,13 +20,13 @@ class Requirement
     if match.nil? || match.value.nil?
       false
     elsif is == 'gt'
-      match.value.to_i > value.to_i
+      match.count > value.to_i
     elsif is == 'lt'
-      match.value.to_i < value.to_i
+      match.count < value.to_i
     elsif cost
-      match.value.to_i >= value.to_i.abs
+      match.count >= value.to_i.abs
     else
-      match.value.to_s == value.to_s
+      match.value == value.to_s
     end
   end
 end

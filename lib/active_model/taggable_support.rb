@@ -12,6 +12,6 @@ module ActiveModel
     
     def apply_to(character)
       character.profile.set(tagging, tag, value) if respond_to?(:value)
-    end    
+    end
   end    
 end

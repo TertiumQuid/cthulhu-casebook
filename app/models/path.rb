@@ -26,7 +26,7 @@ class Path
   end
   
   def advances_skill?(profile, tag) 
-    profile.get('experience', tag).value.to_i > profile.get('skills', tag).value.to_i
+    profile.get('experience', tag).count > profile.get('skills', tag).count
   end
   
   def awards_gained

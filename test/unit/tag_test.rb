@@ -31,4 +31,10 @@ class TagTest < ActiveModel::TestCase
     tag.value = 1
     assert_equal false, tag.send(:numeric?, 'test'), 'expected false for override with string'
   end  
+  
+  def test_count
+    tag = Tag.new
+    tag.value = 2
+    assert_equal tag.value.to_i, tag.count, 'expected numeric tag value for count'
+  end
 end

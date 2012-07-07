@@ -13,12 +13,17 @@
       <% unless path.challenge.blank? %>
         <span><em><small><%= "#{path.challenge.difficulty_text} #{path.challenge.tag.titleize}" %> challenge</small></em></span>
       <% end %>  	 
+      <br />
 
       <span class='button continue'>Continue</span>
     <% end %>
   <% else %>
-    <p><strong><%= path.title %></strong> (UNAVAILABLE)<p>
-	<p>Requires: <%= path.requirement_display(true).titleize %></p>	
+    <%= link_to '', :class => 'copperplate disabled' do %>
+      <strong><%= path.title %></strong>
+      <br />
+      <p>Requires: <%= path.requirement_display(true).titleize %></p>
+      <span class='button continue'>UNAVAILABLE</span>
+    <% end %>
   <% end %>  
 <% end %>
 

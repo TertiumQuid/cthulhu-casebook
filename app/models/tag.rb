@@ -15,4 +15,8 @@ class Tag
     v ||= value
     true if Integer(v) rescue false
   end
+  
+  def count
+    value.to_i if numeric?
+  end  
 end

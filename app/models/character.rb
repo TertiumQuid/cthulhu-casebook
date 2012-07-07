@@ -26,7 +26,6 @@ class Character
     Character.new params
   end
   
-  
   def friends
     character_friend_ids.blank? ? [] : Character.where(:_id => {'$in' => character_friend_ids })
   end  
@@ -85,6 +84,14 @@ class Character
       self.character_friend_ids << cid 
       save
     end
+  end
+  
+  def skill_progress(skill)
+    val = profile.get('experience', skill).count
+    return 0 if val == 0
+    
+    val = val.to_f / (profile.get('skills', skill).count.to_f + 1)
+    (val * 100).round(0)
   end
   
   private 

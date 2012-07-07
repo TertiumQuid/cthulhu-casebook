@@ -27,5 +27,5 @@ class TaggableSupportTest < ActiveModel::TestCase
     
     @instance.apply_to(character)
     assert_equal '2', character.profile.get(@instance.tagging, @instance.tag).value, 'expected existing value incremented'
-  end  
+  end
 end

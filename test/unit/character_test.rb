@@ -119,4 +119,12 @@ class CharacterTest < ActiveModel::TestCase
     @character.update_attribute(:character_friend_ids, [c1._id.to_s])
     assert_equal [c1], @character.friends.all, 'expected characters from character_friend_ids'
   end
+  
+  def test_skill_progress
+    @character.save!
+    assert_equal 0, @character.skill_progress('conflict'), 'expected 0 for no progress'
+    
+    @character.profile.set('experience', 'conflict', 1)
+    assert_equal 50, @character.skill_progress('conflict'), 'expected 50 progress to next level'
+  end
 end

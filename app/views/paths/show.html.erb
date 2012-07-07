@@ -10,6 +10,12 @@
   <% unless @path.awards_gained.blank? %>
     <h4>You gained:</h4>
     <ul>
+      <% if @path.develops_experience? && current_character.profile.get('experience', @path.challenge.tag).count == 0 %>
+        <li><%= "+1 skill in #{@path.challenge.tag}" %></li>
+      <% elsif @path.develops_experience? %>
+        <li><%= "+1 experience in #{@path.challenge.tag}" %></li>
+      <% end %>
+	
 	  <% @path.awards_gained.select {|a| a.display? }.each do |award| %>
         <li><%= "+#{award.value} #{award.tag.titleize}" %></li>
       <% end %>

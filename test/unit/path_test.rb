@@ -56,10 +56,10 @@ class PathTest < ActiveModel::TestCase
     assert_equal false, @path.advances_skill?(@character.profile, tag), 'expected no advance by default'
     
     @character.profile.set('experience', tag, @character.profile.get('skills', tag).value, true)
-    assert_equal false, @path.advances_skill?(@character.profile, tag), 'expected no advance when exp equal to skiill'
+    assert_equal false, @path.advances_skill?(@character.profile, tag), 'expected no advance when exp equal to skill'
     
     @character.profile.set('experience', tag, @character.profile.get('skills', tag).value.to_i + 1, true)
-    assert_equal true, @path.advances_skill?(@character.profile, tag), 'expected advance when exp greater than skiill'
+    assert_equal true, @path.advances_skill?(@character.profile, tag), 'expected advance when exp greater than skill'
   end
   
   def test_develop

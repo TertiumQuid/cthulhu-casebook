@@ -11,7 +11,11 @@
     <ul class='plain'>
       <li><h4>Skills</h4></li>
       <% @character.profile.find_tagging('skills').tags.each do |tag| %>
-        <li><%= tag._id.titleize %> <%= tag.value %></li>
+        <li>
+          <%= tag._id.titleize %> <%= tag.value %>
+
+          <progress max="100" value="<%= @character.skill_progress(tag._id) %>"></progress>
+        </li>
       <% end %>
     </ul>
   </li>

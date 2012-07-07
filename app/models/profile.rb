@@ -25,7 +25,7 @@ class Profile
   
   def deduct!(tagging_id, tag_id, value=1)
     if tag = get(tagging_id, tag_id)
-      if tag.numeric? && tag.value.to_i > value
+      if tag.numeric? && tag.count > value
         tag.set(-value)
       else
         find_tagging(tagging_id).tags.delete_if{ |t| t._id == tag_id }
