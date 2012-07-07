@@ -4,6 +4,7 @@ class Character
   key :name, String, :required => true
   key :clues, Integer, :required => true, :default => 100
   key :gender, String
+  key :biography, String  
   key :messages_count, Integer, :default => 1
   key :character_friend_ids, Array  
   key :last_seen_at, Time

@@ -1,4 +1,21 @@
 encounters:
+  manellis_music_store:
+    _id: manellis_music_store
+    title: Manelli's Music Store
+    location: arkham_merchant_district
+    type: fixed      
+    paths: 
+         -  _id: 1
+            title: Sistrum
+            awards: 
+                  - 
+                    _id: belongings.sistrum
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -10
   caleb_markhem_locksmith:
     _id: caleb_markhem_locksmith
     title: Calbem Markhem, Locksmith
@@ -72,6 +89,17 @@ encounters:
                     _id: belongings.american_dollars
                     cost: true
                     value: -5
+         -  _id: 2
+            title: Chalk Sticks
+            awards: 
+                  - 
+                    _id: belongings.chalk
+                    value: 10
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -1
   pikes_haberdashery:
     _id: pikes_haberdashery
     title: Pike's Haberdashery
@@ -89,3 +117,43 @@ encounters:
                     _id: belongings.american_dollars
                     cost: true
                     value: -10
+                    
+  curios_and_antiques:
+    _id: curios_and_antiques
+    title: Curios & Antiques
+    location: arkham_merchant_district
+    type: fixed      
+    paths: 
+         -  _id: 1
+            title: Altar Candles
+            awards: 
+                  - 
+                    _id: belongings.altar_candles
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -2
+         -  _id: 2
+            title: Votive Candles
+            awards: 
+                  - 
+                    _id: belongings.votive_candles
+                    value: 10
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -1
+         -  _id: 3
+            title: Votive Incense
+            awards: 
+                  - 
+                    _id: belongings.votive_incense
+                    value: 5
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -1

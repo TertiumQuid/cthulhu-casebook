@@ -1,16 +1,14 @@
 <h1>Leave <%= @location.short_name %></h1>
 
-<% if @location.passages.select{|p| p.available_for?(current_character) }.size > 0 %>
-  <ul>
-  <% @location.passages.each do |passage| %>
-    <% if passage.available_for?(current_character) %>
-      <li>
-      Travel to <strong><%= link_to passage._id.titleize, location_passage_path(passage._id), :method => :put, :rel => 'nofollow' %></strong>
-	  </li>
+<div class="map">
+  <%= image_tag 'maps/arkham.png' %>
+
+  <% if @location.passages.select{|p| p.available_for?(current_character) }.size > 0 %>
+    <%= link_to_current_location %>
+    <% @location.passages.each do |passage| %>
+      <% if passage.available_for?(current_character) %>
+        <%= link_to_location passage %>
+      <% end %>
     <% end %>
   <% end %>
-  </ul>
-<% else %>
-  <p>There is nowhere else you can go right now.</p>
-<% end %>
-
+</div>

@@ -12,11 +12,13 @@ class Profile
     tag = tagging && tagging.get(tag_id)
   end
   
-  def set(tagging_id, tag_id, value)
+  def set(tagging_id, tag_id, value, force_equal=false)
     tag = get(tagging_id, tag_id)
-    if tag
+    if tag && force_equal # force explicit value
+      tag.value = value
+    elsif tag # increment existing value
       tag.set(value) 
-    elsif tagging = find_tagging(tagging_id)
+    elsif tagging = find_tagging(tagging_id) # create new tag for value
       tagging.tags << Tag.new(:_id => tag_id, :value => value)
     end
   end
@@ -55,6 +57,12 @@ class Profile
     skills.tags << Tag.new(:_id => 'sorcery', :value => 1)
     skills.tags << Tag.new(:_id => 'underworld', :value => 1)
 
+    traits = Tagging.new(:_id => 'traits')
+    affiliations = Tagging.new(:_id => 'affiliations')
+
+    exp = Tagging.new(:_id => 'experience')
+    skills.tags.each { |t| exp.tags << Tag.new(:_id => t._id, :value => 0) }
+
     pathology = Tagging.new(:_id => 'pathology')
     pathology.tags << Tag.new(:_id => 'madness', :value => 0)
     pathology.tags << Tag.new(:_id => 'wounds', :value => 0)
@@ -68,6 +76,9 @@ class Profile
     equipment = Tagging.new(:_id => 'equipment')    
 
     taggings << skills
+    taggings << traits
+    taggings << affiliations
+    taggings << exp
     taggings << location 
     taggings << lodgings
     taggings << pathology 

@@ -4,26 +4,6 @@
 </h1>
 <p><%= @location.text %><br />&nbsp;</p>
 
-<% unless fixed_encounters.blank? %>
-  <hr />
-  <div>
-    <hgroup>
-      <h3>Fixed Encounters</h3>
-      <h5>Sisyphean concerns which you may pursue with the guarantee of near-limitless iterance.</h5>
-    </hgroup>
-    <ul class='horizontal polaroids'>
-      <% fixed_encounters.each do |encounter| %>
-        <li>
-          <%= link_to encounter_path(encounter), :rel => 'nofollow' do %>
-            <%= image_tag 'placeholder96x96.png' %>
-            <%= simple_format word_wrap(encounter.title, :line_width => 15) %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>	
-  </div>
-<% end %>
-
 <% unless plot_encounters.blank? %>
   <hr />
   <div>
@@ -44,7 +24,25 @@
   </div>
 <% end %>
 
-
+<% unless fixed_encounters.blank? %>
+  <hr />
+  <div>
+    <hgroup>
+      <h3>Fixed Encounters</h3>
+      <h5>Sisyphean concerns which you may pursue with the guarantee of near-limitless iterance.</h5>
+    </hgroup>
+    <ul class='horizontal polaroids'>
+      <% fixed_encounters.each do |encounter| %>
+        <li>
+          <%= link_to encounter_path(encounter), :rel => 'nofollow' do %>
+            <%= image_tag 'placeholder96x96.png' %>
+            <%= simple_format word_wrap(encounter.title, :line_width => 15) %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>	
+  </div>
+<% end %>
 
 
 

@@ -12,6 +12,23 @@ class Path
   
   many :awards
   
+  def develop(character)
+    character.profile.set 'experience', challenge.tag, 1
+    
+    if advances_skill? character.profile, challenge.tag
+      character.profile.set('experience', challenge.tag, 0, true)
+      character.profile.set('skills', challenge.tag, 1)
+    end
+  end
+  
+  def develops_experience?
+    challenge && challenge.tagging == 'skills' ? true : false
+  end
+  
+  def advances_skill?(profile, tag) 
+    profile.get('experience', tag).value.to_i > profile.get('skills', tag).value.to_i
+  end
+  
   def awards_gained
     awards.select {|a| a.value[0] != '-' }
   end

@@ -9,7 +9,7 @@ class EncounterTest < ActiveModel::TestCase
   
   def test_find_location
     load_encounters
-    encounters = Encounter.find_location('arkham')
+    encounters = Encounter.find_location('arkham_northside')
     assert_operator encounters.size, ">", 0, 'expected to find location encounters'
     assert_operator encounters.size, "<", Encounter.count, 'expected locational subset of all encounters'
     assert_operator encounters.size, "==", encounters.select{ |l| l.location != 'arkahm'}.size, 'expected only location encounters'
@@ -49,6 +49,30 @@ class EncounterTest < ActiveModel::TestCase
     assert_difference "@character.reload.profile.get('test', 'test').value.to_i", -1, 'expected requirement cost deducted' do
       assert encounter.play(@character, path._id), 'expected successful (true) play'
     end
+  end  
+  
+  def test_play_with_challenge_success
+    path = Path.new(:title => 'test')
+    path.challenge = Challenge.new(:_id => 'skills.conflict', :difficulty => 1)
+    path.save!    
+    @character.profile.set('skills', 'conflict', 100)
+    @character.profile.save!
+    
+    encounter = Encounter.create!(:title => 'test', :text => 'test', :paths => [path])    
+    assert_difference "@character.reload.profile.get('experience', 'conflict').value.to_i", +1, 'expected exeperience awarded' do
+      assert encounter.play(@character, path._id), 'expected successful (true) play'
+    end    
+  end  
+  
+  def test_play_with_challenge_failure
+    path = Path.new(:title => 'test')
+    path.challenge = Challenge.new(:_id => 'skills.conflict', :difficulty => 100)
+    path.save!    
+    
+    encounter = Encounter.create!(:title => 'test', :text => 'test', :paths => [path])
+    assert_no_difference "@character.reload.profile.get('experience', 'conflict').value.to_i", 'expected no exp development after failure' do
+      assert !encounter.play(@character, path._id), 'expected failed (false) play'
+    end    
   end  
   
   def test_play_without_clues

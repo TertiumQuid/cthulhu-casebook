@@ -19,13 +19,15 @@ class Encounter
   
   def play(character, path_id)
     if character.clues >= Encounter.cost && path = find_path(path_id)
-      succeeded = path.challenge ? path.play(character) : true
+      succeeded = path.challenge ? path.challenge.play(character) : true
       
       path.awards.each { |a| a.apply_to(character) }
       path.requirements.each { |r| r.apply_to(character) if r.cost }
+      path.develop(character) if succeeded && path.develops_experience?
       
       character.spend_clues Encounter.cost
       character.profile.save && character.save
+      succeeded
     else
       false
     end

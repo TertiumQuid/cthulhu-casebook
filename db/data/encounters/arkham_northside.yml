@@ -18,33 +18,10 @@ encounters:
                   - 
                     _id: plots.arkham
                     value: 1
-    requirements: 
-                - 
-                  _id: plots.arkham
-                  value: 0
-  estranged_connections:
-    _id: estranged_connections
-    title: Estranged Connections
-    location: arkham_northside
-    type: plot    
-    paths:
-         -  _id: 1
-            title: Births & Deaths
-            awards: 
                   - 
                     _id: plots.estranged
                     value: 1
-         -  _id: 2                    
-            title: A Familiar Blood
-            awards: 
-                  - 
-                    _id: plots.estranged
-                    value: 1
-                    
     requirements: 
                 - 
                   _id: plots.arkham
-                  value: 1
-                - 
-                  _id: plots.estranged
                   value: 0

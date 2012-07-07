@@ -1,3 +1,27 @@
+/* Forms */
+
+label {
+cursor:default;
+display:inline-block; 
+}
+
+/* Badges */
+
+.badge {
+border:1px solid #ccc;
+padding:3px 3px 0 3px;
+}
+.badge big {
+display:block;
+font-size:90%;
+text-align: center;
+}
+.badge p {
+margin:2px 0;
+}
+
+/* Lists */
+
 ul.plain {
 list-style:none;
 margin:0;
@@ -14,7 +38,7 @@ vertical-align:top;
 }
 
 
-/* ICONS */
+/* Icons */
 
 .clues {
 font-size:1.5em;
@@ -31,7 +55,7 @@ font-size:1.5em;
 text-shadow: 1px 1px 2px green;
 }
 
-/* THUMBNAILS */
+/* Thumbnails */
 
 img.picture-frame {
 padding: 4px;
@@ -94,14 +118,14 @@ position: relative;
 right: 5px;
 }
 
-/* CONTENT BOXES */
+/* Content Boxes */
 
 .copperplate {
 border:1px solid #ccc;
 display:inline-block;
 }
 
-/* BUTTONS */
+/* Buttons */
 
 .button {        
 color: #222;
@@ -151,3 +175,47 @@ width: 1em;
 }
 .continue:after { content: "\25B6"; }
 .cancel:after { content: "\2716"; }
+
+/* Widths */
+
+.third { width: 32% }
+.two-thirds { width: 65% }
+.half { width: 49% }
+
+/* Typography */
+
+.normal {
+font-weight:normal;
+}
+
+/* Map */
+
+.map {
+margin:0 15%;
+position:relative;
+}
+.map img {
+width:100%;
+}
+.map a {
+color:yellow;
+display:inline-block;
+font-size:140%;
+position:absolute;
+text-shadow: 1px 1px 2px white, -1px -1px 2px white;
+z-index:99;
+}
+.map a[disabled] {
+cursor:default;
+color:blue;
+}
+#arkham_northside { left:10%; top:5%; }
+#arkham_easttown { right:5%; top:5%; }
+#arkham_downtown { left:40%; top:20%; }
+#arkham_merchant_district { left:15%; top:40%; }
+#arkham_rivertown { right:5%; top:45%; }
+#arkham_miskatonic_university { left:20%; top:50%; }
+#arkham_french_hill { right:20%; top:60%; }
+#arkham_uptown { left:20%; top:70%; }
+#arkham_southside { right:25%; top:75%; }
+#arkham_outskirts { left:35%; top:90%; }

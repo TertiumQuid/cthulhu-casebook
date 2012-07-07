@@ -97,7 +97,19 @@ locations:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.arkham_scion
+                            _id: plots.arkham
+                            value: 10
+            - _id: arkham_outskirts
+              requirements: 
+                          - 
+                            _id: plots.estranged
                             value: 10
             - _id: arkham_french_hill
-            - _id: arkham_southside            
+            - _id: arkham_southside
+  arkham_outskirts:
+    _id: arkham_outskirts
+    short_name: Arkham Outskirts
+    long_name: Arkham Outskirts, Massachusetts, United States
+    text: 
+    passages:
+            - _id: arkham_uptown

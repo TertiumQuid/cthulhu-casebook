@@ -40,4 +40,34 @@ class PathTest < ActiveModel::TestCase
     @path.requirements << Requirement.new(:_id => 'test.count', :value => 1)
     assert_equal false, @path.available_for?(@character), 'expected no available path for profile without matching count'  
   end  
+  
+  def test_develops_experience
+    assert_equal false , @path.develops_experience?, 'expected no exp development without challenge'
+    
+    @path.challenge = Challenge.new
+    assert_equal false , @path.develops_experience?, 'expected no exp development without skill challenge'
+    
+    @path.challenge._id = 'skills.conflict'
+    assert_equal true, @path.develops_experience?, 'expected exp development with skill challenge'
+  end
+  
+  def test_advances_skill                                         
+    tag = 'conflict'
+    assert_equal false, @path.advances_skill?(@character.profile, tag), 'expected no advance by default'
+    
+    @character.profile.set('experience', tag, @character.profile.get('skills', tag).value, true)
+    assert_equal false, @path.advances_skill?(@character.profile, tag), 'expected no advance when exp equal to skiill'
+    
+    @character.profile.set('experience', tag, @character.profile.get('skills', tag).value.to_i + 1, true)
+    assert_equal true, @path.advances_skill?(@character.profile, tag), 'expected advance when exp greater than skiill'
+  end
+  
+  def test_develop
+    @path.challenge = Challenge.new
+    @path.challenge._id = 'skills.conflict'
+    assert_difference "@character.profile.get('experience', 'conflict').value.to_i", +1, 'expected exeperience awarded' do
+      @path.develop(@character)
+    end
+    assert_equal @character.reload.profile.get('experience', 'conflict').value.to_i, 0, 'expected profile updated but not saved'
+  end
 end

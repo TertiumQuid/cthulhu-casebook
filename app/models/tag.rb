@@ -14,5 +14,5 @@ class Tag
   def numeric?(v=nil)
     v ||= value
     true if Integer(v) rescue false
-  end 
+  end
 end

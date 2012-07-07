@@ -16,9 +16,15 @@ class ProfileTest < ActiveModel::TestCase
     assert_nothing_raised do
       profile.set('fail', 'fail', 'fail')
     end
-    profile.taggings << Tagging.new(:_id => 'test', :tags => [{:_id => 'pass'}])
-    profile.set('test', 'pass', 1)
-    assert_equal '1', profile.get('test', 'pass').value, 'expected value set for existing profile tag'
+    initial_value = 3
+    profile.taggings << Tagging.new(:_id => 'test', :tags => [{:_id => 'pass', :value => initial_value}])
+
+    assert_difference "profile.get('test', 'pass').value.to_i", +1, 'expected value incremented for existing profile tag' do
+      profile.set('test', 'pass', 1)
+    end
+    
+    profile.set('test', 'pass', 2, true)
+    assert_equal 2, profile.get('test', 'pass').value.to_i, 'expected value explicitly set when forced on existing profile tag'
   end
   
   def test_set_new
