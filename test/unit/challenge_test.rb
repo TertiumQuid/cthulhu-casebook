@@ -27,4 +27,16 @@ class ChallengeTest < ActiveModel::TestCase
     assert_nil Challenge.new.difficulty_text, 'expected nil without difficulty'
     assert_not_nil @challenge.difficulty_text, 'expected text for difficulty'
   end
+  
+  def test_develops_experience
+    character = Character.create(:name => 'test')
+    challenge = Challenge.new(:_id => 'skills.conflict', :difficulty => 10)
+    assert_equal true, challenge.develops_experience?(character), 'expected experience when skill value under limit'
+    
+    character.profile.set('skills', 'conflict', Challenge::SKILL_LIMIT + challenge.difficulty) 
+    character.profile.save
+    assert_equal false, challenge.develops_experience?(character), 'expected no experience when skill value equal to limit'
+    character.profile.set('skills', 'conflict', 1)     
+    assert_equal false, challenge.develops_experience?(character), 'expected no experience when skill value above limit'    
+  end
 end

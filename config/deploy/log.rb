@@ -15,6 +15,11 @@ namespace :log do
     end
   end    
       
+  desc "Tail cron log file"
+  task :cron, :roles => :app do  
+    run "tail /var/cron/log"
+  end      
+      
   task :setup, :roles => :app do
     log_config = <<-LOG
 #{shared_path}/log/*.log {

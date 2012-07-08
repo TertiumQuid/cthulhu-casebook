@@ -1,7 +1,7 @@
-(function(document) {
+(function(d) {
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : <%= CthulhuCasebook::Application.config.facebook[:app_id] %>,
+      appId      : <%= CthulhuCasebook::Application.config.facebook['app_id'] %>,
       channelUrl : '//www.cthulhucasebook.com/channel.html',
       status     : true, // check login status
       cookie     : true, // enable cookies to allow the server to access the session
@@ -11,8 +11,10 @@
 	
   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
   if (d.getElementById(id)) { return; }
-    
+
   js = d.createElement('script'); js.id = id; js.async = true;
   js.src = "//connect.facebook.net/en_US/all.js";
+  js.onerror = function () { /* could not load facebook script (e.g. if no internet connection) */ };
+	
   ref.parentNode.insertBefore(js, ref);
 })(document);

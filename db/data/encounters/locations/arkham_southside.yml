@@ -1,0 +1,77 @@
+encounters:
+  szymanskis_boarding_house:    
+    _id: szymanskis_boarding_house
+    title: Szymanski's Boarding House
+    location: arkham_southside
+    type: fixed
+    paths: 
+         -  _id: 1
+            title: A Dingy Roost in a Polack Nest
+            awards: 
+                  - 
+                    _id: lodgings.current
+                    value: szymanskis_dingy_attic
+            requirements: 
+                        - 
+                          _id: belongings.american_dollars
+                          cost: true
+                          value: -25
+
+         -  _id: 2
+            title: Down With Bolshevism!
+            awards: 
+                   - 
+                     _id: lodgings.current
+                     value: szymanskis_dingy_attic
+            requirements: 
+                         - 
+                           _id: belongings.american_dollars
+                           cost: true
+                           value: -5
+                         - 
+                           _id: knowledge.news_of_foreign_lands
+                           cost: true
+                           value: -5
+    requirements: 
+                - 
+                  _id: lodgings.current
+                  is: not
+                  value: szymanskis_dingy_attic
+  arkahm_southside_gym: 
+    _id: arkahm_southside_gym
+    title: Southside Gym
+    location: arkham_southside
+    type: fixed    
+    paths: 
+         -  _id: 1
+            title: Boxing the Rocks
+            awards: 
+                  - 
+                    _id: pathology.wounds
+                    value: 1
+            challenge:
+                     _id: skills.conflict
+                     difficulty: 1                     
+         -  _id: 2
+            title: Training With Luca Maruzzo
+            awards: 
+                  - 
+                    _id: pathology.wounds
+                    value: 2
+            challenge:
+                     _id: skills.conflict
+                     difficulty: 10
+            requirements: 
+                        - 
+                          _id: skills.conflict
+                          is: gt
+                          value: 4
+         -  _id: 3
+            title: Betting the Rocks
+            awards: 
+                  - 
+                    _id: belongings.american_dollars
+                    value: 1
+            challenge:
+                     _id: skills.underworld
+                     difficulty: 5

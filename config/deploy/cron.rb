@@ -1,4 +1,5 @@
-set :cron_log_path, "#{shared_path}/log/cron.log"
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
 
 namespace :cron do  
   desc "List crontab for '#{user}' user"
@@ -10,10 +11,3 @@ namespace :cron do
     run "sudo status cron"
   end    
 end
-
-namespace :log do
-  desc "Tail cron log file"
-  task :cron, :roles => :app do  
-    run "tail #{cron_log_path}"
-  end
-end  

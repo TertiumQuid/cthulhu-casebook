@@ -8,6 +8,8 @@ class Challenge
     
   key :difficulty, Integer, :required => true 
   
+  SKILL_LIMIT = 25
+  
   def self.to_mongo(value)
     return nil if value.blank?
     return value if value.is_a?(Hash)
@@ -29,5 +31,9 @@ class Challenge
     else
       false
     end
+  end
+  
+  def develops_experience?(character)
+    character.profile.get('skills', tag).count < difficulty + SKILL_LIMIT
   end
 end

@@ -49,6 +49,15 @@ class RequirementTest < ActiveModel::TestCase
     assert_equal false, requirement.met_by?(greater_profile), 'expected false for profile with matching count greater than'
   end 
   
+  def test_met_by_not
+    matching_profile = Profile.new(:taggings => [{:_id => 'test', :tags => [{:_id => 'text', :value => 'test'}] }])
+    non_matching_profile = Profile.new(:taggings => [{:_id => 'test', :tags => [{:_id => 'text', :value => 'hit'}] }])
+    
+    requirement = Requirement.new(:_id => 'test.text', :is => 'not', :value => 'test')
+    assert_equal true, requirement.met_by?(non_matching_profile), 'expected true for profile without matching tag'
+    assert_equal false, requirement.met_by?(matching_profile), 'expected false for profile with matching tag'
+  end  
+  
   def test_met_by_cost
     tags = [{:_id => 'text', :value => 'test'}, {:_id => 'count', :value => 2}]
     profile = Profile.new(:taggings => [{:_id => 'test', :tags => tags }])

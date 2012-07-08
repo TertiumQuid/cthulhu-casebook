@@ -16,13 +16,14 @@ class Requirement
     return false if profile.blank?
     
     match = profile.get(tagging, tag)
-    Rails.logger.info "#{tagging}, #{tag} #{match.inspect}"
     if match.nil? || match.value.nil?
       false
     elsif is == 'gt'
       match.count > value.to_i
     elsif is == 'lt'
       match.count < value.to_i
+    elsif is == 'not'
+      match.value != value.to_s
     elsif cost
       match.count >= value.to_i.abs
     else

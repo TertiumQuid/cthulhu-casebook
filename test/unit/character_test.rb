@@ -24,6 +24,14 @@ class CharacterTest < ActiveModel::TestCase
     end
   end
   
+  def test_reclue
+    @character.clues = 1
+    @character.save!
+    assert_difference '@character.reload.clues', Character::MAX_CLUES - 1, 'expected character clues reset to max' do
+      Character.reclue
+    end
+  end
+  
   def test_location
     assert_nil @character.location, 'expected no default location'    
     

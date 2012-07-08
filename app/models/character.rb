@@ -1,8 +1,10 @@
 class Character
   include MongoMapper::Document
   
+  MAX_CLUES = 50
+  
   key :name, String, :required => true
-  key :clues, Integer, :required => true, :default => 100
+  key :clues, Integer, :required => true, :default => MAX_CLUES
   key :gender, String
   key :biography, String  
   key :messages_count, Integer, :default => 1
@@ -24,6 +26,10 @@ class Character
     params ||= {}
     params[:user_id] ||= User.create(:email => "#{rand(1000000)}@example.com")._id
     Character.new params
+  end
+  
+  def self.reclue
+    Character.set({:clues => {'$lt' => MAX_CLUES}}, :clues => MAX_CLUES)
   end
   
   def friends

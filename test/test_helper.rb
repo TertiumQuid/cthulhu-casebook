@@ -11,7 +11,7 @@ class ActiveSupport::TestCase
 
   def load_encounters
     ['arkham_northside', 'miskatonic_university'].each do |loc|
-      docs = YAML.load_file( File.expand_path("../../db/data/encounters/#{loc}.yml", __FILE__) )
+      docs = YAML.load_file( File.expand_path("../../db/data/encounters/locations/#{loc}.yml", __FILE__) )
       data = docs['encounters'].values
       Encounter.collection.insert data
     end

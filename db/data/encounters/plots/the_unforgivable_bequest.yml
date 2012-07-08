@@ -242,7 +242,12 @@ encounters:
             awards: 
                   - 
                     _id: plots.estranged
-                    value: 1
+                    value: 1 
+            requirements: 
+                        - 
+                          _id: knowledge.idyllic_secrets
+                          cost: true
+                          value: -3
     requirements: 
                 - 
                   _id: plots.estranged
@@ -254,7 +259,7 @@ encounters:
     type: plot    
     paths:
          -  _id: 1
-            title: Some Local Advice
+            title: Walk the Blighted Grounds
             awards: 
                   - 
                     _id: plots.estranged

@@ -1,0 +1,36 @@
+encounters:
+  old_arkham_graveyard:
+    _id: old_arkham_graveyard
+    title: Old Arkham Graveyard
+    location: arkham_french_hill
+    type: fixed
+    paths: 
+         -  _id: 1
+            title: Hunger Disinterred
+            awards: 
+                  - 
+                    _id: knowledge.idyllic_secrets
+                    value: 3
+                  - 
+                    _id: pathology.madness
+                    value: 1
+            requirements: 
+                        - 
+                          _id: belongings.shovel
+                          value: 1
+                        - 
+                          _id: belongings.lantern
+                          value: 1
+            challenge:
+                     _id: skills.sorcery
+                     difficulty: 3
+         -  _id: 2
+            title: Heritage Grave-Rubbing
+            awards: 
+                  - 
+                    _id: knowledge.idyllic_secrets
+                    value: 1
+            requirements: 
+                        - 
+                          _id: belongings.lantern
+                          value: 1

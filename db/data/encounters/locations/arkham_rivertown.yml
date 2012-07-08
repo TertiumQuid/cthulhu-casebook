@@ -28,13 +28,24 @@ encounters:
                     cost: true
                     value: -20
          -  _id: 3
-            title: Sword Cane
+            title: Shovel
             awards: 
                   - 
-                    _id: equipment.sword_cane
+                    _id: belongings.shovel
                     value: 1
             requirements: 
                   - 
                     _id: belongings.american_dollars
                     cost: true
-                    value: -10
+                    value: -5
+         -  _id: 4
+            title: Hooded Lantern
+            awards: 
+                  - 
+                    _id: belongings.lantern
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.lantern
+                    cost: true
+                    value: -5

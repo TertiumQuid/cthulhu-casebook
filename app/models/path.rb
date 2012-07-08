@@ -21,8 +21,10 @@ class Path
     end
   end
   
-  def develops_experience?
-    challenge && challenge.tagging == 'skills' ? true : false
+  def develops_experience?(character=nil)
+    challenge && 
+    (challenge.tagging == 'skills' ? true : false) &&
+    (character ? challenge.develops_experience?(character) : true) ? true : false
   end
   
   def advances_skill?(profile, tag) 
