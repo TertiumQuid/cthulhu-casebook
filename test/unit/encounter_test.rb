@@ -86,11 +86,6 @@ class EncounterTest < ActiveModel::TestCase
     path = Path.new(:title => 'test')    
     encounter = Encounter.create!(:title => 'test', :text => 'test', :paths => [path])
     assert_equal false, encounter.play(@character, 'miss'), 'expected unsuccessful (false) play from missing path id'
-  end  
-  
-  def test_available_for_no_requirements
-    encounter = Encounter.new
-    assert_equal true, encounter.available_for?(@character), 'expected available encounter without requirements'        
   end
   
   def test_available_for_matching_profile

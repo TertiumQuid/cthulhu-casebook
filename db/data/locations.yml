@@ -44,8 +44,8 @@ locations:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.arkham_scion
-                            value: 10
+                            _id: plots.a_hapless_stranger_comes_to_arkham
+                            value: 0
             - _id: arkham_northside
             - _id: arkham_downtown
             - _id: arkham_rivertown
@@ -69,8 +69,8 @@ locations:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.arkham_scion
-                            value: 10
+                            _id: plots.a_hapless_stranger_comes_to_arkham
+                            value: 0
             - _id: arkham_uptown
             - _id: arkham_rivertown
             - _id: arkham_merchant_district
@@ -84,8 +84,8 @@ locations:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.arkham_scion
-                            value: 10
+                            _id: plots.a_hapless_stranger_comes_to_arkham
+                            value: 0
             - _id: arkham_french_hill
             - _id: arkham_uptown
   arkham_uptown:
@@ -97,12 +97,12 @@ locations:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.arkham
-                            value: 10
+                            _id: plots.a_hapless_stranger_comes_to_arkham
+                            value: 0
             - _id: arkham_outskirts
               requirements: 
                           - 
-                            _id: plots.estranged
+                            _id: plots.plots.the_edge_of_darkness
                             value: 10
             - _id: arkham_french_hill
             - _id: arkham_southside

@@ -67,13 +67,16 @@ class Profile
     pathology.tags << Tag.new(:_id => 'madness', :value => 0)
     pathology.tags << Tag.new(:_id => 'wounds', :value => 0)
 
+    knowledge = Tagging.new(:_id => 'knowledge')
+
     belongings = Tagging.new(:_id => 'belongings')
     belongings.tags << Tag.new(:_id => 'american_dollars', :value => 200)
 
     plots = Tagging.new(:_id => 'plots')
-    plots.tags << Tag.new(:_id => 'arkham', :value => 0)
+    plots.tags << Tag.new(:_id => 'a_hapless_stranger_comes_to_arkham', :value => 5)
     
     equipment = Tagging.new(:_id => 'equipment')    
+    
 
     taggings << skills
     taggings << traits
@@ -82,6 +85,7 @@ class Profile
     taggings << location 
     taggings << lodgings
     taggings << pathology 
+    taggings << knowledge
     taggings << belongings     
     taggings << plots
     taggings << equipment

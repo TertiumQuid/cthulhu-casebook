@@ -1,6 +1,6 @@
 module EncountersHelper
   def fixed_encounters
-    @encounters.blank? ? [] : @encounters.select { |e| e.type == 'fixed' }
+    @encounters.blank? ? [] : @encounters.select { |e| e.type == 'fixed' && e.available_for?(current_character) }
   end
 
   def random_encounters

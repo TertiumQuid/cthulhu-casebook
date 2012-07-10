@@ -17,7 +17,7 @@ module ActiveModel
     end
     
     def available_for?(character)
-      requirements.size == 0 || requirements.select{ |r| r.met_by? character.profile }.size > 0
+      requirements.size == 0 || requirements.select{ |r| r.met_by? character.profile }.size == requirements.size
     end
   end
 end

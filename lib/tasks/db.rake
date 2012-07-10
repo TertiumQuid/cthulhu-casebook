@@ -7,6 +7,7 @@ namespace :db do
     User.delete_all
     Encounter.delete_all
     Location.delete_all
+    Lodging.delete_all    
     Message.delete_all    
     
     Rake::Task["db:seed"].execute

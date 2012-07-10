@@ -11,6 +11,11 @@ encounters:
                   - 
                     _id: pathology.wounds
                     value: -2
+            requirements: 
+                  - 
+                    _id: pathology.wounds
+                    is: gt
+                    value: 1                    
          -  _id: 2
             title: A matter of life and death!
             awards: 

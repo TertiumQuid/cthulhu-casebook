@@ -1,12 +1,17 @@
 (function(d) {
   window.fbAsyncInit = function() {
+	FB.Event.subscribe('auth.statusChange', function(response) {
+
+    });
+	
     FB.init({
       appId      : <%= CthulhuCasebook::Application.config.facebook['app_id'] %>,
       channelUrl : '//www.cthulhucasebook.com/channel.html',
-      status     : true, // check login status
+      status     : true, // automatically check login status
       cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true  // parse XFBML
     });
+
   };	
 	
   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];

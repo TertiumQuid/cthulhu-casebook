@@ -28,6 +28,12 @@ class ActiveSupport::TestCase
     data = docs['locations'].values
     Location.collection.insert data
   end
+  
+  def load_lodgings
+    docs = YAML.load_file( File.expand_path('../../db/data/lodgings.yml', __FILE__) )
+    data = docs['lodgings'].values
+    Lodging.collection.insert data
+  end  
 
   def load_equipment
     docs = YAML.load_file( File.expand_path('../../db/data/equipment.yml', __FILE__) )

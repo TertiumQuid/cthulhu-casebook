@@ -178,6 +178,7 @@ width: 1em;
 
 /* Widths */
 
+.quarter { width: 24% }
 .third { width: 32% }
 .two-thirds { width: 65% }
 .half { width: 49% }

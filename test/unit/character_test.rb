@@ -41,11 +41,12 @@ class CharacterTest < ActiveModel::TestCase
   end
 
   def test_lodgings
+    load_lodgings
     assert_nil @character.lodgings, 'expected no default lodgings'    
     
     @character.send(:populate_profile)
     assert_not_nil @character.lodgings, 'expected lodgings to be set'
-    assert_equal @character.profile.get('lodgings', 'current'), @character.lodgings, 'expected lodgings from profile tag'
+    assert_equal @character.profile.get('lodgings', 'current').value, @character.lodgings._id, 'expected lodgings from profile tag'
   end
   
   def test_populate_profile

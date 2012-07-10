@@ -1,0 +1,11 @@
+lodgings:
+  displaced:
+    _id: displaced
+    name: Displaced
+    description: You're not a vagrant, but having just arrived in town cannot already be expected to rush upon the purpose of making a home. On the other hand, the absence of a bureau and postbox may quite hinder your sleuthing.
+    level: 1    
+  szymanskis_dingy_attic:
+    _id: szymanskis_dingy_attic
+    name: Szymanski's Dingy Attic
+    description: The widow Szymanski owns and operates this tottering topfull boarding house of leery Poles, where she leaves you to your devices in the attic. The window cheerlessly provides hot meals in the evening, during which she scrutinizes your thoughts on Vladimir Lenin.
+    level: 2

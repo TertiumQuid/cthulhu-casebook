@@ -21,10 +21,6 @@ class PathTest < ActiveModel::TestCase
     assert_equal [@path.awards[3]], @path.awards_lost, 'expected only negative value awards'
   end
   
-  def test_available_for_no_requirements
-    assert_equal true, @path.available_for?(@character), 'expected available path without requirements'        
-  end
-  
   def test_available_for_matching_profile
     @character.profile.set('test', 'count', 1)
     @character.profile.save!

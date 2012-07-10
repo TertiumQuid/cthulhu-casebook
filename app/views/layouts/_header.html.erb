@@ -9,17 +9,16 @@
   <div id='header-navigation'>
     <ul class='horizontal'>
       <li><%= link_to 'Profile', edit_character_path %></li>
-      <li><%= link_to 'Story', location_path %></li>
+      <li><%= link_to 'Encounters', location_path %></li>
       <li><%= link_to 'Map', locations_path %></li>
-      <li><%= link_to 'Arcana', '' %></li>
-      <li><%= link_to 'Friends', friends_path %></li>
       <li>
         <% if has_character? && current_character.messages_count > 0 %>
-          <%= link_to "Messages (#{current_character.messages_count})", messages_path %>
+          <%= link_to "Lodgings (#{current_character.messages_count})", messages_path %>
         <% else %>
-          <%= link_to 'Messages', messages_path %>
+          <%= link_to 'Lodgings', messages_path %>
         <% end %>
       </li>
+      <li><%= link_to 'Friends', friends_path %></li>
       <li><%= link_to '?', '' %></li>
     </ul>
   </div>

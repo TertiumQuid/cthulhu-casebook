@@ -17,7 +17,13 @@
       <% end %>
 	
 	  <% @path.awards_gained.select {|a| a.display? }.each do |award| %>
-        <li><%= "+#{award.value} #{award.tag.titleize}" %></li>
+        <li>
+          <% if award.tagging == 'location' %>
+            <%= "you moved to #{award.value.titleize}" %>
+          <% else %>
+            <%= "+#{award.value} #{award.tag.titleize}" %>
+          <% end %>
+        </li>
       <% end %>
     </ul>	
   <% end %>

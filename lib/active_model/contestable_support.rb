@@ -4,7 +4,7 @@ module ActiveModel
     
     def chance_of_success(contest_tag=nil, contest_difficulty=nil)
       contest_difficulty ||= difficulty
-      base = 50 - (contest_difficulty * 10)
+      base = 50 - (contest_difficulty * 7)
       base = base + contest_tag.value.to_i unless contest_tag.blank? || !contest_tag.send(:numeric?)
       base
     end
@@ -12,6 +12,7 @@ module ActiveModel
     def check_success(chance, max_range=100, forced_at=3)
       chance = [chance, forced_at].max
       chance = [chance, max_range-forced_at].min
+      Rails.logger.info "CHANCE=#{chance}"
       rand(max_range) <= chance
     end
     

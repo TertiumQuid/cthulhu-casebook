@@ -1,4 +1,119 @@
 encounters:
+  speakeasy:
+    _id: speakeasy
+    title: The Speakeasy
+    location: arkham_northside
+    type: fixed
+    paths:
+         -  _id: 1
+            title: A Helpful Card Shill
+            awards: 
+                  - 
+                    _id: knowledge.malicious_rumors
+                    value: 1
+                  - 
+                    _id: belongings.american_dollars
+                    value: 3
+            requirements: 
+                        - 
+                          _id: belongings.deck_of_playing_cards
+                          gt: lt
+                          value: 0
+            challenge:
+                     _id: skills.underworld
+                     difficulty: 3
+         -  _id: 2
+            title: Comping the Jazz Band
+            awards: 
+                  - 
+                    _id: drinks.snifter_of_bathtub_gin
+                    value: 1
+            challenge:
+                     _id: skills.culture
+                     difficulty: 1
+                     
+         -  _id: 3
+            title: Send a Troublemaker Packing
+            awards: 
+                  - 
+                    _id: drinks.snifter_of_bathtub_gin
+                    value: 2
+                  - 
+                    _id: drinks.tumbler_of_brandy
+                    value: 1                                
+            challenge:
+                     _id: skills.conflict
+                     difficulty: 2              
+    requirements: 
+                - 
+                  _id: knowledge.glib_passwords
+                  is: gt
+                  value: 4
+  b_and_m_train_station:
+    _id: b_and_m_train_station
+    title: B&M Train Station
+    location: arkham_northside
+    type: fixed
+    paths:
+         -  _id: 1
+            title: Shadow the Comings and Goings of Passengers
+            awards: 
+                  - 
+                    _id: knowledge.malicious_rumors
+                    value: 1
+                  - 
+                    _id: knowledge.glib_passwords
+                    value: 1                    
+            challenge:
+                     _id: skills.clandestinity
+                     difficulty: 1
+            requirements: 
+                        - 
+                          _id: skills.clandestinity
+                          is: lt
+                          value: 5
+        -  _id: 2
+           title: The Valet's Obliging Glove
+           awards: 
+                 - 
+                   _id: knowledge.news_of_foreign_lands
+                   value: 1 
+                 - 
+                   _id: belongings.american_dollars
+                   value: 1
+        -  _id: 3
+           title: The Valet's Nimble Glove
+           challenge:
+                    _id: skills.clandestinity
+                    difficulty: 3
+           awards: 
+                 - 
+                   _id: belongings.american_dollars
+                   value: 5
+  arkham_gazette:
+    _id: arkham_gazette
+    title: Arkham Gazette (since 1806)
+    location: arkham_northside
+    type: fixed
+    paths:
+         -  _id: 1
+            title: Daily Extras
+            awards: 
+                  - 
+                    _id: knowledge.malicious_rumors
+                    value: 1
+  arkham_advertiser:
+    _id: arkham_advertiser
+    title: Arkham Advertiser (world news)
+    location: arkham_northside
+    type: fixed
+    paths:
+         -  _id: 1
+            title: Our Town, The World
+            awards: 
+                  - 
+                    _id: knowledge.news_of_foreign_lands
+                    value: 1
   homecoming:
     _id: homecoming
     title: Homecoming
@@ -10,18 +125,18 @@ encounters:
                  Now, in the pursuit of the unaccountable, brought to all-standing and then to your proverbial knees, you find yourself at the city train station hounded by the lawless shadow of allegorical dreams and suspicious memories.
 
 
-                 There is only one road ahead - you intend to grave your sleepless dread by investigating the preternatural aura which imbues sleepy Arkham, where the sycamore shadows crawl like snakes and the moon is always hiding behind a steeple.
+                 There is only one road ahead - you intend to grave your dread by investigating the preternatural aura which imbues sleepy Arkham, where the sycamore shadows crawl like snakes and the moon is always hiding behind a steeple.
     paths:
          -  _id: 1
             title: Into the Mouth of Madness
             awards: 
                   - 
-                    _id: plots.arkham
-                    value: 1
+                    _id: plots.a_hapless_stranger_comes_to_arkham
+                    value: -1
                   - 
-                    _id: plots.estranged
+                    _id: plots.plots.the_edge_of_darkness
                     value: 1
     requirements: 
                 - 
-                  _id: plots.arkham
-                  value: 0
+                  _id: plots.a_hapless_stranger_comes_to_arkham
+                  value: 5

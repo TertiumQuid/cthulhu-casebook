@@ -1,10 +1,35 @@
-<h1>Messages from people as well as Other Things</h1>
+<h1>
+  <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
+  <small>Your Lodgings:</small><br> <%= current_character.lodgings.name %>
+</h1>
+<p><%= simple_format current_character.lodgings.description %></p>
 
-<ul>
-  <% @messages.each do |message| %>
-    <li>
-      <big><%= link_to message.title, message_path(message) %></big><br />
-      <small>From: <%= message.sender %></small>
-    </li>
-  <% end %>
+<ul class='horizontal'>
+  <li class='half'>
+    <ul class='plain'>
+      <li>
+        <h3>A Davenport of Mysterious Cases</h3>
+        <p>You've staked ground in unsure footing, but appear to be making progress with the following plots...</p>
+      </li>
+      <% current_character.profile.find_tagging('plots').tags.each do |plot| %>
+        <li>
+          <label class='half'><%= plot._id.titleize %> </label>
+          <progress max="15" value="<%= plot.value %>"></progress>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+  <li class='half'>		
+    <ul class='plain'>
+      <li>
+        <h3>Messages from people as well as Other Things</h3>
+      </li>
+      <% @messages.each do |message| %>
+        <li>
+          <strong><%= link_to message.title, message_path(message) %></strong><br />
+          <small>From: <%= message.sender %></small>
+        </li>
+      <% end %>
+    </ul>
+  </li>
 </ul>

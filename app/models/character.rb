@@ -67,7 +67,7 @@ class Character
   end
   
   def lodgings
-    profile.get('lodgings', 'current') if profile
+    Lodging.find(profile.get('lodgings', 'current').value) if profile
   end  
   
   def relocate!(current_location)

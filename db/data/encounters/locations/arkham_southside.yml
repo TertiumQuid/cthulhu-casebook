@@ -15,7 +15,7 @@ encounters:
                         - 
                           _id: belongings.american_dollars
                           cost: true
-                          value: -25
+                          value: -30
 
          -  _id: 2
             title: Down With Bolshevism!
@@ -60,7 +60,7 @@ encounters:
                     value: 2
             challenge:
                      _id: skills.conflict
-                     difficulty: 10
+                     difficulty: 6
             requirements: 
                         - 
                           _id: skills.conflict
@@ -74,4 +74,4 @@ encounters:
                     value: 1
             challenge:
                      _id: skills.underworld
-                     difficulty: 5
+                     difficulty: 4
