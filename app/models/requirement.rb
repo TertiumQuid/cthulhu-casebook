@@ -23,7 +23,6 @@ class Requirement
     elsif is == 'lt'
       match.count < value.to_i
     elsif is == 'not'
-      Rails.logger.info " NOT     #{match.value} != #{value.to_s}"
       match.value != value.to_s
     elsif cost
       match.count >= value.to_i.abs

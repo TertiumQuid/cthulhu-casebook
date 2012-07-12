@@ -2,9 +2,11 @@ module ActiveModel
   module ContestableSupport
     extend ActiveSupport::Concern
     
+    DIFFICULTY_FACTOR = 7
+    
     def chance_of_success(contest_tag=nil, contest_difficulty=nil)
       contest_difficulty ||= difficulty
-      base = 50 - (contest_difficulty * 7)
+      base = 50 - (contest_difficulty * DIFFICULTY_FACTOR)
       base = base + contest_tag.value.to_i unless contest_tag.blank? || !contest_tag.send(:numeric?)
       base
     end

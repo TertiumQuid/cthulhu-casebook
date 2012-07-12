@@ -1,9 +1,126 @@
 monsters:
+  gargoyle:
+    _id: gargoyle
+    name: Gargoyle
+    prevalence: 3
+    locations: [arkham_miskatonic_university, arkham_french_hill]
+    penalties:
+              -
+                _id: pathology.wounds
+                value: 3
+              -
+                _id: pathology.madness
+                value: 1
+  acolyte:
+    _id: acolyte
+    name: Acolyte
+    prevalence: 10
+    locations: [arkham_northside, arkham_miskatonic_university, arkham_french_hill, arkham_southside]
+    penalties:
+              -
+                _id: pathology.madness
+                value: 1
+  ghost:
+    _id: ghost
+    name: Ghost
+    prevalence: 10
+    locations: [arkham_northside, arkham_uptown, arkham_miskatonic_university, arkham_french_hill, arkham_southside]
+    penalties:
+              -
+                _id: pathology.madness
+                value: 3
+  banshee:
+    _id: banshee
+    name: Banshee
+    prevalence: 5
+    locations: [arkham_uptown, arkham_rivertown]
+    penalties:
+              -
+                _id: pathology.madness
+                value: 2
+              -
+                _id: pathology.cursed
+                value: 3
+  spectral_hunter:
+    _id: spectral_hunter
+    name: Spectral Hunter
+    prevalence: 10
+    locations: [arkham_northside, arkham_southside, arkham_french_hill, arkham_southside]
+    penalties:
+              -
+                _id: pathology.wounds
+                value: 2
+              -
+                _id: pathology.cursed
+                value: 1    
+  druid:
+    _id: druid
+    name: Druid
+    prevalence: 10
+    locations: [arkham_northside, arkham_southside]
+    penalties:
+              -
+                _id: pathology.wounds
+                value: 2
+              -
+                _id: pathology.cursed
+                value: 1
+  deep_one:
+    _id: deep_one
+    name: Deep One
+    prevalence: 10
+    locations: [arkham_rivertown]
+    penalties:
+              -
+                _id: pathology.wounds
+                value: 2
+              -
+                _id: pathology.madness
+                value: 2    
+  werewolf:
+    _id: werewolf
+    name: Werewolf
+    prevalence: 10
+    locations: [arkham_french_hill, arkham_southside, arkham_rivertown, arkham_northside]
+    penalties:
+              -
+                _id: pathology.wounds
+                value: 3
+              -
+                _id: pathology.madness
+                value: 1                
+              -
+                _id: pathology.lycanthropy
+                value: 1
+  nightgaunt:
+    _id: nightgaunt
+    name: Nightgaunt
+    prevalence: 5
+    locations: [arkham_french_hill, arkham_southside, arkham_miskatonic_university, arkham_rivertown]
+    penalties:
+              -
+                _id: pathology.madness
+                value: 5
+  ghoul:
+    _id: ghoul
+    name: Ghoul
+    prevalence: 15
+    locations: [arkham_french_hill, arkham_merchant_district, arkham_rivertown, arkham_southside, arkham_northside]
+    penalties:
+              -
+                _id: pathology.madness
+                value: 3
+              -
+                _id: pathology.wounds
+                value: 1
+              -
+                _id: pathology.the_hunger
+                value: 1         
   lunatic:
     _id: lunatic
     name: Lunatic
     prevalence: 25
-    locations: [arkham_northside, arkham_downtown, arkham_rivertown, arkham_southside, arkham_uptown]
+    locations: [arkham_northside, arkham_downtown, arkham_rivertown, arkham_southside, arkham_uptown, arkham_miskatonic_university]
     penalties:
               -
                 _id: pathology.wounds

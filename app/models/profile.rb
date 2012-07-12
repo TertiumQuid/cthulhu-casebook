@@ -17,7 +17,7 @@ class Profile
     if tag && force_equal # force explicit value
       tag.value = value
     elsif tag # increment existing value
-      tag.set(value) 
+      tag.set(value)
     elsif tagging = find_tagging(tagging_id) # create new tag for value
       tagging.tags << Tag.new(:_id => tag_id, :value => value)
     end
@@ -38,6 +38,13 @@ class Profile
     taggings.select{|t| t._id == tagging_id }.first
   end
   
+  def check_for_demise
+    if demise = Demise.all.select { |d| d.met_by?(self) }.first
+      demise.apply_to(character)
+      demise
+    end
+  end
+    
   private
     
   def populate
@@ -77,7 +84,6 @@ class Profile
     
     equipment = Tagging.new(:_id => 'equipment')    
     
-
     taggings << skills
     taggings << traits
     taggings << affiliations

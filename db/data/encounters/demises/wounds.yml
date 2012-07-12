@@ -1,0 +1,16 @@
+encounters:
+  war_stories:
+    _id: war_stories
+    title: War Stories
+    location: arkham_sanitarium
+    type: plot
+    paths:
+         -  _id: 1
+            title: Heed the Lessons of the Great War
+            awards: 
+                  - 
+                    _id: pathology.madness
+                    value: -1
+                  - 
+                    _id: pathology.wounds
+                    value: -3

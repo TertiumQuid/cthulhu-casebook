@@ -10,6 +10,7 @@ class MessagesControllerTest < ActionController::TestCase
   end
   
   test 'get index' do
+    load_lodgings
     get :index
     assert_response :success, 'expected http success'
     assert_equal [@message], assigns(:messages).all, 'expected all and only messages for character'

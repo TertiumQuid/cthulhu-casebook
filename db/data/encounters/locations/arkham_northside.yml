@@ -72,24 +72,24 @@ encounters:
                           _id: skills.clandestinity
                           is: lt
                           value: 5
-        -  _id: 2
-           title: The Valet's Obliging Glove
-           awards: 
-                 - 
-                   _id: knowledge.news_of_foreign_lands
-                   value: 1 
-                 - 
-                   _id: belongings.american_dollars
-                   value: 1
-        -  _id: 3
-           title: The Valet's Nimble Glove
-           challenge:
-                    _id: skills.clandestinity
-                    difficulty: 3
-           awards: 
-                 - 
-                   _id: belongings.american_dollars
-                   value: 5
+         -  _id: 2
+            title: The Valet's Obliging Glove
+            awards: 
+                  - 
+                    _id: knowledge.news_of_foreign_lands
+                    value: 1 
+                  - 
+                    _id: belongings.american_dollars
+                    value: 1
+         -  _id: 3
+            title: The Valet's Nimble Glove
+            challenge:
+                     _id: skills.clandestinity
+                     difficulty: 3
+            awards: 
+                  - 
+                    _id: belongings.american_dollars
+                    value: 5
   arkham_gazette:
     _id: arkham_gazette
     title: Arkham Gazette (since 1806)

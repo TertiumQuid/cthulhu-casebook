@@ -26,6 +26,7 @@ class Encounter
       path.develop(character) if succeeded && path.develops_experience?
       
       character.spend_clues Encounter.cost
+      character.profile.check_for_demise
       character.profile.save && character.save
       succeeded
     else

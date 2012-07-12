@@ -5,6 +5,8 @@ namespace :db do
     Profile.delete_all    
     Character.delete_all
     User.delete_all
+    Gift.delete_all
+    Demise.delete_all
     Encounter.delete_all
     Location.delete_all
     Lodging.delete_all    

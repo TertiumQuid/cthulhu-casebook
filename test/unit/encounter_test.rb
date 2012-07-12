@@ -75,6 +75,17 @@ class EncounterTest < ActiveModel::TestCase
     end    
   end  
   
+  def test_play_with_demise
+    demise = Demise.create!(:_id => 'pathology.madness', :location => 'arkham_sanitarium', :limit => 1)
+    @character.profile.set('location', 'current', 'arkham_northside')
+    @character.profile.set('pathology', 'madness', 1)
+    path = Path.new(:title => 'test')
+    encounter = Encounter.create!(:title => 'test', :text => 'test', :paths => [path])
+    
+    encounter.play(@character, path._id)
+    assert_equal demise.location, @character.reload.location.value, 'expected character to move to demise location after reaching limit'
+  end
+  
   def test_play_without_clues
     @character.clues = 0
     path = Path.new(:title => 'test')    

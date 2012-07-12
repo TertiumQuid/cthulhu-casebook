@@ -1,0 +1,49 @@
+encounters:
+  one_hypodermic_needle_later:
+    _id: one_hypodermic_needle_later
+    title: One Hypodermic Needle Later
+    location: arkham_sanitarium
+    type: plot
+    paths:
+         -  _id: 1
+            title: Think of Something Plesant, Somewhere Else
+            awards: 
+                  - 
+                    _id: pathology.wounds
+                    value: 1                
+                  - 
+                    _id: pathology.madness
+                    value: -2
+         -  _id: 1
+            title: Just Let Them Try It
+            awards: 
+                  - 
+                    _id: pathology.wounds
+                    value: 3   
+                  - 
+                    _id: pathology.madness
+                    value: -5
+  the_miracle_of_psychosurgery:
+    _id: the_miracle_of_psychosurgery
+    title: The Miracle of Psychosurgery
+    location: arkham_sanitarium
+    type: plot    
+    paths:
+         -  _id: 1
+            title: Transorbital Lobotomy
+            awards: 
+                  - 
+                    _id: pathology.madness
+                    value: -10
+         -  _id: 2
+            title: Electroconvulsive Therapy
+            awards: 
+                  - 
+                    _id: pathology.madness
+                    value: -5
+         -  _id: 3
+            title: Hydropathy: the Water Cure
+            awards: 
+                  - 
+                    _id: pathology.madness
+                    value: -2

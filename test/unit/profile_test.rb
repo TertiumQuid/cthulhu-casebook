@@ -72,4 +72,14 @@ class ProfileTest < ActiveModel::TestCase
     assert_equal true, profile.deduct!('test', 'text'), 'expected profile to be saved'    
     assert_nil profile.reload.get('test', 'text'), 'expected text tag removed immediately'
   end
+  
+  def test_check_for_demise
+    character = Character.create!(:name => 'test')
+    demise = Demise.create!(:_id => 'pathology.wounds', :limit => 10)
+    profile = Profile.create!(:character => character)
+    assert_nil profile.check_for_demise, 'expected no demise without respective tags'
+    
+    profile.set('pathology', 'wounds', 10)
+    assert_equal demise, profile.check_for_demise, 'expected demise with tag limit reached'
+  end
 end
