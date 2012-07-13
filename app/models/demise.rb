@@ -23,9 +23,9 @@ class Demise
     end
   end
   
-  def apply_to(character)
-    unless Demise.locations.include? character.location.value
-      character.profile.set('location', 'current', location)
+  def apply_to(profile)
+    unless Demise.locations.include? profile.get('location', 'current').value
+      profile.set('location', 'current', location)
     end
   end
 end

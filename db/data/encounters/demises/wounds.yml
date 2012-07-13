@@ -1,16 +1,57 @@
 encounters:
+  fine_just_fine:
+    _id: fine_just_fine
+    title: fine_just_fine
+    location: st_marys_hospital
+    type: fixed
+    paths:
+         -  _id: 1
+            title: You're fine, just fine; there's work to do
+            awards: 
+                  - 
+                    _id: location.arkham_uptown
+                    value: 1
+    requirements: 
+                - 
+                  _id: pathology.wounds
+                  value: 0
+  you_dont_have_time_for_iv_therapy:
+    _id: you_dont_have_time_for_iv_therapy
+    title: You Don't Have Time for IV Therapy
+    location: st_marys_hospital
+    type: fixed
+    paths:
+         -  _id: 1
+            title: Rip the Drip Cords From Your Body
+            awards: 
+                  - 
+                    _id: pathology.madness
+                    value: 5
+                  - 
+                    _id: pathology.wounds
+                    value: -10    
+    requirements: 
+                - 
+                  _id: pathology.wounds
+                  is: gt
+                  value: 0                    
   war_stories:
     _id: war_stories
     title: War Stories
-    location: arkham_sanitarium
-    type: plot
+    location: st_marys_hospital
+    type: fixed
     paths:
          -  _id: 1
             title: Heed the Lessons of the Great War
             awards: 
                   - 
                     _id: pathology.madness
-                    value: -1
+                    value: 1
                   - 
                     _id: pathology.wounds
                     value: -3
+    requirements: 
+                - 
+                  _id: pathology.wounds
+                  is: gt
+                  value: 0                    

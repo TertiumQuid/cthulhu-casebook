@@ -14,7 +14,6 @@ module ActiveModel
     def check_success(chance, max_range=100, forced_at=3)
       chance = [chance, forced_at].max
       chance = [chance, max_range-forced_at].min
-      Rails.logger.info "CHANCE=#{chance}"
       rand(max_range) <= chance
     end
     

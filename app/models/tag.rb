@@ -5,7 +5,7 @@ class Tag
   
   def set(v)
     if numeric?(v)
-      self.value = (value || 0).to_i + v.to_i
+      self.value = [(value || 0).to_i + v.to_i, 0].max
     else
       self.value = v
     end

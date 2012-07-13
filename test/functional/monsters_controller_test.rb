@@ -59,6 +59,19 @@ class MonstersControllerTest < ActionController::TestCase
     assert_nil @character.reload.monster_id, 'expected character no longer associated with monster'
   end 
   
+  test 'get show with demise' do
+    setup_fight
+    demise = Demise.create!(:limit => 10, :_id => 'pathology.madness', :location => 'arkham_sanitarium')
+    @character.profile.set('pathology', 'madness', 10)
+    @character.profile.save
+    
+    get :show, :id => 'confront'
+    assert_equal @monster, assigns(:monster), 'expected monster assigned'    
+    assert_equal true, assigns(:success), 'expected success'
+    assert !assigns(:demise).blank?, 'expected demise assigned'
+    assert_equal demise.location, @character.reload.location.value, 'expected new location after demise'
+  end 
+  
   test 'get show and relocate' do
     load_locations
     setup_fight

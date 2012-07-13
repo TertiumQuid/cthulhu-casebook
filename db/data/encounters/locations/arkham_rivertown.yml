@@ -49,15 +49,14 @@ encounters:
                     _id: belongings.american_dollars
                     cost: true
                     value: -5
-                    
-          -  _id: 5
-             title: Deck of Hoyle Playing Cards
-             awards: 
-                   - 
-                     _id: belongings.deck_of_playing_cards
-                     value: 1
-             requirements: 
-                   - 
-                     _id: belongings.deck_of_playing_cards
-                     cost: true
-                     value: -3
+         -  _id: 5
+            title: Deck of Hoyle Playing Cards
+            awards: 
+                  - 
+                    _id: belongings.deck_of_playing_cards
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.deck_of_playing_cards
+                    cost: true
+                    value: -3

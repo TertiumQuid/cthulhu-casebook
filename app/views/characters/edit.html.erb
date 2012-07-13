@@ -23,7 +23,7 @@
     <h4>Pathology</h4>
     <ul class='plain'>
       <% @character.profile.find_tagging('pathology').tags.each do |tag| %>
-        <li><%= tag._id.titleize  %> <%= tag.value %></li>
+        <li><%= tag._id.titleize  %> <strong><%= tag.value %></strong> <progress max="20" value="<%= tag.value %>"></progress></li>
       <% end %>
     </ul>
 

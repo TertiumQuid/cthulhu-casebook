@@ -1,20 +1,36 @@
 encounters:
+  free_at_last:
+    _id: free_at_last
+    title: Free at Last
+    location: arkham_sanitarium
+    type: fixed
+    paths:
+         -  _id: 1
+            title: Reintegration Period
+            awards: 
+                  - 
+                    _id: location.arkham_downtown
+                    value: 1
+    requirements: 
+                - 
+                  _id: pathology.madness
+                  value: 0    
   one_hypodermic_needle_later:
     _id: one_hypodermic_needle_later
     title: One Hypodermic Needle Later
     location: arkham_sanitarium
-    type: plot
+    type: fixed
     paths:
          -  _id: 1
             title: Think of Something Plesant, Somewhere Else
             awards: 
                   - 
                     _id: pathology.wounds
-                    value: 1                
+                    value: 1
                   - 
                     _id: pathology.madness
                     value: -2
-         -  _id: 1
+         -  _id: 2
             title: Just Let Them Try It
             awards: 
                   - 
@@ -23,11 +39,16 @@ encounters:
                   - 
                     _id: pathology.madness
                     value: -5
+    requirements: 
+                - 
+                  _id: pathology.madness
+                  is: gt
+                  value: 0                    
   the_miracle_of_psychosurgery:
     _id: the_miracle_of_psychosurgery
     title: The Miracle of Psychosurgery
     location: arkham_sanitarium
-    type: plot    
+    type: fixed    
     paths:
          -  _id: 1
             title: Transorbital Lobotomy
@@ -42,8 +63,13 @@ encounters:
                     _id: pathology.madness
                     value: -5
          -  _id: 3
-            title: Hydropathy: the Water Cure
+            title: Hydropathy - the Water Cure
             awards: 
                   - 
                     _id: pathology.madness
                     value: -2
+    requirements: 
+                - 
+                  _id: pathology.madness
+                  is: gt
+                  value: 0

@@ -10,7 +10,11 @@ class MonstersController < ApplicationController
     @monster = current_character.monster
     @success = @monster.fight(current_character, params[:id])
     
-    current_character.relocate!(params[:location_id]) if @success && is_taking_passage?
+    if @demise = current_character.profile.check_for_demise
+      current_character.profile.save
+    else
+      current_character.relocate!(params[:location_id]) if @success && is_taking_passage?
+    end
   end
   
   private

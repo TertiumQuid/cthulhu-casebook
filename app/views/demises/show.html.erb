@@ -1,0 +1,11 @@
+<h1>
+  <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
+  <%= @demise.title %>
+</h1>
+<p><%= simple_format @demise.description %><br />&nbsp;</p>
+
+<p>	
+  <%= link_to location_path, :class => 'copperplate' do %>	
+    <span class='button continue'>Continue</span>
+  <% end %>
+</p>

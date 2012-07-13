@@ -5,7 +5,7 @@ class DemiseTest < ActiveModel::TestCase
     character = Character.create!(:name => 'test')
     demise = Demise.new(:location => 'test')
     
-    demise.apply_to(character)
+    demise.apply_to(character.profile)
     assert_equal 'test', character.location.value, 'expected demise applied to character location'
   end
   

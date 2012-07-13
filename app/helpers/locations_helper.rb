@@ -4,7 +4,7 @@ module LocationsHelper
   end
   
   def link_to_location(passage, disabled=false)
-    name = passage._id.gsub(/arkham_/, '')
+    name = passage._id.include?('sanitarium') ? passage._id : passage._id.gsub(/arkham_/, '')
     name = name.include?('outskirts') ? "&larr;#{name.titleize}&rarr;" : name.titleize
     href = disabled ? '' : location_passage_path(passage._id)
     method = disabled ? :get : :put

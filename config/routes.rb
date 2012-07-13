@@ -28,6 +28,7 @@ CthulhuCasebook::Application.routes.draw do
   resources :encounters, :only => [:show] do
     resources :paths, :only => [:show]
   end
+  resources :demises, :only => [:show]
   resources :friends, :only => [:index]
   resources :importunity, :only => [:create], :controller => 'importunities' do
     member do

@@ -18,7 +18,7 @@ class ProfileTest < ActiveModel::TestCase
     end
     initial_value = 3
     profile.taggings << Tagging.new(:_id => 'test', :tags => [{:_id => 'pass', :value => initial_value}])
-
+  
     assert_difference "profile.get('test', 'pass').value.to_i", +1, 'expected value incremented for existing profile tag' do
       profile.set('test', 'pass', 1)
     end
@@ -75,11 +75,21 @@ class ProfileTest < ActiveModel::TestCase
   
   def test_check_for_demise
     character = Character.create!(:name => 'test')
-    demise = Demise.create!(:_id => 'pathology.wounds', :limit => 10)
+    demise = Demise.create!(:_id => 'pathology.wounds', :limit => 10, :location => 'st_marys_hospital')
     profile = Profile.create!(:character => character)
-    assert_nil profile.check_for_demise, 'expected no demise without respective tags'
     
     profile.set('pathology', 'wounds', 10)
-    assert_equal demise, profile.check_for_demise, 'expected demise with tag limit reached'
+    assert profile.check_for_demise.is_a?(Demise), 'expected demise instance returned'
+    assert_equal demise.location, profile.get('location', 'current').value, 'expected demise applied to profile'
+  end
+  
+  def test_current_demise
+    character = Character.create!(:name => 'test')
+    demise = Demise.create!(:_id => 'pathology.wounds', :limit => 10)
+    profile = Profile.create!(:character => character)
+    assert_nil profile.send(:current_demise), 'expected no demise without respective tags'
+    
+    profile.set('pathology', 'wounds', 10)
+    assert_equal demise, profile.send(:current_demise), 'expected demise with tag limit reached'    
   end
 end

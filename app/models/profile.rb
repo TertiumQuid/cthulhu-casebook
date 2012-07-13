@@ -39,8 +39,8 @@ class Profile
   end
   
   def check_for_demise
-    if demise = Demise.all.select { |d| d.met_by?(self) }.first
-      demise.apply_to(character)
+    if demise = current_demise
+      demise.apply_to(self)
       demise
     end
   end
@@ -97,5 +97,9 @@ class Profile
     taggings << equipment
     
     self.trappings = Trappings.new
+  end  
+  
+  def current_demise
+    Demise.all.select { |d| d.met_by?(self) }.first
   end  
 end

@@ -7,6 +7,8 @@ class TagTest < ActiveModel::TestCase
     assert_equal '10', tag.value, 'expected value to be set to given number'
     tag.set('2')
     assert_equal '12', tag.value, 'expected value to be added to number'
+    tag.set(-100)    
+    assert_equal '0', tag.value, 'expected min value of 0'    
   end
   
   def test_set_text

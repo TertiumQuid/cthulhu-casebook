@@ -1,4 +1,12 @@
 locations:
+  st_marys_hospital:
+    _id: st_marys_hospital
+    short_name: St. Marys Hospital
+    long_name: St. Marys Hospital, Arkham Massachusetts, United States    
+  arkham_sanitarium:
+    _id: arkham_sanitarium
+    short_name: Arkham Sanitarium
+    long_name: Arkham Sanitarium, Massachusetts, United States
   arkham_northside:
     _id: arkham_northside
     short_name: Northside Arkham
