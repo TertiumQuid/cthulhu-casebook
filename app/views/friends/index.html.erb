@@ -6,14 +6,17 @@
 
   <p>Whatever the reason, you can always <u>invite a friend to join</u> if your burden grows too heavy for one individual to carry alone.</p>
 <% else %>
-  <p>Several persons of some talent and expertise are known to you:</p>
-  <ul>
+  <p>Some persons of talent and expertise are known to you:</p>
+  <ul class='horizontal polaroids'>
     <% @characters.each do |character| %>
       <li>
-        <big><%= link_to character.name, "/characters/#{character._id}" %></big><br />
+        <%= link_to "/characters/#{character._id}", :rel => 'nofollow' do %>
+          <%= image_tag 'placeholder96x96.png' %>
+          <big><%= character.formal_name %></big>
+        <% end %>
       </li>
     <% end %>
-  </ul>
+  </ul>	
 <% end %>
 <hr />
 
@@ -21,15 +24,16 @@
   <h3>The Importunities of Strangers!</h3>
   <p>Suspicious... or propitious? It seems your reputation proceeds you as strangers importune upon your sense of camaraderie!</p>
 
-  <ul>
+  <ul class='horizontal'>
     <% @importunity.pending_user_ids.each do |uid| %>
       <li>
         <% if character = Character.first(:user_id => uid) %>
-          <big><%= link_to character.name, "/characters/#{character._id}" %></big><br />
-          <p>
-            &nbsp;&nbsp;&nbsp;<%= link_to 'accept their friendship', accept_importunity_path(uid) %><br />
-            &nbsp;&nbsp;&nbsp;or <%= link_to 'reject their friendship', reject_importunity_path(uid) %>
-          </p>
+          <%= image_tag 'placeholder64x64.png', :class => 'picture-frame' %>
+          <big><%= link_to character.formal_name, "/characters/#{character._id}" %></big><br />
+
+           <%= link_to 'accept their friendship', accept_importunity_path(uid), :class => 'button' %><br />
+           <%= link_to 'reject their friendship', reject_importunity_path(uid), :class => 'button' %>
+
         <% end %>
       </li>
     <% end %>
@@ -38,9 +42,9 @@
 <% end %>
 
 <h3>Importune a Stranger</h3>
-<p>If you know the <strong>cosmic identifier</strong> of a stranger of some talent and expertise, you can importune their friendship by entering it here:</p>
+<p>If you know the <strong>case #</strong> of a stranger of some talent and expertise, you can importune their friendship by entering it here:</p>
 
 <%= form_tag importunity_index_path do |f| %>
-  <p><%= text_field_tag :user_id, nil, :placeholder => 'cosmic identifier' %></p>
+  <p><%= text_field_tag :user_id, nil, :placeholder => 'case number' %></p>
   <p><%= submit_tag 'Importune' %></p>
 <% end %>

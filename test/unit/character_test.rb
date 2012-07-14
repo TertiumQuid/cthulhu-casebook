@@ -136,4 +136,20 @@ class CharacterTest < ActiveModel::TestCase
     @character.profile.set('experience', 'conflict', 1)
     assert_equal 50, @character.skill_progress('conflict'), 'expected 50 progress to next level'
   end
+  
+  def test_last_seen
+    @character.last_seen_at = nil
+    @character.last_seen
+    assert_not_nil @character.last_seen_at, 'expected last_seen_at set when nil'
+    
+    assert_no_difference '@character.last_seen_at.to_i', 'expected no update during 10 minute cooldown' do
+      @character.last_seen
+    end
+    
+    original = Time.now.utc - 11.minutes
+    @character.last_seen_at = original
+    @character.last_seen
+    assert_not_equal original.to_i, @character.last_seen_at, 'expected timestamp update after 10 minutes'
+    
+  end
 end

@@ -75,6 +75,7 @@ class Profile
     pathology.tags << Tag.new(:_id => 'wounds', :value => 0)
 
     knowledge = Tagging.new(:_id => 'knowledge')
+    research = Tagging.new(:_id => 'research')    
 
     belongings = Tagging.new(:_id => 'belongings')
     belongings.tags << Tag.new(:_id => 'american_dollars', :value => 200)
@@ -92,6 +93,7 @@ class Profile
     taggings << lodgings
     taggings << pathology 
     taggings << knowledge
+    taggings << research
     taggings << belongings     
     taggings << plots
     taggings << equipment

@@ -13,8 +13,11 @@ class ApplicationControllerCharacterSupportTest < ActionController::TestCase
     assert_nil @controller.current_character, 'expected no default character'    
     
     character = Character.create!(:name => 'test')
+    character.update_attribute(:last_seen_at, nil)
+    
     @controller.session[:character_id] = character._id
     assert_equal character, @controller.current_character, 'expected character from stored session character id'    
+    assert_not_nil @controller.current_character.last_seen_at, 'expected last seen timestamp set'
   end
   
   def test_has_character

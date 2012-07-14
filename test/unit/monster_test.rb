@@ -17,8 +17,14 @@ class MonsterTest < ActiveModel::TestCase
     character = Character.create!(:name => 'available', :clues => Encounter.cost)
     location = Location.find('arkham_miskatonic_university')
 
+    range = Monster::ENCOUNTER_CHANCE_RANGE
+    Monster.send :remove_const, :ENCOUNTER_CHANCE_RANGE
+    Monster.send :const_set, :ENCOUNTER_CHANCE_RANGE, 1000000000
     Monster.set({}, :prevalence => 0)
     assert_nil Monster.encounters_monster_at?(character, location), 'expected no monster from failed random chance test'
+    Monster.send :remove_const, :ENCOUNTER_CHANCE_RANGE
+    Monster.send :const_set, :ENCOUNTER_CHANCE_RANGE, range
+
 
     Monster.set({}, :prevalence => 100)
     monster = Monster.encounters_monster_at?(character, location)

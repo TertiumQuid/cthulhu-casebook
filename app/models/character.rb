@@ -25,11 +25,16 @@ class Character
   def self.new_for_user(params)
     params ||= {}
     params[:user_id] ||= User.create(:email => "#{rand(1000000)}@example.com")._id
+    params[:last_seen_at] = Time.now.utc
     Character.new params
   end
   
   def self.reclue
     Character.set({:clues => {'$lt' => MAX_CLUES}}, :clues => MAX_CLUES)
+  end
+  
+  def formal_name
+    gender == 'female' ? "Ms. #{name}" : "Mr. #{name}"
   end
   
   def friends
@@ -98,6 +103,10 @@ class Character
     
     val = val.to_f / (profile.get('skills', skill).count.to_f + 1)
     (val * 100).round(0)
+  end
+  
+  def last_seen
+    self.last_seen_at = Time.now.utc if last_seen_at.blank? || last_seen_at < Time.now.utc - 10.minutes
   end
   
   private 

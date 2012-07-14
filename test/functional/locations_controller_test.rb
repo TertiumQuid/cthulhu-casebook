@@ -21,14 +21,14 @@ class LocationsControllerTest < ActionController::TestCase
     assert assigns(:encounters).select {|e| e.location != location}.blank?, "expected encounters only for #{location}"
   end
   
-  test 'get show with friends' do
+  test 'get index with friends' do
     friend = Character.create!(:name => 'test', :last_seen_at => Time.now.utc)
     character = @controller.current_character
     character.befriend! friend
     character.befriend! Character.create!(:name => 'test', :last_seen_at => Time.now.utc)
     Conference.confer(character._id, friend._id)
 
-    get :show
+    get :index
     assert !assigns(:friends).blank?, 'expected local friends assigned'
     assert !assigns(:conferences).blank?, 'expected conferences assigned'
   end

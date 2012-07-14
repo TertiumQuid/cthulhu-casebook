@@ -11,6 +11,6 @@ class ConferencesControllerTest < ActionController::TestCase
       get :show, :character_id => friend._id
     end
     assert !assigns(:conference).blank?, 'expected conference assigned'
-    assert_redirected_to location_path, 'expected redirect to show location path'
+    assert_redirected_to locations_path, 'expected redirect to map after conference'
   end
 end

@@ -9,6 +9,6 @@ module LocationsHelper
     href = disabled ? '' : location_passage_path(passage._id)
     method = disabled ? :get : :put
     
-    link_to name, href, :id => passage._id, :method => method, :rel => 'nofollow', :disabled => disabled
+    link_to name, href, :id => passage._id, :method => method, :rel => 'nofollow', :disabled => disabled, :class => 'passage'
   end
 end

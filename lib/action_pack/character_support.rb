@@ -9,7 +9,9 @@ module ActionPack
     
     def current_character
       @current_character ||= Character.find(current_character_id)
-    end    
+      @current_character.last_seen if @current_character
+      @current_character
+    end
     
     def has_character?
       !current_character_id.blank?

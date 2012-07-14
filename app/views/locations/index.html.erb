@@ -1,6 +1,22 @@
 <h1>Location: <%= @location.short_name %></h1>
 
 <div class="map">
+  <% unless @friends.blank? %> 	
+    <p>
+    <ul class='horizontal'>
+	  <li><big>Nearby Friends (<%= @friends.size %>):</big></li>
+      <% @friends.each do |friend| %>
+        <li>
+          <%= image_tag 'placeholder16x16.png', :style => 'width:16px', :align => 'left' %>&nbsp; <%= friend.formal_name %><br />
+          <% if @conferences && @conferences.map {|c| c.character_ids }.flatten.include?(friend._id.to_s) %>
+            <small><em>recently conferred</em></small>
+          <% else %>
+            <small><%= link_to 'confer (+1 clue)', character_conferences_path(friend._id), 'rel' => 'nofollow' %></small>
+          <% end %>
+        </li>
+      <% end %>
+    </ul></p>
+  <% end %>
   <%= image_tag 'maps/arkham.png' %>
 
   <%= link_to_current_location %>

@@ -43,26 +43,3 @@
     </ul>	
   </div>
 <% end %>
-
-
-
-
-
-
-
-<% unless @friends.blank? %>
-  <h3>Nearby Friends</h3>
-  <p>Some of your trusted friends have also come to <%= @location.short_name %> to investigate</p>
-  <ul>
-	<% @friends.each do |friend| %>
-      <li>
-        <%= link_to friend.name, "characters/#{friend._id}" %>&nbsp;&nbsp;&nbsp;
-        <% if @conferences && @conferences.map {|c| c.character_ids }.flatten.include?(friend._id) %>
-          <em>recently conferred</em>
-        <% else %>
-          <%= link_to 'confer with them to gain a clue', character_conferences_path(friend._id), 'rel' => 'nofollow' %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>	
-<% end %>

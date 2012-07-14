@@ -1,6 +1,6 @@
 <h1>
   <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
-  <%= @character.gender == 'female' ? 'Ms' : 'Mr' %>. <%= @character.name %>
+  <%= @character.formal_name %>
 </h1>
 <h5><span class='normal'>Case #</span> <%= @character.user_id %></h5>
 
