@@ -12,6 +12,6 @@ class PassagesController < ApplicationController
       
       current_character.relocate!(params[:id])
     end
-    redirect_to location_path
+    redirect_to locations_path
   end
 end

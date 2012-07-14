@@ -76,7 +76,7 @@ class EncounterTest < ActiveModel::TestCase
   end  
   
   def test_play_with_demise
-    demise = Demise.create!(:_id => 'pathology.madness', :location => 'arkham_sanitarium', :limit => 1)
+    demise = Demise.create!(:_id => 'pathology.madness', :location => 'arkham_sanitarium', :limit => 1, :title => 'test')
     @character.profile.set('location', 'current', 'arkham_northside')
     @character.profile.set('pathology', 'madness', 1)
     path = Path.new(:title => 'test')

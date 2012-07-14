@@ -4,7 +4,7 @@ class Demise
   include MongoMapper::Document
   include ActiveModel::TaggableSupport
   
-  key :title, String
+  key :title, String, :required => true
   key :limit, Integer, :default => 10
   key :description, String
   key :location, String

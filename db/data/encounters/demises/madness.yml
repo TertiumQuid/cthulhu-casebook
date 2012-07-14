@@ -6,11 +6,11 @@ encounters:
     type: fixed
     paths:
          -  _id: 1
-            title: Reintegration Period
+            title: Who Can Analyze Their Delusions is Called a Philosopher
             awards: 
                   - 
-                    _id: location.arkham_downtown
-                    value: 1
+                    _id: location.current
+                    value: arkham_downtown
     requirements: 
                 - 
                   _id: pathology.madness

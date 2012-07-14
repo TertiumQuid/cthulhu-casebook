@@ -19,7 +19,7 @@ class PathsControllerTest < ActionController::TestCase
   end
   
   test 'get show and demise' do
-    demise = Demise.create!(:limit => 10, :_id => 'pathology.madness', :location => 'arkham_sanitarium')
+    demise = Demise.create!(:limit => 10, :_id => 'pathology.madness', :location => 'arkham_sanitarium', :title => 'test')
     encounter = Encounter.find('homecoming')
     encounter.paths.first.awards << Award.new(:_id => 'pathology.madness', :value => demise.limit)
     encounter.save!
@@ -31,7 +31,7 @@ class PathsControllerTest < ActionController::TestCase
   end  
   
   test 'get show with demise' do
-    demise = Demise.create!(:limit => 10, :_id => 'pathology.madness', :location => 'arkham_sanitarium')
+    demise = Demise.create!(:limit => 10, :_id => 'pathology.madness', :location => 'arkham_sanitarium', :title => 'test')
     @character.profile.set('pathology', 'madness', 10)
     @character.profile.save
     encounter = Encounter.find('homecoming')

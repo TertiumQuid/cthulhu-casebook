@@ -9,7 +9,7 @@ encounters:
             title: 33 Degrees of Separation
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: affiliations.entered_apprentice
@@ -18,14 +18,14 @@ encounters:
             title: It Is I
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: affiliations.mystic_bloodline
                     value: 1
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
+                  _id: plots.the_edge_of_darkness
                   value: 1
   unforgivable_bequest_of_a_rueful_dying_man:
     _id: unforgivable_bequest_of_a_rueful_dying_man
@@ -37,11 +37,11 @@ encounters:
             title: Hear the Man's Bequest
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
+                  _id: plots.the_edge_of_darkness
                   value: 2
   the_journal_to_a_dying_mans_apostasy:
     _id: the_journal_to_a_dying_mans_apostasy
@@ -53,11 +53,11 @@ encounters:
             title: I'll Take That
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1                    
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
+                  _id: plots.the_edge_of_darkness
                   value: 3
   key_to_the_clubs_treasury_safe:
     _id: key_to_the_clubs_treasury_safe
@@ -69,15 +69,15 @@ encounters:
             title: I'll Take That
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: belongings.alumni_club_treasury_key
                     value: 1
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
-                  value: 3
+                  _id: plots.the_edge_of_darkness
+                  value: 4
   stele_of_ankh_ef_en_khonsu:
     _id: stele_of_ankh_ef_en_khonsu
     title: Stele of Ankh-ef-en-Khonsu
@@ -88,12 +88,12 @@ encounters:
             title: I'll Take That
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
-                  value: 3
+                  _id: plots.the_edge_of_darkness
+                  value: 5
   an_answer_for_the_unforgivable:
     _id: an_answer_for_the_unforgivable
     title: An Answer for the Unforgivable
@@ -104,7 +104,7 @@ encounters:
             title: Rest In Peace, for I Shall Help
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: plots.a_hapless_stranger_comes_to_arkham
@@ -113,16 +113,15 @@ encounters:
             title: Die in Fear (Then Pursue his Leads in Secret)
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: plots.a_hapless_stranger_comes_to_arkham
                     value: -1
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
+                  _id: plots.the_edge_of_darkness
                   value: 6
-  
   whereabouts_of_the_farmhouse:
     _id: whereabouts_of_the_farmhouse
     title: Whereaabouts of the Farmhouse
@@ -133,14 +132,14 @@ encounters:
             title: Excuse Me, Good Clerk
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
             challenge:
                      _id: skills.bureaucracy
                      difficulty: 1
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
+                  _id: plots.the_edge_of_darkness
                   value: 7
   revelations_of_ankh_ef_en_khonsu:
     _id: revelations_of_ankh_ef_en_khonsu
@@ -152,7 +151,7 @@ encounters:
             title: Those Assiduous Students
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: belongings.revelations_of_ankh_ef_en_khonsu
@@ -164,7 +163,7 @@ encounters:
             title: University Library, Egyptology
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: belongings.revelations_of_ankh_ef_en_khonsu
@@ -176,7 +175,7 @@ encounters:
             title: Professor Rice can Help
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: belongings.revelations_of_ankh_ef_en_khonsu
@@ -186,8 +185,8 @@ encounters:
                      difficulty: 3
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
-                  value: 7
+                  _id: plots.the_edge_of_darkness
+                  value: 8
   lost_west_dormitory_treasury_room:
     _id: lost_west_dormitory_treasury_room
     title: Lost West Dormitory Treasury Room
@@ -198,7 +197,7 @@ encounters:
             title: A Building Inspection
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
             challenge:
                      _id: skills.bureaucracy
@@ -207,7 +206,7 @@ encounters:
             title: Sneaking in the Upper Storm Windows
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
             challenge:
                      _id: skills.clandestinity
@@ -216,7 +215,7 @@ encounters:
             title: Fast Times and Fighting Drunk
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: belongings.alumni_club_summoning_codex
@@ -226,8 +225,8 @@ encounters:
                      difficulty: 2
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
-                  value: 7
+                  _id: plots.the_edge_of_darkness
+                  value: 9
                 - 
                   _id: belongings.alumni_club_treasury_key
                   value: 1
@@ -241,7 +240,7 @@ encounters:
             title: Some Local Advice
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1 
             requirements: 
                         - 
@@ -250,7 +249,7 @@ encounters:
                           value: -3
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
+                  _id: plots.the_edge_of_darkness
                   value: 10
   the_unredeemed_farmhouse:
     _id: the_unredeemed_farmhouse
@@ -262,11 +261,11 @@ encounters:
             title: Walk the Blighted Grounds
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
+                  _id: plots.the_edge_of_darkness
                   value: 11
   repair_the_farmhouse_portal_wards:
     _id: repair_the_farmhouse_portal_wards
@@ -278,7 +277,7 @@ encounters:
             title: Just Retrace What's There
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
             challenge:
                      _id: skills.adventure
@@ -287,14 +286,14 @@ encounters:
             title: Consult the Codex
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1     
             challenge:
                      _id: skills.sorcery
                      difficulty: 2
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
+                  _id: plots.the_edge_of_darkness
                   value: 12
   subdue_the_deranged_hobo:
     _id: subdue_the_deranged_hobo
@@ -306,7 +305,7 @@ encounters:
             title: No Time for Mercy
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
             challenge:
                      _id: skills.conflict
@@ -315,15 +314,48 @@ encounters:
             title: Talk Him Down
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1    
             challenge:
                      _id: skills.psychology
                      difficulty: 2
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
+                  _id: plots.the_edge_of_darkness
                   value: 13
+  whats_in_the_cigar_box_in_wall:
+    _id: whats_in_the_cigar_box_in_wall
+    title: What's in the Cigar Box in the Wall
+    location: arkham_outskirts
+    type: plot
+    paths:
+         -  _id: 1
+            title: Reach Into the Dark Recess
+            awards: 
+                  - 
+                    _id: research.die_geheimnisvollen_wurm
+                    value: 1
+                  - 
+                    _id: pathology.madness
+                    value: 2
+            challenge:
+                     _id: skills.adventure
+                     difficulty: 2
+         -  _id: 2
+            title: Seal it Away, Just in Case
+            awards: 
+                  - 
+                    _id: belongings.lord_tennyson_cigar
+                    value: 5
+    requirements: 
+                - 
+                  _id: plots.the_edge_of_darkness
+                  is: gt
+                  value: 12
+                - 
+                  _id: plots.the_edge_of_darkness
+                  is: lt
+                  value: 14
   defend_the_farmhouse_against_the_carrion_undead:
     _id: defend_the_farmhouse_against_the_carrion_undead
     title: Defend the Farmhouse Against the Carrion Undead
@@ -334,7 +366,7 @@ encounters:
             title: Farm Axe to the Skull
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
             challenge:
                      _id: skills.conflict
@@ -343,7 +375,7 @@ encounters:
             title: Sever Their Star Quality
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1    
             challenge:
                      _id: skills.sorcery
@@ -352,15 +384,15 @@ encounters:
             title: Hold Them Back By Firewall
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1        
             challenge:
                      _id: skills.adventure
                      difficulty: 2                    
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
-                  value: 14     
+                  _id: plots.the_edge_of_darkness
+                  value: 15
   perform_the_summoning_ceremony_of_the_stele:
     _id: perform_the_summoning_ceremony_of_the_stele
     title: Perform the Summoning Ceremony of the Stele
@@ -371,15 +403,15 @@ encounters:
             title: Summon the Lurking Evil
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
             challenge:
                      _id: skills.sorcery
                      difficulty: 3
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
-                  value: 15
+                  _id: plots.the_edge_of_darkness
+                  value: 16
                 - 
                   _id: belongings.revelations_of_ankh_ef_en_khonsu
                   value: 1
@@ -416,13 +448,13 @@ encounters:
             title: Let Them Die As Bait
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
          -  _id: 2
             title: They Do Not Understand
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
             challenge:
                      _id: skills.adventure
@@ -431,15 +463,15 @@ encounters:
             title: Only Sorcery Can Save Them
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1        
             challenge:
                      _id: skills.sorcery
                      difficulty: 6
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
-                  value: 16
+                  _id: plots.the_edge_of_darkness
+                  value: 17
   banish_the_farmhouse_evil:
     _id: banish_the_farmhouse_evil
     title: Banish the Farmohouse Evil
@@ -450,7 +482,7 @@ encounters:
             title: Put the Farmstead to Flames
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: plots.a_hapless_stranger_comes_to_arkham
@@ -462,7 +494,7 @@ encounters:
             title: Bind the Evil With Your Life
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: plots.a_hapless_stranger_comes_to_arkham
@@ -474,7 +506,7 @@ encounters:
             title: Break the Lurker's Materialization Seals
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: plots.a_hapless_stranger_comes_to_arkham
@@ -486,7 +518,7 @@ encounters:
             title: Recite the Revelations of the Stele
             awards: 
                   - 
-                    _id: plots.plots.the_edge_of_darkness
+                    _id: plots.the_edge_of_darkness
                     value: 1
                   - 
                     _id: plots.a_hapless_stranger_comes_to_arkham
@@ -496,5 +528,5 @@ encounters:
                      difficulty: 4
     requirements: 
                 - 
-                  _id: plots.plots.the_edge_of_darkness
-                  value: 17
+                  _id: plots.the_edge_of_darkness
+                  value: 18

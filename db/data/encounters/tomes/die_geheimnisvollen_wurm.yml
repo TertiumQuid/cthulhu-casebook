@@ -1,0 +1,78 @@
+encounters:
+  die_geheimnisvollen_wurm:
+    _id: die_geheimnisvollen_wurm
+    title: Die Geheimnisvollen Wurm
+    location: lodgings
+    type: plot    
+    paths:
+          -  _id: 1
+             title: Knowledge of the Dark Saracenic Arts
+             challenge:
+                      _id: skills.scholarship
+                      difficulty: 7
+             awards: 
+                   - 
+                     _id: tomes.die_geheimnisvollen_wurm
+                     value: 1    
+                   - 
+                     _id: research.die_geheimnisvollen_wurm
+                     value: -40
+                   -    
+                     _id: pathology.madness
+                     value: 12
+    requirements: 
+                - 
+                  _id: research.die_geheimnisvollen_wurm
+                  is: gt
+                  value: 39
+  studying_die_geheimnisvollen_wurm:
+    _id: studying_die_geheimnisvollen_wurm
+    title: Studying Die Geheimnisvollen Wurm
+    location: lodgings
+    type: plot    
+    paths:
+         -  _id: 1
+            title: Curse These Diabloic Glyphs
+            challenge:
+                     _id: skills.scholarship
+                     difficulty: 4
+            awards: 
+                  - 
+                    _id: research.die_geheimnisvollen_wurm
+                    value: 1
+         -  _id: 2
+            title: Curse This Saracenic Symbology
+            awards: 
+                  -    
+                    _id: research.die_geheimnisvollen_wurm
+                    value: 5
+            challenge:
+                     _id: skills.scholarship
+                     difficulty: 7
+            requirements:
+                        -
+                          _id: skills.scholarship
+                          is: gt
+                          value: 9
+         -  _id: 3
+            title: Ask an Erudite Familiar to Help
+            awards: 
+                  -    
+                    _id: research.die_geheimnisvollen_wurm
+                    value: 5
+                  -    
+                    _id: pathology.madness
+                    value: 1       
+            challenge:
+                     _id: skills.sorcery
+                     difficulty: 2
+            requirements:
+                        -
+                          _id: skills.sorcery
+                          is: gt
+                          value: 4
+    requirements: 
+                - 
+                  _id: research.die_geheimnisvollen_wurm
+                  is: lt
+                  value: 40

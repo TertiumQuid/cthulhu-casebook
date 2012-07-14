@@ -75,7 +75,7 @@ class ProfileTest < ActiveModel::TestCase
   
   def test_check_for_demise
     character = Character.create!(:name => 'test')
-    demise = Demise.create!(:_id => 'pathology.wounds', :limit => 10, :location => 'st_marys_hospital')
+    demise = Demise.create!(:_id => 'pathology.wounds', :limit => 10, :location => 'st_marys_hospital', :title => 'test')
     profile = Profile.create!(:character => character)
     
     profile.set('pathology', 'wounds', 10)
@@ -85,7 +85,7 @@ class ProfileTest < ActiveModel::TestCase
   
   def test_current_demise
     character = Character.create!(:name => 'test')
-    demise = Demise.create!(:_id => 'pathology.wounds', :limit => 10)
+    demise = Demise.create!(:_id => 'pathology.wounds', :limit => 10, :title => 'test')
     profile = Profile.create!(:character => character)
     assert_nil profile.send(:current_demise), 'expected no demise without respective tags'
     

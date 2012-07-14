@@ -15,11 +15,13 @@
       <% elsif @path.develops_experience? %>
         <li><%= "+1 experience in #{@path.challenge.tag}" %></li>
       <% end %>
-	
+
 	  <% @path.awards_gained.select {|a| a.display? }.each do |award| %>
         <li>
           <% if award.tagging == 'location' %>
             <%= "you moved to #{award.value.titleize}" %>
+          <% elsif award.tagging == 'research' %>
+            <%= "+#{award.value} toward #{award.tag.titleize}" %>
           <% else %>
             <%= "+#{award.value} #{award.tag.titleize}" %>
           <% end %>
@@ -39,7 +41,7 @@
 <% end %>
 
 <p>	
-  <%= link_to location_path, :class => 'copperplate' do %>	
+  <%= link_to @encounter.location == 'lodgings' ? messages_path : location_path, :class => 'copperplate' do %>	
     <span class='button continue'>Continue</span>
   <% end %>
 </p>

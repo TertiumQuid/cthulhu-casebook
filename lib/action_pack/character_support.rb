@@ -31,6 +31,10 @@ module ActionPack
       redirect_to new_character_path and return false unless has_character? || requested_new_character_path? || allow_unauthenticated?
     end
 
+    def require_no_demise
+      redirect_to location_path and return false if current_character && ['arkham_sanitarium', 'st_marys_hospital'].include?(current_character.location.value)
+    end
+
     def require_monster
       redirect_to location_path and return false unless current_character && current_character.fighting_monster?
     end

@@ -152,7 +152,7 @@ monsters:
     penalties:
               -
                 _id: pathology.wounds
-                value: 25
+                value: 15
               -
                 _id: pathology.madness
                 value: 10

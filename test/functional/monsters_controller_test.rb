@@ -61,7 +61,7 @@ class MonstersControllerTest < ActionController::TestCase
   
   test 'get show with demise' do
     setup_fight
-    demise = Demise.create!(:limit => 10, :_id => 'pathology.madness', :location => 'arkham_sanitarium')
+    demise = Demise.create!(:limit => 10, :_id => 'pathology.madness', :location => 'arkham_sanitarium', :title => 'test')
     @character.profile.set('pathology', 'madness', 10)
     @character.profile.save
     
@@ -70,6 +70,7 @@ class MonstersControllerTest < ActionController::TestCase
     assert_equal true, assigns(:success), 'expected success'
     assert !assigns(:demise).blank?, 'expected demise assigned'
     assert_equal demise.location, @character.reload.location.value, 'expected new location after demise'
+    assert_select "a[href=?]", demise_path(demise._id.gsub(/\./, '_'))
   end 
   
   test 'get show and relocate' do

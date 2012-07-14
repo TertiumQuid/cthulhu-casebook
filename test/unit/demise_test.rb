@@ -20,8 +20,8 @@ class DemiseTest < ActiveModel::TestCase
   end
   
   def test_locations
-    Demise.create!(:location => 'test')
-    Demise.create!(:location => 'test')
+    Demise.create!(:location => 'test', :title => 'test')
+    Demise.create!(:location => 'test', :title => 'test')
     assert_equal ['test'], Demise.locations, 'expected all and only unique demise locations mapped'
   end
 end

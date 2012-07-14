@@ -1,7 +1,7 @@
 encounters:
   fine_just_fine:
     _id: fine_just_fine
-    title: fine_just_fine
+    title: Fine, Just Fine
     location: st_marys_hospital
     type: fixed
     paths:
@@ -9,8 +9,8 @@ encounters:
             title: You're fine, just fine; there's work to do
             awards: 
                   - 
-                    _id: location.arkham_uptown
-                    value: 1
+                    _id: location.current
+                    value: arkham_uptown
     requirements: 
                 - 
                   _id: pathology.wounds

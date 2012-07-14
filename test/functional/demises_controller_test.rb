@@ -4,7 +4,7 @@ class DemisesControllerTest < ActionController::TestCase
   tests DemisesController
   
   def setup
-    Demise.create!(:limit => 10, :_id => 'pathology.madness')
+    Demise.create!(:limit => 10, :_id => 'pathology.madness', :title => 'test')
     @character = login!
     @character.profile.set('pathology', 'madness', 10)
     @character.profile.save

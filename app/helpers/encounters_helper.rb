@@ -10,4 +10,8 @@ module EncountersHelper
   def plot_encounters
     @encounters.blank? ? [] : @encounters.select { |e| e.type == 'plot' && e.available_for?(current_character) }
   end  
+  
+  def lodgings_encounters
+    @encounters.blank? ? [] : @encounters.select { |e| e.location == 'lodgings' && e.available_for?(current_character) }
+  end  
 end
