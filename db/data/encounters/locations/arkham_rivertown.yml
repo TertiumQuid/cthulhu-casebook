@@ -3,10 +3,15 @@ encounters:
     _id: arkham_general_store
     title: Arkham General Store
     location: arkham_rivertown
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed
     paths: 
          -  _id: 1
             title: Winchester Shotgun
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: equipment.winchester_shotgun
@@ -18,6 +23,7 @@ encounters:
                     value: -60
          -  _id: 2
             title: .38 Reolver
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards:
                   - 
                     _id: equipment.38_revolver
@@ -29,6 +35,7 @@ encounters:
                     value: -20
          -  _id: 3
             title: Shovel
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.shovel
@@ -40,6 +47,7 @@ encounters:
                     value: -5
          -  _id: 4
             title: Hooded Lantern
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.lantern
@@ -51,6 +59,7 @@ encounters:
                     value: -5
          -  _id: 5
             title: Deck of Hoyle Playing Cards
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.deck_of_playing_cards

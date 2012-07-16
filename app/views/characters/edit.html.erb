@@ -1,89 +1,106 @@
-<h1>
-  <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
-  <%= @character.formal_name %>
-</h1>
-<h5><span class='normal'>Case #</span> <%= @character.user_id %></h5>
+<section class='row'>
+  <div class="span7">	
+    <h1>    
+      <span class='pull-left'><%= image_tag 'placeholder300x300.png', :width => 64, :height => 64 %>&nbsp;</span>
+      <span><%= @character.formal_name %></span>
+    </h1>
+    <p>Case # <strong><%= @character.user_id %></strong> (share with friends)</p>
+    <p>Currently at: <strong><%= @character.location.value.titleize %></strong></p>
+  </div>	
 
-<br />
-
-<ul class='horizontal'>
-  <li class='half'>	
-    <ul class='plain'>
-      <li><h4>Skills</h4></li>
-      <% @character.profile.find_tagging('skills').tags.each do |tag| %>
-        <li>
-          <label class='third'><%= tag._id.titleize %></label> <strong><%= tag.count > 9 ? tag.count : "0#{tag.count}" %></strong>
-          &nbsp;&nbsp;
-          <progress max="100" value="<%= @character.skill_progress(tag._id) %>"></progress>
-        </li>
-      <% end %>
-    </ul>
-  </li>
-  <li class='half'>
-    <h4>Pathology</h4>
-    <ul class='plain'>
-      <% @character.profile.find_tagging('pathology').tags.each do |tag| %>
-        <li><%= tag._id.titleize  %> <strong><%= tag.value %></strong> <progress max="20" value="<%= tag.value %>"></progress></li>
-      <% end %>
-    </ul>
-
-    <% if @character.profile.find_tagging('knowledge') %>
-      <h4>Knowledge</h4>
-      <ul class='plain'>
-        <% @character.profile.find_tagging('knowledge').tags.each do |tag| %>
-          <li><%= tag._id.titleize  %> <%= tag.value %></li>
+  <div class="span5">	
+    <div class='well well-condensed'>
+      <h3>Pathology</h3>
+      <dl class="dl-horizontal">
+        <% @character.profile.find_tagging('pathology').tags.each do |tag| %>
+          <dt><%= tag._id.titleize  %></dt> 
+          <dd>
+			<div class="progress progress-labeled progress-<%= tag.count < 10 ? 'warning' : 'danger' %>">
+			  <div class="bar" style="width: <%= [((tag.value.to_f / 20.0) * 100).to_i, 1].max %>%;"></div>
+              <big><%= tag.value %></big>
+			</div>
+          </dd>
         <% end %>
-      </ul>
-    <% end %>
-  </li>
-</ul>
+      </dl>	
+    </div>	
+  </div>		
+</section>
 
-<ul class='horizontal'>
-  <li class='third'>		
-    <h4>Trappings</h4>
-    <p>Equip items to gain their benefits</p>
-    <div>
-      <% if right_hand = @character.profile.trappings.get('right_hand')%> 
-        <p>Right Hand: <%= right_hand.title %> <%= link_to '[unequip]', equipment_trapping_path(right_hand._id, 'right_hand'), :method => :delete %></p>
-      <% else %>
-        <p>Right Hand: empty</p>
-      <% end %>
+<section>
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#skills" data-toggle="tab">Skills</a></li>
+      <li><a href="#belongings" data-toggle="tab">Items</a></li>
+      <li><a href="#equipment" data-toggle="tab">Gear</a></li>
+      <li><a href="#knowledge" data-toggle="tab">Knowledge</a></li>
+    </ul>
+  </div>	
 
-      <% if left_hand = @character.profile.trappings.get('left_hand')%> 
-        <p>Left Hand: <%= left_hand.title %> <%= link_to '[unequip]', equipment_trapping_path(left_hand._id, 'left_hand'), :method => :delete %></p>
-      <% else %>
-        <p>Left Hand: empty</p>
-      <% end %>
+  <div class="tab-content">
+    <div class="tab-pane active" id='skills'>
+      <div class='well well-condensed'>		
+        <h3>Skills</h3>
+        <dl class="dl-horizontal">
+          <% @character.profile.find_tagging('skills').tags.each do |tag| %>
+            <dt><%= tag._id.titleize  %>: <big>0<%= tag.value %></big></dt> 
+            <dd>
+		      <div class="progress progress-labeled progress-success">
+		  	    <div class="bar" style="width: <%= @character.skill_progress(tag._id) %>%;"></div>
+              </div>
+            </dd>
+          <% end %>
+        </dl>
+      </div>	
+    </div>	
+
+    <div class="tab-pane" id='belongings'>
+      <div class='well well-condensed'>		
+        <h3>Belongings</h3>
+        <ul class="thumbnails">
+          <% @character.profile.find_tagging('belongings').tags.each do |tag| %>
+            <li>
+              <div class="thumbnail">                
+                <h5><%= simple_format word_wrap("#{tag.value} #{tag._id.titleize}", :line_width => 15) %>	</h5>
+                <%= image_tag 'placeholder64x64.png', :class => 'picture-frame' %>
+              </div>
+            </li>	
+          <% end %>
+        </ul>
+      </div>	
     </div>
-  </li>
-  <li class='two-thirds'>
-    <h4>Equipment</h4>
-    <% if @character.profile.find_tagging('equipment').tags.blank? %>
-      <p>You don't own any equipment. You can purchase items from various merchants and discover them during your investigations.</p>
-    <% else %>
-      <ul class='plain'>
-        <% @character.profile.find_tagging('equipment').tags.each do |tag| %>
-          <li>
-            <%= tag._id.titleize %><br />
-            <% if equipment = @equipment.select{|e| e._id == tag._id}.first %>
-              <em><%= equipment.modifier_display %></em>
-              <% if @character.profile.trappings.location_of(equipment._id).blank? %>
-                <%= link_to '[equip]', equipment_trapping_path(equipment._id, equipment.location), :method => :put %>
-              <% end %>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-  </li>
-</ul>
 
-<h4>Belongings</h4>
-<ul class='horizontal'>
-  <% @character.profile.find_tagging('belongings').tags.each do |tag| %>
-    <li class='badge'>
-      <%= image_tag 'placeholder64x64.png', :class => 'picture-frame' %>
-      <big><%= simple_format word_wrap("#{tag.value} #{tag._id.titleize}", :line_width => 15) %></big>
-    </li>
-  <% end %>
-</ul>
+    <div class="tab-pane fade" id='equipment'>
+      <div class='well well-condensed'>
+        <h3>Gear</h3>
+        <ul class="thumbnails">
+          <% @character.profile.find_tagging('equipment').tags.each do |tag| %>
+            <li>
+              <div class="thumbnail">                
+                <h5><%= simple_format word_wrap("#{tag.value} #{tag._id.titleize}", :line_width => 15) %>	</h5>
+                <%= image_tag 'placeholder64x64.png', :class => 'picture-frame' %>
+
+	            <% if equipment = @equipment.select{|e| e._id == tag._id}.first %>
+	              <p><%= equipment.modifier_display %></p>
+	              <% if @character.profile.trappings.location_of(equipment._id).blank? %>
+	                <%= link_to 'Equip This', equipment_trapping_path(equipment._id, equipment.location), :method => :put, :class => 'btn btn-info btn-small' %>
+                  <% else %>
+                    <%= link_to 'Equipped', 'javascript:void(0)', :class => 'btn btn  btn-small disabled' %>
+	              <% end %>
+	            <% end %>
+              </div>
+            </li>	
+          <% end %>
+        </ul>
+      </div>	
+    </div>
+
+    <div class="tab-pane fade" id='knowledge'>
+        <dl class="dl-horizontal">
+          <% @character.profile.find_tagging('knowledge').tags.each do |tag| %>
+            <dt><%= tag._id.titleize  %>: </dt> 
+            <dd><big>0<%= tag.value %></big></dd>
+          <% end %>
+        </dl>
+    </div>	
+  </div>
+</section>

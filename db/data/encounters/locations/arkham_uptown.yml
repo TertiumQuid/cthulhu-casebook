@@ -3,10 +3,16 @@ encounters:
     _id: st_marys_hospital
     title: St. Mary's Hospital
     location: arkham_uptown
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed    
     paths: 
          -  _id: 1
             title: The School of Medicine
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: pathology.wounds
@@ -18,6 +24,8 @@ encounters:
                     value: 1                    
          -  _id: 2
             title: A matter of life and death!
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: pathology.wounds

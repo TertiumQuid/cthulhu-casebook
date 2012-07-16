@@ -3,10 +3,16 @@ encounters:
     _id: long_lost_blood
     title: Long Lost Blood
     location: arkham_northside
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.        
     type: plot    
     paths:
          -  _id: 1
             title: 33 Degrees of Separation
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -16,6 +22,8 @@ encounters:
                     value: 1
          -  _id: 2
             title: It Is I
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -31,10 +39,16 @@ encounters:
     _id: unforgivable_bequest_of_a_rueful_dying_man
     title: Unforgivable Bequest of a Rueful, Dying Man
     location: arkham_uptown
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.        
     type: plot
     paths:
          -  _id: 1
             title: Hear the Man's Bequest
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -47,10 +61,16 @@ encounters:
     _id: the_journal_to_a_dying_mans_apostasy
     title: The Journal to a Dying Man's Apostasy
     location: arkham_uptown
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: plot    
     paths:
          -  _id: 1
             title: I'll Take That
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -63,10 +83,16 @@ encounters:
     _id: key_to_the_clubs_treasury_safe
     title: Key to the Club's Treasury Safe
     location: arkham_uptown
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.            
     type: plot    
     paths:
          -  _id: 1
             title: I'll Take That
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -82,10 +108,16 @@ encounters:
     _id: stele_of_ankh_ef_en_khonsu
     title: Stele of Ankh-ef-en-Khonsu
     location: arkham_uptown
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: plot    
     paths:
          -  _id: 1
             title: I'll Take That
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -98,10 +130,16 @@ encounters:
     _id: an_answer_for_the_unforgivable
     title: An Answer for the Unforgivable
     location: arkham_uptown
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: plot    
     paths:
          -  _id: 1
             title: Rest In Peace, for I Shall Help
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -111,6 +149,8 @@ encounters:
                     value: -1
          -  _id: 2
             title: Die in Fear (Then Pursue his Leads in Secret)
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -126,10 +166,17 @@ encounters:
     _id: whereabouts_of_the_farmhouse
     title: Whereaabouts of the Farmhouse
     location: arkham_downtown
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.           
     type: plot    
     paths:
          -  _id: 1
             title: Excuse Me, Good Clerk
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -145,10 +192,17 @@ encounters:
     _id: revelations_of_ankh_ef_en_khonsu
     title: Revelations of Ankh-ef-en-Khonsu
     location: arkham_miskatonic_university
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.            
     type: plot    
     paths:
          -  _id: 1
             title: Those Assiduous Students
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -161,6 +215,9 @@ encounters:
                      difficulty: 2
          -  _id: 2
             title: University Library, Egyptology
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -173,6 +230,9 @@ encounters:
                      difficulty: 3       
          -  _id: 3
             title: Professor Rice can Help
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -191,10 +251,17 @@ encounters:
     _id: lost_west_dormitory_treasury_room
     title: Lost West Dormitory Treasury Room
     location: arkham_miskatonic_university
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.           
     type: plot    
     paths:
          -  _id: 1
             title: A Building Inspection
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -204,6 +271,9 @@ encounters:
                      difficulty: 2
          -  _id: 2
             title: Sneaking in the Upper Storm Windows
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -213,6 +283,9 @@ encounters:
                      difficulty: 2
          -  _id: 3
             title: Fast Times and Fighting Drunk
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -234,10 +307,16 @@ encounters:
     _id: ross_corner
     title: Ross's Corner
     location: arkham_outskirts
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: plot    
     paths:
          -  _id: 1
             title: Some Local Advice
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -255,10 +334,16 @@ encounters:
     _id: the_unredeemed_farmhouse
     title: The Unredeemed Farmhouse
     location: arkham_outskirts
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.           
     type: plot    
     paths:
          -  _id: 1
             title: Walk the Blighted Grounds
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -271,10 +356,17 @@ encounters:
     _id: repair_the_farmhouse_portal_wards
     title: Repair The Farmhouse Portal Wards
     location: arkham_outskirts
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.           
     type: plot
     paths:
          -  _id: 1
             title: Just Retrace What's There
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -284,6 +376,9 @@ encounters:
                      difficulty: 2
          -  _id: 2
             title: Consult the Codex
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -299,10 +394,17 @@ encounters:
     _id: subdue_the_deranged_hobo
     title: Subdue the Deranged Hobo
     location: arkham_outskirts
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.            
     type: plot
     paths:
          -  _id: 1
             title: No Time for Mercy
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -312,6 +414,9 @@ encounters:
                      difficulty: 1
          -  _id: 2
             title: Talk Him Down
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -327,10 +432,17 @@ encounters:
     _id: whats_in_the_cigar_box_in_wall
     title: What's in the Cigar Box in the Wall
     location: arkham_outskirts
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.            
     type: plot
     paths:
          -  _id: 1
             title: Reach Into the Dark Recess
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: research.die_geheimnisvollen_wurm
@@ -343,6 +455,8 @@ encounters:
                      difficulty: 2
          -  _id: 2
             title: Seal it Away, Just in Case
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.lord_tennyson_cigar
@@ -360,10 +474,17 @@ encounters:
     _id: defend_the_farmhouse_against_the_carrion_undead
     title: Defend the Farmhouse Against the Carrion Undead
     location: arkham_outskirts
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.            
     type: plot
     paths:
          -  _id: 1
             title: Farm Axe to the Skull
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -373,6 +494,9 @@ encounters:
                      difficulty: 3
          -  _id: 2
             title: Sever Their Star Quality
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -382,6 +506,9 @@ encounters:
                      difficulty: 2
          -  _id: 3
             title: Hold Them Back By Firewall
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -397,10 +524,17 @@ encounters:
     _id: perform_the_summoning_ceremony_of_the_stele
     title: Perform the Summoning Ceremony of the Stele
     location: arkham_outskirts
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.            
     type: plot
     paths:
          -  _id: 1
             title: Summon the Lurking Evil
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -442,16 +576,25 @@ encounters:
     _id: pacify_the_credulous_mob_of_farmers
     title: Pacify the Credulous Mob of Farmers
     location: arkham_outskirts
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.        
     type: plot
     paths:
          -  _id: 1
             title: Let Them Die As Bait
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
                     value: 1
          -  _id: 2
             title: They Do Not Understand
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -461,6 +604,9 @@ encounters:
                      difficulty: 3
          -  _id: 3
             title: Only Sorcery Can Save Them
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -476,10 +622,17 @@ encounters:
     _id: banish_the_farmhouse_evil
     title: Banish the Farmohouse Evil
     location: arkham_outskirts
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.            
     type: plot
     paths:
          -  _id: 1
             title: Put the Farmstead to Flames
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -492,6 +645,7 @@ encounters:
                      difficulty: 4
          -  _id: 2
             title: Bind the Evil With Your Life
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -504,6 +658,9 @@ encounters:
                      difficulty: 4
          -  _id: 3
             title: Break the Lurker's Materialization Seals
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness
@@ -516,6 +673,9 @@ encounters:
                      difficulty: 4
          -  _id: 4
             title: Recite the Revelations of the Stele
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: plots.the_edge_of_darkness

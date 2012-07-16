@@ -3,10 +3,16 @@ encounters:
     _id: szymanskis_boarding_house
     title: Szymanski's Boarding House
     location: arkham_southside
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed
     paths: 
          -  _id: 1
             title: A Dingy Roost in a Polack Nest
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: lodgings.current
@@ -19,6 +25,8 @@ encounters:
 
          -  _id: 2
             title: Down With Bolshevism!
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                    - 
                      _id: lodgings.current
@@ -41,10 +49,17 @@ encounters:
     _id: arkahm_southside_gym
     title: Southside Gym
     location: arkham_southside
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed    
     paths: 
          -  _id: 1
             title: Boxing the Rocks
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: pathology.wounds
@@ -54,6 +69,9 @@ encounters:
                      difficulty: 1                     
          -  _id: 2
             title: Training With Luca Maruzzo
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: pathology.wounds
@@ -68,6 +86,9 @@ encounters:
                           value: 4
          -  _id: 3
             title: Betting the Rocks
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: belongings.american_dollars

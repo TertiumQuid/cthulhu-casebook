@@ -15,8 +15,9 @@
       <% end %>
     </ul></p>
   <% end %>
+<span class='thumbnail'>
   <%= image_tag 'maps/arkham.png' %>
-
+</span>
   <%= link_to_current_location %>
   <% if @location.passages.select{|p| p.available_for?(current_character) }.size > 0 %>
     <% @location.passages.each do |passage| %>

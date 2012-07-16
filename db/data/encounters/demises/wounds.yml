@@ -7,6 +7,8 @@ encounters:
     paths:
          -  _id: 1
             title: You're fine, just fine; there's work to do
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: location.current
@@ -23,6 +25,8 @@ encounters:
     paths:
          -  _id: 1
             title: Rip the Drip Cords From Your Body
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: pathology.madness
@@ -43,6 +47,8 @@ encounters:
     paths:
          -  _id: 1
             title: Heed the Lessons of the Great War
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: pathology.madness

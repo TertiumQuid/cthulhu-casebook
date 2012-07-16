@@ -1,4 +1,20 @@
 equipment:
+  parasol:
+    _id: umbrella
+    title: Umbrella
+    location: hand
+    modifiers:
+             - 
+               _id: 'skills.adventure'
+               value: 1
+  umbrella:
+    _id: umbrella
+    title: Umbrella
+    location: hand 
+    modifiers:
+             - 
+               _id: 'skills.adventure'
+               value: 1      
   winchester_shotgun:
     _id: winchester_shotgun
     title: Winchester Shotgun

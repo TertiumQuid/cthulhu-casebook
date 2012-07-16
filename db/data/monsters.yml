@@ -3,6 +3,10 @@ monsters:
     _id: gargoyle
     name: Gargoyle
     prevalence: 3
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_miskatonic_university, arkham_french_hill]
     penalties:
               -
@@ -15,6 +19,10 @@ monsters:
     _id: acolyte
     name: Acolyte
     prevalence: 10
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_northside, arkham_miskatonic_university, arkham_french_hill, arkham_southside]
     penalties:
               -
@@ -24,6 +32,10 @@ monsters:
     _id: ghost
     name: Ghost
     prevalence: 10
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_northside, arkham_uptown, arkham_miskatonic_university, arkham_french_hill, arkham_southside]
     penalties:
               -
@@ -33,6 +45,10 @@ monsters:
     _id: banshee
     name: Banshee
     prevalence: 5
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_uptown, arkham_rivertown]
     penalties:
               -
@@ -45,6 +61,10 @@ monsters:
     _id: spectral_hunter
     name: Spectral Hunter
     prevalence: 10
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_northside, arkham_southside, arkham_french_hill, arkham_southside]
     penalties:
               -
@@ -57,6 +77,10 @@ monsters:
     _id: druid
     name: Druid
     prevalence: 10
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_northside, arkham_southside]
     penalties:
               -
@@ -69,6 +93,10 @@ monsters:
     _id: deep_one
     name: Deep One
     prevalence: 10
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_rivertown]
     penalties:
               -
@@ -81,6 +109,10 @@ monsters:
     _id: werewolf
     name: Werewolf
     prevalence: 10
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_french_hill, arkham_southside, arkham_rivertown, arkham_northside]
     penalties:
               -
@@ -96,6 +128,10 @@ monsters:
     _id: nightgaunt
     name: Nightgaunt
     prevalence: 5
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_french_hill, arkham_southside, arkham_miskatonic_university, arkham_rivertown]
     penalties:
               -
@@ -105,6 +141,10 @@ monsters:
     _id: ghoul
     name: Ghoul
     prevalence: 15
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_french_hill, arkham_merchant_district, arkham_rivertown, arkham_southside, arkham_northside]
     penalties:
               -
@@ -120,6 +160,10 @@ monsters:
     _id: lunatic
     name: Lunatic
     prevalence: 25
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_northside, arkham_downtown, arkham_rivertown, arkham_southside, arkham_uptown, arkham_miskatonic_university]
     penalties:
               -
@@ -129,6 +173,10 @@ monsters:
     _id: witch
     name: Witch
     prevalence: 10    
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_french_hill, arkham_miskatonic_university]
     penalties:
               -
@@ -148,6 +196,10 @@ monsters:
     _id: warlock
     name: Warlock
     prevalence: 3    
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor.    
     locations: [arkham_french_hill]
     penalties:
               -

@@ -1,7 +1,58 @@
-<h1><%= @encounter.title %></h1>
-<p><%= @encounter.description %></p>
-	
-<p><%= @path.title %></p>
+<section>
+  <div>
+    <h1>    
+      <span class='pull-left'><%= image_tag 'placeholder300x300.png', :width => 96, :height => 64 %>&nbsp;</span>
+      <span><%= @encounter.title %></span>
+      <small><%= @path.title %></small>
+    </h1>    
+    <p><%= simple_format @path.text %></p>
+    <br />
+  </div>
+</section>
+
+<section>
+  <blockquote>
+    <% if @success %>
+      <div class='alert-success well'>      
+        <big class="label label-success">Success !</big>
+
+        <p class='lead'><%= simple_format @path.success_text %></p>	
+        <br />
+        <% unless @path.awards_gained.blank? %>
+          <ul class="unstyled">
+		    <% if @path.develops_experience? && current_character.profile.get('experience', @path.challenge.tag).count == 0 %>
+              <li><i class='icon-star'></i> <span class="label label-info">+1 skill in <%= @path.challenge.tag.upcase %></span></dt>
+            <% elsif @path.develops_experience? %>
+              <li><i class='icon-star-empty'></i> <span class="label label-info">+1 experience in <%= @path.challenge.tag.upcase %></span></dt>
+            <% end %>          	
+          </ul>
+        <% end %>
+      </div>
+    <% else %>
+      <div class='alert-error well'>      
+        <big class="label label-important">Failure !</big>	
+        <p class='lead'><%= simple_format @path.failure_text %></p>
+      </div>
+    <% end %>
+  </blockquote>
+
+  <p>
+    <%= link_to encounter_path(@encounter), 
+                :class => 'btn btn-info btn-large input-small' do %>	
+      <i class='icon-repeat'></i> Try Again
+    <% end %>	
+    <%= link_to @encounter.location == 'lodgings' ? messages_path : location_path, 
+                :class => 'btn btn-info btn-large input-medium' do %>	
+      Continue <i class='icon-forward'></i>
+    <% end %>
+  <p>
+</section>
+
+
+
+
+
+<div style='display:none'>
 
 <p><big><%= @success ? 'Success' : 'Failure' %></big></p>
 <p><%= @success ? @path.success_text : @path.failure_text %></p>
@@ -45,3 +96,4 @@
     <span class='button continue'>Continue</span>
   <% end %>
 </p>
+</div>

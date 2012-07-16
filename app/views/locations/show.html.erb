@@ -1,45 +1,53 @@
-<h1>
-  <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
-  <%= @location.long_name %>
-</h1>
-<p><%= @location.text %><br />&nbsp;</p>
+<section>
+  <div class="page-header">
+    <h1>    
+      <span class='pull-left'><%= image_tag 'placeholder300x300.png', :width => 96, :height => 64 %>&nbsp;</span>
+      <span><%= @location.long_name %></span>
+    </h1>    
+    <p><%= simple_format @location.text %></p>
+    <br />
+  </div>
+</section>
 
-<% unless plot_encounters.blank? %>
-  <hr />
-  <div>
-    <hgroup>
-      <h3>Plot Encounters</h3>
-      <h5>Mysteries branching like a weald above the circumstances of your soul; explore them through mazy boughs that intrigue to the vanishing point yet promise no retracing steps.</h5>
-    </hgroup>
-    <ul class='horizontal polaroids'>
-      <% plot_encounters.each do |encounter| %>
-        <li>
-          <%= link_to encounter_path(encounter), :rel => 'nofollow' do %>
-            <%= image_tag 'placeholder96x96.png' %>
-            <%= simple_format word_wrap(encounter.title, :line_width => 15) %>
-          <% end %>
-        </li>
-      <% end %>
+<section>
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#plots" data-toggle="tab">Plot Threads</a></li>
+      <li><a href="#encounters" data-toggle="tab">Encounters</a></li>
     </ul>
-  </div>
-<% end %>
-
-<% unless fixed_encounters.blank? %>
-  <hr />
-  <div>
-    <hgroup>
-      <h3>Fixed Encounters</h3>
-      <h5>Sisyphean concerns which you may pursue with the guarantee of near-limitless second-chances.</h5>
-    </hgroup>
-    <ul class='horizontal polaroids'>
-      <% fixed_encounters.each do |encounter| %>
-        <li>
-          <%= link_to encounter_path(encounter), :rel => 'nofollow' do %>
-            <%= image_tag 'placeholder96x96.png' %>
-            <%= simple_format word_wrap(encounter.title, :line_width => 15) %>
+  </div>	
+	
+  <div class="tab-content">
+    <div class="tab-pane active" id='plots'>			
+      <% unless plot_encounters.blank? %>
+        <p>Mysteries branching like a weald above the circumstances of your soul; explore them through mazy boughs that intrigue to the vanishing point yet promise no retracing steps.</p>
+        <ul class="thumbnails">
+          <% plot_encounters.each do |encounter| %>	
+            <li>
+              <%= link_to encounter_path(encounter), :class => 'thumbnail' do %>
+                <center><%= simple_format word_wrap(encounter.title, :line_width => 15) %></center>
+                <%= image_tag 'placeholder96x96.png', :width => 96, :height => 64 %>
+              <% end %>
+            </li>
           <% end %>
-        </li>
+        </ul>
       <% end %>
-    </ul>	
+    </div>
+    <div class="tab-pane" id='encounters'>		
+      <% unless fixed_encounters.blank? %>
+        <p>Sisyphean concerns which you may pursue with the guarantee of near-limitless second-chances.</p>
+
+        <ul class="thumbnails">
+          <% fixed_encounters.each do |encounter| %>	
+            <li>
+              <%= link_to encounter_path(encounter), :class => 'thumbnail' do %>
+                <center><%= simple_format word_wrap(encounter.title, :line_width => 15) %></center>
+                <%= image_tag 'placeholder96x96.png', :width => 96, :height => 64 %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</section>

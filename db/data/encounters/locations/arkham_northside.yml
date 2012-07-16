@@ -3,10 +3,17 @@ encounters:
     _id: speakeasy
     title: The Speakeasy
     location: arkham_northside
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed
     paths:
          -  _id: 1
             title: A Helpful Card Shill
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: knowledge.malicious_rumors
@@ -24,6 +31,9 @@ encounters:
                      difficulty: 3
          -  _id: 2
             title: Comping the Jazz Band
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: drinks.snifter_of_bathtub_gin
@@ -34,6 +44,9 @@ encounters:
                      
          -  _id: 3
             title: Send a Troublemaker Packing
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: drinks.snifter_of_bathtub_gin
@@ -53,10 +66,17 @@ encounters:
     _id: b_and_m_train_station
     title: B&M Train Station
     location: arkham_northside
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed
     paths:
          -  _id: 1
             title: Shadow the Comings and Goings of Passengers
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: knowledge.malicious_rumors
@@ -74,6 +94,8 @@ encounters:
                           value: 5
          -  _id: 2
             title: The Valet's Obliging Glove
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: knowledge.news_of_foreign_lands
@@ -83,6 +105,9 @@ encounters:
                     value: 1
          -  _id: 3
             title: The Valet's Nimble Glove
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             challenge:
                      _id: skills.clandestinity
                      difficulty: 3
@@ -94,10 +119,16 @@ encounters:
     _id: arkham_gazette
     title: Arkham Gazette (since 1806)
     location: arkham_northside
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed
     paths:
          -  _id: 1
             title: Daily Extras
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: knowledge.malicious_rumors
@@ -106,10 +137,16 @@ encounters:
     _id: arkham_advertiser
     title: Arkham Advertiser (world news)
     location: arkham_northside
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed
     paths:
          -  _id: 1
             title: Our Town, The World
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: knowledge.news_of_foreign_lands
@@ -129,6 +166,8 @@ encounters:
     paths:
          -  _id: 1
             title: Into the Mouth of Madness
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: plots.a_hapless_stranger_comes_to_arkham

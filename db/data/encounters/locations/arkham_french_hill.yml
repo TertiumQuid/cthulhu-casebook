@@ -3,10 +3,17 @@ encounters:
     _id: old_arkham_graveyard
     title: Old Arkham Graveyard
     location: arkham_french_hill
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.        
     type: fixed
     paths: 
          -  _id: 1
             title: Hunger Disinterred
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   - 
                     _id: knowledge.idyllic_secrets
@@ -26,6 +33,8 @@ encounters:
                      difficulty: 3
          -  _id: 2
             title: Heritage Grave-Rubbing
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: knowledge.idyllic_secrets

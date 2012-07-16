@@ -3,10 +3,15 @@ encounters:
     _id: manellis_music_store
     title: Manelli's Music Store
     location: arkham_merchant_district
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed      
     paths: 
          -  _id: 1
             title: Sistrum
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.sistrum
@@ -20,10 +25,15 @@ encounters:
     _id: caleb_markhem_locksmith
     title: Calbem Markhem, Locksmith
     location: arkham_merchant_district
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed      
     paths: 
          -  _id: 1
             title: Padlock
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.padlock
@@ -33,8 +43,9 @@ encounters:
                     _id: belongings.american_dollars
                     cost: true
                     value: -1
-         -  _id: 1
+         -  _id: 2
             title: Lockpicks
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.lockpicks
@@ -48,10 +59,15 @@ encounters:
     _id: main_street_tobacconist
     title: Main St. Tobacconist
     location: arkham_merchant_district
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed      
     paths: 
          -  _id: 1
             title: Lucky Strike Cigarettes
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
             awards: 
                   - 
                     _id: belongings.lucky_strike_cigarettes
@@ -61,8 +77,9 @@ encounters:
                     _id: belongings.american_dollars
                     cost: true
                     value: -1
-         -  _id: 1
+         -  _id: 2
             title: Egyptian Cigarettes
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
             awards: 
                   - 
                     _id: belongings.egyptian_cigarettes
@@ -75,11 +92,15 @@ encounters:
   sears_roebuck_catalog_store:
     _id: sears_roebuck_catalog_store
     title: Sears-Roebuck Catalog Store
-    location: arkham_merchant_district
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed      
     paths: 
          -  _id: 1
             title: Remington Typewriter
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.remington_typewriter
@@ -91,6 +112,7 @@ encounters:
                     value: -5
          -  _id: 2
             title: Chalk Sticks
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.chalk
@@ -104,10 +126,15 @@ encounters:
     _id: pikes_haberdashery
     title: Pike's Haberdashery
     location: arkham_merchant_district
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed      
     paths: 
          -  _id: 1
             title: Gentleman's Chesterfield Overcoat
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: coat.chesterfield_overcoat
@@ -122,10 +149,15 @@ encounters:
     _id: curios_and_antiques
     title: Curios & Antiques
     location: arkham_merchant_district
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: fixed      
     paths: 
          -  _id: 1
             title: Altar Candles
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.altar_candles
@@ -137,6 +169,7 @@ encounters:
                     value: -2
          -  _id: 2
             title: Votive Candles
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.votive_candles
@@ -148,6 +181,7 @@ encounters:
                     value: -1
          -  _id: 3
             title: Votive Incense
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: belongings.votive_incense

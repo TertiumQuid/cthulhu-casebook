@@ -3,10 +3,17 @@ encounters:
     _id: die_geheimnisvollen_wurm
     title: Die Geheimnisvollen Wurm
     location: lodgings
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
     type: plot    
     paths:
           -  _id: 1
              title: Knowledge of the Dark Saracenic Arts
+             text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.
+             success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+             failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.             
              challenge:
                       _id: skills.scholarship
                       difficulty: 7
@@ -29,10 +36,17 @@ encounters:
     _id: studying_die_geheimnisvollen_wurm
     title: Studying Die Geheimnisvollen Wurm
     location: lodgings
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+    
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.            
     type: plot    
     paths:
          -  _id: 1
             title: Curse These Diabloic Glyphs
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.            
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             challenge:
                      _id: skills.scholarship
                      difficulty: 4
@@ -42,6 +56,9 @@ encounters:
                     value: 1
          -  _id: 2
             title: Curse This Saracenic Symbology
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   -    
                     _id: research.die_geheimnisvollen_wurm
@@ -56,6 +73,9 @@ encounters:
                           value: 9
          -  _id: 3
             title: Ask an Erudite Familiar to Help
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
+            failure_text: Etiam lobortis, nulla vel convallis interdum, ligula ligula sodales lorem, vitae eleifend nisi mauris id tortor.            
             awards: 
                   -    
                     _id: research.die_geheimnisvollen_wurm

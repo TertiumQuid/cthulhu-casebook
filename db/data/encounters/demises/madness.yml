@@ -7,6 +7,8 @@ encounters:
     paths:
          -  _id: 1
             title: Who Can Analyze Their Delusions is Called a Philosopher
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien. 
             awards: 
                   - 
                     _id: location.current
@@ -23,6 +25,8 @@ encounters:
     paths:
          -  _id: 1
             title: Think of Something Plesant, Somewhere Else
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: pathology.wounds
@@ -32,6 +36,8 @@ encounters:
                     value: -2
          -  _id: 2
             title: Just Let Them Try It
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: pathology.wounds
@@ -52,18 +58,24 @@ encounters:
     paths:
          -  _id: 1
             title: Transorbital Lobotomy
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: pathology.madness
                     value: -10
          -  _id: 2
-            title: Electroconvulsive Therapy
+            title: Electroshock Surge
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: pathology.madness
                     value: -5
          -  _id: 3
             title: Hydropathy - the Water Cure
+            text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
             awards: 
                   - 
                     _id: pathology.madness

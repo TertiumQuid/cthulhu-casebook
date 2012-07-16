@@ -3,7 +3,7 @@ font-family: 'Garamond', 'Cochin', sans-serif;
 } 
 
 a {
-text-decoration:none;
+text-decoration:none !important;
 }
 
 /* Bootstrap Customizations */
@@ -29,4 +29,31 @@ font-size:150%;
 padding-bottom:20px;
 padding-top:20px;
 width:100%;
+}
+
+.page-header img {
+vertical-align:top;	
+}
+
+.progress-labeled { position: relative; }
+.progress-labeled big {
+color:#fff;
+margin-left:48%;
+position:absolute;
+z-index:999;
+top:0;
+text-shadow: 1px 1px 0 #111,  1px -1px 0 #111,  -1px 1px 0 #111,  -1px -1px 0 #111;
+}
+
+.well-condensed {
+padding: 5px;	
+}
+
+.well .thumbnails li {
+background:#fff;
+text-align:center;
+}
+
+big.label {
+font-size:150%;
 }
