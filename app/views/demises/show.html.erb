@@ -3,7 +3,7 @@
   <%= @demise.title %>
 </h1>
 <p><%= simple_format @demise.description %><br />&nbsp;</p>
-
+<p><em>You've lost all experience and must remain in <%= @demise.location.titleize %> until you can revive yourself.</em></p>
 <p>	
   <%= link_to location_path, :class => 'copperplate' do %>	
     <span class='button continue'>Continue</span>

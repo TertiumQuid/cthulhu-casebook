@@ -1,27 +1,16 @@
 demises:
+  cursed:
+    _id: pathology.lycanthropy
+    title: Lycanthropy
+    location: arkham_graveyard
+    limit: 20
   madness:
     _id: pathology.madness
     title: Almost Insane
     location: arkham_sanitarium
     limit: 20
-    description: 
-                Madness, or wakefulness? Madness, or insight? Madness, or escape? Madness, or refuge? Madness, or immunity? Madness, or freedom? Madness, or enlightenment? Madness, or power? Madness, or greatness? Madness, or godhood? 
-
-
-                When the struggle within subsides and you muster some fractured composure by counting buttons on the asylum cell walls, it occurs to you that a frightful interim must have passed to judge from the unrecognizable shape of your trembling rawboned form.
-
-
-                You were worse when they found you, but will anyone believe your tale, or that you have moved beyond it? And if not, will anyone believe your lies?
   wounds:
     _id: pathology.wounds
     title: Almost Destroyed
     location: st_marys_hospital
     limit: 20
-    description: 
-                Your blood runs free, your bones are scree, your eyes are filled with blackness. The god of pain has named your name and burnt your soul to ashes.
-
-
-                After an eternity of suffering in the purgatory of the half-dead you become aware, only over the course of weeks, that forms and lights are taking shape and deafness giving to a murmur of voices. In fact, you are no tormented shade but consigned to hospital for recovery.
-
-
-                You can't move or speak, and it's worrisome that the orderlies seem unable to look directly at you and perform their few small tasks with barely-stifled fear. Will you be trapped here until your final days a shunned and helpless ward?

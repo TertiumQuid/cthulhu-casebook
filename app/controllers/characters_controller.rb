@@ -4,6 +4,12 @@ class CharactersController < ApplicationController
     @equipment = Equipment.find_for @character.profile.find_tagging('equipment')
   end
   
+  def show
+    if @character = Character.find(params[:id])
+      @equipment = Equipment.find_for @character.profile.find_tagging('equipment')
+    end
+  end
+  
   def new
     @character = Character.new
   end

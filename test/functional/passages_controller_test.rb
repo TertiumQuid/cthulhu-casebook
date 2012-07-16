@@ -14,9 +14,7 @@ class PassagesControllerTest < ActionController::TestCase
   end
   
   test 'put update and encounter monster' do  
-    range = Monster::ENCOUNTER_CHANCE_RANGE
-    Monster.send :remove_const, :ENCOUNTER_CHANCE_RANGE
-    Monster.send :const_set, :ENCOUNTER_CHANCE_RANGE, 1
+    temp_set_const Monster, :ENCOUNTER_CHANCE_RANGE, 1
     
     load_locations
     load_monsters
@@ -27,7 +25,6 @@ class PassagesControllerTest < ActionController::TestCase
     assert_redirected_to new_location_monster_path('arkham_merchant_district'), 'expected redirected to monster path for combat'
     assert_not_nil character.reload.monster_id, 'exepected character monster id set'
    
-    Monster.send :remove_const, :ENCOUNTER_CHANCE_RANGE
-    Monster.send :const_set, :ENCOUNTER_CHANCE_RANGE, range
+    temp_const_reset Monster, :ENCOUNTER_CHANCE_RANGE
   end
 end

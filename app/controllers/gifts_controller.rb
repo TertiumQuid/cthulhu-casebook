@@ -4,6 +4,9 @@ class GiftsController < ApplicationController
   def new
     @character = Character.find(params[:character_id])
     redirect_to location_path if @character.blank?    
+    
+    @equipment = current_character.profile.find_tagging('equipment')
+    @belongings = current_character.profile.find_tagging('belongings')
   end
   
   def update

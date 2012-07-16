@@ -26,6 +26,9 @@ class Demise
   def apply_to(profile)
     unless Demise.locations.include? profile.get('location', 'current').value
       profile.set('location', 'current', location)
+      if exp = profile.find_tagging('experience')
+        exp.tags.each { |t| t.value = 0 }
+      end
     end
   end
 end

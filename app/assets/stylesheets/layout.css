@@ -16,6 +16,7 @@ line-height:1.1em;
 #header-title dfn {
 font-size:1.3em;
 position:relative;
+float:left;
 top:-0.4em;
 }
 

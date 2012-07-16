@@ -1,25 +1,29 @@
-<div id='header'>
-  <div class='clues'><strong>☌</strong><%= has_character? ? current_character.clues : 0 %> clues</div>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to root_path, :class => 'brand' do %>
+        Cthulhu Casebook<br />
+        <small>Trail of Secrets</small>
+      <% end %>
 
-  <div id='header-title'>
-    <%= link_to 'Cthulhu Casebook', root_path %><br />
-	<dfn>Trail of Secrets</dfn>
-  </div>
-
-  <div id='header-navigation'>
-    <ul class='horizontal'>
-      <li><%= link_to 'Profile', edit_character_path %></li>
-      <li><%= link_to 'Encounters', location_path %></li>
-      <li><%= link_to 'Map', locations_path %></li>
-      <li>
-        <% if has_character? && current_character.messages_count > 0 %>
-          <%= link_to "Lodgings (#{current_character.messages_count})", messages_path %>
-        <% else %>
-          <%= link_to 'Lodgings', messages_path %>
-        <% end %>
-      </li>
-      <li><%= link_to 'Friends', friends_path %></li>
-      <li><%= link_to '?', '' %></li>
-    </ul>
+      <% if has_character? %>
+        <p class='pull-right badge badge-success'>
+          <i class='icon-search'></i> <%= pluralize(current_character.clues, 'clue') %>
+        </p>
+      
+        <ul class="nav">
+          <li class='<%= params[:action] == 'edit' ? 'active' : '' %>'><%= link_to 'Profile', edit_character_path %></li>
+          <li class='<%= params[:controller] == 'encounters' || (params[:controller] == 'locations' && params[:action] == 'show') ? 'active' : '' %>'><%= link_to 'Encounters', location_path %></li>
+          <li class='<%= params[:controller] == 'locations' && params[:action] == 'index' ? 'active' : '' %>'><%= link_to 'Map', locations_path %></li>
+          <li class='<%= params[:controller] == 'messages' ? 'active' : '' %>'>
+            <% if current_character.messages_count > 0 %>
+              <%= link_to "Lodgings (#{current_character.messages_count})", messages_path %>
+            <% else %>
+              <%= link_to 'Lodgings', messages_path %>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
   </div>
 </div>

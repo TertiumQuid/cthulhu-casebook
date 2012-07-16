@@ -1,0 +1,15 @@
+@import "bootstrap";
+
+body {
+padding-top: #{$gridColumnWidth + 10px};
+}
+
+.hero-unit.flat {
+padding: #{$gridColumnWidth / 4} #{$gridColumnWidth / 2};	
+}
+
+.hero-unit.flat h1{
+font-size: #{$gridColumnWidth / 1.2};	
+}
+
+@import "bootstrap-responsive";

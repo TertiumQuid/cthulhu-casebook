@@ -1,5 +1,5 @@
-<h1>A Shrewd Gift</h1>
-<p>Select just the right article from your inventory to give your friend <strong><%= @character.name %></strong>.</p>
+<h1><small>A Shrewd Gift for</small> <%= @character.formal_name %></h1>
+<p>Select just the right article from your inventory to give your friend.</p>
 
 <h4>Equipment</h4>
 <% if current_character.profile.find_tagging('equipment').tags.blank? %>
@@ -15,13 +15,19 @@
   </ul>
 <% end %>
 
+<% if current_character.profile.find_tagging('belongings').tags.blank? %>
 <h4>Belongings</h4>
 <% if current_character.profile.find_tagging('belongings').tags.blank? %>
   <p>You don't posses any belongings which you can give your friend.</p>
 <% else %>
-  <ul>
+  <ul class='plain'>
     <% current_character.profile.find_tagging('belongings').tags.each do |tag| %>
-      <li><%= tag._id.titleize  %> <%= tag.value %></li>
+      <li>
+        <label class='half'><%= tag.value %> <%= tag._id.titleize  %></label>
+        <%= link_to 'Give', character_gift_path(params[:character_id], tag._id), :method => :post, :class => 'button' %>
+      </li>
     <% end %>
   </ul>
 <% end %>
+
+<p><%= link_to 'Nevermind', character_path(@character), :class => 'button cancel' %></p>

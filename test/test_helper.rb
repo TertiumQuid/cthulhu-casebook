@@ -8,6 +8,17 @@ class ActiveSupport::TestCase
       c.remove  
     end
   end
+  
+  def temp_set_const(object, constant, value)
+    @temp_constant = object.send(:const_get, constant)
+    object.send :remove_const, constant
+    object.send :const_set, constant, value
+  end
+  
+  def temp_const_reset(object, constant)
+    object.send :remove_const, constant
+    object.send :const_set, constant, @temp_constant
+  end
 
   def load_encounters
     ['arkham_northside', 'miskatonic_university'].each do |loc|

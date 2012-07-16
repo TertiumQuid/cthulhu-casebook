@@ -8,20 +8,21 @@
 
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="width">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta http-equiv="cleartype" content="on">
 
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <div id="container">
-      <%= render :partial => 'layouts/header' %>	
+  <body>	
+    <%= render :partial => 'layouts/header' %>
+    <div class="container">
       <%= yield %>
-      <%= render :partial => 'layouts/footer' %>	
     </div>
-	
+    <div class="container">
+      <%= render :partial => 'layouts/footer' %>
+    </div>	
     <div id="fb-root"></div>
     <%= javascript_include_tag "application" %>
   </body>

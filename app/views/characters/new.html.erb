@@ -1,18 +1,25 @@
-<h1>Dreadful Adventure is Just Around the Corner...</h1>
-<p class='flavor-text'>Cthulhu Casebook is a <strong>browser-based horror RPG</strong> where you investigate (or consummate) Lovecraftian plots and period intrigue in the roaring '20s. You'll pursue the Great Old Ones and their minions through storied mystery and obtain deadly Mythos lore empowering you in mankind's secret battle against cosmic extinction. In a world of occult horror, victorian attire, and pulp adventure, Cthulhu Casebook remains faithful to the literature of <strong>H. P. Lovecraft</strong> and less faithful to history as your investigations take you through sleepy Arkham, Miskatonic Valley, and beyond.</p>
+<header class="jumbotron subhead">
+  <h1>Dreadful Adventure Awaits...</h1><br />
+  <p>Cthulhu Casebook is a <strong>browser-based horror RPG</strong> where you investigate (or consummate) Lovecraftian plots and period intrigue in the roaring '20s. You'll pursue the Great Old Ones and their minions through storied mystery and obtain deadly Mythos lore empowering you in mankind's secret battle against cosmic extinction.<span style='display:inline'><a href='#new-character' class='visible-phone'><i class='icon-chevron-down'></i></a></span></p>
+</header>
 
-<p>Cthulhu Casebook is <strong>completely free to play</strong> and you can login immediately from your <strong>Book of Faces</strong>. Be forewarned, however, that the game is in an archean stage, and exists under the rule of violent, ceaseless,  erratic development, and that your progress may at times be lost as updates are deployed.</p>
+<section id='new-character'>
+  <br />
+  <div class="hero-unit flat">
+    <h1>Create a Character</h1>
 
-<h4>Choose a name and title to start playing:</h4>
+    <p>Cthulhu Casebook is <strong>completely free to play</strong> using the <strong>Book of Faces</strong>.</p>
 
-<%= form_for @character, :url => character_path do |f| %>
-  <p>
-    <%= label_tag 'gender_male', 'Mr.' %>
-    <%= f.radio_button :gender, :male %>
-    <%= label_tag 'gender_female', 'Mrs.' %>
-    <%= f.radio_button :gender, :female %>
-    &nbsp;&nbsp;&nbsp;
-    <%= f.text_field :name, :placeholder => 'Type a Name' %>
-  </p>
-  <p><%= f.submit 'Continue On' %></p>
-<% end %>
+    <%= form_for @character, :url => character_path, :class => "form-inline" do |f| %>
+      Mr. <%= f.radio_button :gender, :male %> &nbsp; &nbsp;
+      Mrs. <%= f.radio_button :gender, :female %> &nbsp; &nbsp;
+
+      <%= f.text_field :name, :placeholder => 'Enter a name', :class => 'medium-input' %> <br>
+      <%= f.submit 'Start Investigating', :class => 'btn btn-success btn-large btn-wide' %>
+    <% end %>
+  </div>
+</section>
+
+<p>In a world of occult horror, victorian attire, and pulp adventure, Cthulhu Casebook remains faithful to the literature of <strong>H. P. Lovecraft</strong> and less faithful to history as your investigations take you through sleepy Arkham, Miskatonic Valley, and beyond.</p>
+
+<p>Be forewarned, however, that the game is in an archean stage, and exists under the rule of violent, ceaseless,  erratic development, and that your progress may at times be lost as updates are deployed. <span style='display:inline'><a href='#new-character' class='visible-phone'><i class='icon-chevron-up'></i></a></span></p>

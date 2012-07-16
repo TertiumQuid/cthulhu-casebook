@@ -1,9 +1,37 @@
-<h1>
-  <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
-  <%= @encounter.title %>
-</h1>
+<section>
+  <div class="page-header">
+    <span class="pull-left"><%= image_tag 'placeholder300x300.png', :width => 96, :height => 64 %></span>
+
+    <h1 class=' pull-left'>&nbsp;<%= @encounter.title %></h1>    
+    <br /><br /><br />
+  </div>
+</section>
+
 <p><%= simple_format @encounter.description %><br />&nbsp;</p>
+
+<% @encounter.paths.each do |path| %>
+  <% if path.available_for?(current_character) %>
+    <blockquote>
+      <p>Take this path</p>
+      <br />
+      <%= link_to encounter_path_path(@encounter, path), :class => 'btn btn-info input-large' do %>
+        <%= path.title %> <i class='icon-play'></i>
+      <% end %>
+    </blockquote>	
+    <hr />
+  <% end %>
+<% end %>
+<blockquote>
+  <p>Perhaps another time</p>
+  <br />
+  <%= link_to location_path, :class => 'btn btn-default input-large' do %>
+    Nevermind <i class='icon-backward'></i>
+  <% end %>
+</blockquote>
+<% unless params[:id] == 'homecoming' %>	
+<% end %>	
 	
+<div style='display:none'>	
 <% @encounter.paths.each do |path| %>
   <% if path.available_for?(current_character) %>
     <%= link_to encounter_path_path(@encounter, path), :class => 'copperplate' do %>
@@ -29,3 +57,4 @@
 
 <br /><br /><br />
 <p>Perhaps another time<br /><%= link_to 'Cancel', location_path, :class => 'button cancel' %></p>
+</div>

@@ -5,7 +5,10 @@ class DemiseTest < ActiveModel::TestCase
     character = Character.create!(:name => 'test')
     demise = Demise.new(:location => 'test')
     
-    demise.apply_to(character.profile)
+    character.profile.set('experience', 'adventure', 10)
+    assert_difference "character.profile.get('experience', 'adventure').count", -10, 'expected experience lost on demise' do
+      demise.apply_to(character.profile)
+    end
     assert_equal 'test', character.location.value, 'expected demise applied to character location'
   end
   
