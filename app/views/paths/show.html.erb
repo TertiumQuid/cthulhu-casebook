@@ -18,13 +18,38 @@
 
         <p class='lead'><%= simple_format @path.success_text %></p>	
         <br />
-        <% unless @path.awards_gained.blank? %>
+        <% unless @path.awards.blank? %>
           <ul class="unstyled">
 		    <% if @path.develops_experience? && current_character.profile.get('experience', @path.challenge.tag).count == 0 %>
               <li><i class='icon-star'></i> <span class="label label-info">+1 skill in <%= @path.challenge.tag.upcase %></span></dt>
             <% elsif @path.develops_experience? %>
               <li><i class='icon-star-empty'></i> <span class="label label-info">+1 experience in <%= @path.challenge.tag.upcase %></span></dt>
             <% end %>          	
+
+            <% @path.awards_gained.select {|a| a.display? }.each do |award| %>
+	          <li>
+              
+	            <% if award.tagging == 'location' %>
+	              <i class='icon-home'></i> <span class="label label-info"><%= "you moved to #{award.value.titleize}" %></span>
+                <% elsif award.tagging == 'research' %>
+	              <i class='icon-book'></i> <span class="label label-info"><%= "+#{award.value} toward #{award.tag.titleize}" %></span>
+                <% elsif award.tagging == 'belongings' %>	
+	              <i class='icon-briefcase'></i> <span class="label label-info"><%= "+#{award.value} #{award.tag.titleize}" %></span>
+                <% elsif award.tagging == 'drinks' %>	
+	              <i class='icon-glass'></i> <span class="label label-info"><%= "+#{award.value} #{award.tag.titleize}" %></span>
+                <% elsif award.tagging == 'knowledge' %>	
+	              <i class='icon-eye-open'></i> <span class="label label-info"><%= "+#{award.value} #{award.tag.titleize}" %></span>
+	            <% else %>
+	              <i class='icon-ok'></i> <span class="label label-info"><%= "+#{award.value} #{award.tag.titleize}" %></span>
+	            <% end %>
+              </li>
+            <% end %>
+
+            <% @path.awards_lost.select {|a| a.display? }.each do |award| %>
+              <li>
+                <i class='icon-fire'></i> <span class="label label-danger"><%= "#{award.value} #{award.tag}" %></span>
+              </li>
+            <% end %>
           </ul>
         <% end %>
       </div>
@@ -37,10 +62,12 @@
   </blockquote>
 
   <p>
-    <%= link_to encounter_path(@encounter), 
-                :class => 'btn btn-info btn-large input-small' do %>	
-      <i class='icon-repeat'></i> Try Again
-    <% end %>	
+    <% unless @encounter.plot? %>
+      <%= link_to encounter_path(@encounter), 
+                  :class => 'btn btn-info btn-large input-small' do %>	
+        <i class='icon-repeat'></i> Try Again
+      <% end %>	
+    <% end %>
     <%= link_to @encounter.location == 'lodgings' ? messages_path : location_path, 
                 :class => 'btn btn-info btn-large input-medium' do %>	
       Continue <i class='icon-forward'></i>

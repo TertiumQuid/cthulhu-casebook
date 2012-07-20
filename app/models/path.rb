@@ -36,6 +36,6 @@ class Path
   end
 
   def awards_lost
-    awards.select {|a| a.value[0] == '-' }    
+    awards.select {|a| a.value[0] == '-' }
   end
 end

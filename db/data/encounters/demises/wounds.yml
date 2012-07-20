@@ -3,7 +3,7 @@ encounters:
     _id: fine_just_fine
     title: Fine, Just Fine
     location: st_marys_hospital
-    type: fixed
+    type: plot
     paths:
          -  _id: 1
             title: You're fine, just fine; there's work to do

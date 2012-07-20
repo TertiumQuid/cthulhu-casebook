@@ -66,7 +66,7 @@ class EncounterTest < ActiveModel::TestCase
   
   def test_play_with_challenge_failure
     path = Path.new(:title => 'test')
-    path.challenge = Challenge.new(:_id => 'skills.conflict', :difficulty => 100)
+    path.challenge = Challenge.new(:_id => 'skills.conflict', :difficulty => 1000)
     path.save!    
     
     encounter = Encounter.create!(:title => 'test', :text => 'test', :paths => [path])
@@ -143,5 +143,14 @@ class EncounterTest < ActiveModel::TestCase
       assert requirements.include?(requirement.text), 'expected requirement in display'
     end
     assert !requirements.include?(junk.text), 'expected requirement hidden from display'    
+  end
+  
+  def test_is_plot
+    encounter = Encounter.new
+    assert_equal false, encounter.plot?, 'expected not plot for plotless encounter'
+    encounter.type = 'fixed'
+    assert_equal false, encounter.plot?, 'expected not plot for plotless encounter'
+    encounter.type = 'plot'
+    assert_equal true, encounter.plot?, 'expected plot for plot type encounter'    
   end
 end

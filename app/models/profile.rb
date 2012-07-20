@@ -85,9 +85,9 @@ class Profile
     plots.tags << Tag.new(:_id => 'a_hapless_stranger_comes_to_arkham', :value => 5)
     
     equipment = Tagging.new(:_id => 'equipment')  
-    if character.gender == 'male'
+    if character && character.gender == 'male'
       equipment.tags << Tag.new(:_id => 'umbrella', :value => 1)
-    elsif character.gender == 'female'
+    elsif character && character.gender == 'female'
       equipment.tags << Tag.new(:_id => 'parasol', :value => 1)      
     end
     

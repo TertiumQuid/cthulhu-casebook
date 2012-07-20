@@ -15,7 +15,7 @@ CthulhuCasebook::Application.routes.draw do
   end
   
   resource  :location,  :only => [:show], :controller => 'locations' do
-    resources :passage, :only => [:update], :controller => 'passages'
+    resources :passage, :only => [:show], :controller => 'passages'
   end
   resources :messages, :only => [:index, :show]
   resources :locations, :only => [:index] do

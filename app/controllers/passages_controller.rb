@@ -1,7 +1,8 @@
 class PassagesController < ApplicationController
   before_filter :require_no_monster
   
-  def update
+  
+  def show
     location = Location.find current_character.location.value
     if passage = location.passage_to(params[:id])
       
@@ -12,6 +13,12 @@ class PassagesController < ApplicationController
       
       current_character.relocate!(params[:id])
     end
-    redirect_to locations_path
+    render_location
+  end
+  
+  def render_location
+    load_location
+    load_location_friends
+    render 'locations/index'
   end
 end

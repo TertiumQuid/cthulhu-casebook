@@ -3,7 +3,7 @@ encounters:
     _id: free_at_last
     title: Free at Last
     location: arkham_sanitarium
-    type: fixed
+    type: plot
     paths:
          -  _id: 1
             title: Who Can Analyze Their Delusions is Called a Philosopher

@@ -7,9 +7,8 @@ module LocationsHelper
     name = passage._id.include?('sanitarium') ? passage._id : passage._id.gsub(/arkham_/, '')
     name = name.include?('outskirts') ? "&larr;#{name.titleize}&rarr;" : name.titleize
     href = disabled ? '' : location_passage_path(passage._id)
-    method = disabled ? :get : :put
     
-    link_to name, href, :id => passage._id, :method => method, :rel => 'nofollow', 
+    link_to name, href, :id => passage._id, :rel => 'nofollow', 
             :disabled => disabled, :class => "passage label label-#{(disabled ? 'info' : 'success')}"
   end
 end

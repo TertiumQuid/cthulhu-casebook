@@ -66,6 +66,6 @@ encounters:
                     value: 1
             requirements: 
                   - 
-                    _id: belongings.deck_of_playing_cards
+                    _id: belongings.american_dollars
                     cost: true
                     value: -3

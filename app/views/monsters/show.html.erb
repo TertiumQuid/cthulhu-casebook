@@ -1,20 +1,34 @@
-<% if params[:id] == 'confront' %>
-  <h1>You put the monster to a spectacular end with the power of cosmic knowledge</h1>
-  <ul><li>You used 1 clue</li></ul>
-<% else %>
-  <h1>You faced the <%= @monster.name %> with <strong><%= params[:id] %></strong></h1>
+<section>
+  <div>
+    <h1>  
+      <span class='pull-left'><%= image_tag 'placeholder300x300.png', :width => 128, :height => 96 %>&nbsp;</span>  
+      <small>You encountered <%= articleize(@monster.name).downcase %>:</small><br /> <%= @monster.name %>!
+    </h1> 
+    <br /><br /><br />
+  </div>
+</section>
 
-  <% if @success %>
-    <h2>Success!</h2>
+<section>
+  <% if @success %>		
+    <div class='alert-success well'>      
+      <big class="label label-success">Success!</big>
+      <br /><br />
+      <p class='lead'><%= monster_strategy_success(@monster.name) %></p>
+      <% if is_taking_passage? && !demised? %><p>With no inconsiderable danger, you arrived at your destination.</p><% end %>
+    </div>
   <% else %>
-    <h2>Doom!</h2>
-    <p>You gained:</p>
-    <ul>
-      <% @monster.penalties.each do |penalty| %>
-        <li><%= "+#{penalty.value} #{penalty.tag}" %></li>
-      <% end %>
-    </ul>
-  <% end %>
-<% end %>
+    <div class='alert-error well'>  	
+      <big class="label label-important">Failure!</big>    
+      <br /><br />
+      <p class='lead'><%= monster_strategy_failure(@monster.name) %></p>
 
-<p><%= link_to_demise_or_location %></p>
+      <ul class="unstyled">
+        <% @monster.penalties.each do |penalty| %>	
+          <li><i class='icon-fire'></i> <span class="label label-danger"><%= "+#{penalty.value} #{penalty.tag.titleize.downcase}" %></span></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p><%= link_to_demise_or_location %></p>
+</section>

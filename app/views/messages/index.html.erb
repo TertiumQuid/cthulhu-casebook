@@ -1,3 +1,51 @@
+<section class='row'>
+  <div>	
+    <h1>    
+      <span class='pull-left'><%= image_tag 'placeholder300x300.png', :width => 96, :height => 64 %>&nbsp;</span>
+      <span><%= current_character.lodgings.name %></span>
+    </h1>
+	<p><%= simple_format current_character.lodgings.description %></p>
+  </div>
+</section>
+
+<section class='row'>
+
+  <div class='well span8'>	
+    <h3>A Davenport of Mysterious Cases</h3>
+    <br />
+    <table class='table table-bordered'>
+      <% if current_character.profile.find_tagging('plots').tags.size > 0 %>
+        <thead style='background:#fff'><th>You've staked ground in unsure footing, but appear to be making progress with the following plots...</th></thead>
+      <% end %>
+      <% current_character.profile.find_tagging('plots').tags.each do |plot| %>
+        <tr>
+          <td>
+            <h4><%= plot._id.titleize %></h4>
+			<span class="progress progress-success">
+			  <div class="bar" style="width: <%= [((plot.value.to_f / 15.0) * 100).to_i, 1].max %>%;"></div>
+			</span>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+	
+  <div class='well well-condensed span3'>	
+    <ul class="nav nav-list">
+      <li class="nav-header">Messages from people as well as Other Things</li>
+      <% @messages.each do |message| %>
+        <li>
+          <strong><%= link_to message.title, message_path(message) %></strong><br />
+          <small>From: <%= message.sender %></small>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</section>
+
+
+<div style='display:none'>
 <h1>
   <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
   <small>Your Lodgings:</small><br> <%= current_character.lodgings.name %>
@@ -62,3 +110,4 @@
     </ul>	
   </div>
 <% end %>
+</div>

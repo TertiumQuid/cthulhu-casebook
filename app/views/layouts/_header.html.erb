@@ -1,5 +1,10 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
+	
+    <span id="loader" class='hidden'>
+      <% 8.times { |x| %><span class="b<%= x+1 %>"></span><%  } %>
+    </span>	
+	
     <div class="container">
       <%= link_to root_path, :class => 'brand' do %>
         Cthulhu Casebook<br />
@@ -8,7 +13,7 @@
 
       <% if has_character? %>
         <p class='pull-right badge badge-success'>
-          <i class='icon-search'></i> <%= pluralize(current_character.clues, 'clue') %>
+          <i class='icon-search'></i> <span id='clue-counter'><%= pluralize(current_character.clues, 'clue') %></span>
         </p>
       
         <ul class="nav">

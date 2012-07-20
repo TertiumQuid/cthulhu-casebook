@@ -1,7 +1,7 @@
 equipment:
   parasol:
-    _id: umbrella
-    title: Umbrella
+    _id: parasol
+    title: Parasol
     location: hand
     modifiers:
              - 

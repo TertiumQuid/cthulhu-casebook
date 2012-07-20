@@ -8,6 +8,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass', '>= 2.0.4.0'
+  gem 'pjax_rails'
 end
 
 gem 'mongo_mapper', :git => 'git://github.com/jnunemaker/mongomapper.git', :ref => '4d35c6704a9'
@@ -30,3 +31,4 @@ end
 gem 'capistrano'
 gem 'capistrano-ext'
 gem 'whenever', :require => false
+

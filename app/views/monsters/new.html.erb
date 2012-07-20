@@ -1,6 +1,56 @@
+<section>
+  <div>
+    <h1>    
+      <span class='pull-left'><%= image_tag 'placeholder300x300.png', :width => 128, :height => 96 %>&nbsp;</span>
+      <%= articleize @monster.name %> <%= @monster.name %> appears!
+    </h1>    
+    <p><%= @monster.description %></p>
+    <br />
+  </div>
+
+  <br />
+  <div class='well'>
+    <p>You must choose how to deal with the threat before continuing.</p>
+	<ul class="nav nav-tabs nav-stacked">
+      <li>
+	    <%= link_to (is_taking_passage? ? location_monster_path(params[:location_id], 'fight') : monster_path('fight')), :rel => 'nofollow', :class => 'button' do %>
+          <h4><i class='icon-play'></i> Fight!</h4>
+		  ...the monster with your skills of <strong>conflict (<%= current_character.profile.get('skills', 'conflict').value %>)</strong>
+        <% end %> 
+      </li>
+      <li>
+	    <%= link_to (is_taking_passage? ? location_monster_path(params[:location_id], 'escape') : monster_path('escape')), :rel => 'nofollow', :class => 'button' do %>
+          <h4><i class='icon-play'></i> Escape!</h4>
+		  ...the monster with your skills of <strong>adventure (<%= current_character.profile.get('skills', 'adventure').value %>)</strong>
+        <% end %> 
+      </li>
+      <li>
+	    <%= link_to (is_taking_passage? ? location_monster_path(params[:location_id], 'stealth') : monster_path('stealth')), :rel => 'nofollow', :class => 'button' do %>
+          <h4><i class='icon-play'></i> Hide!</h4>
+		  ...from the monster with your skill in <strong>clandestinity (<%= current_character.profile.get('skills', 'clandestinity').value %>)</strong>
+        <% end %> 
+      </li>
+      <li>
+	    <%= link_to (is_taking_passage? ? location_monster_path(params[:location_id], 'magic') : monster_path('magic')), :rel => 'nofollow', :class => 'button' do %>
+          <h4><i class='icon-play'></i> Bind!</h4>
+		  ...the monster with the dark art of <strong>sorcery (<%= current_character.profile.get('skills', 'sorcery').value %>)</strong>
+        <% end %> 
+      </li>
+      <li>
+	    <%= link_to (is_taking_passage? ? location_monster_path(params[:location_id], 'confront') : monster_path('confront')), :rel => 'nofollow', :class => 'button', :data => { 'clue-cost' => 1 } do %>
+          <h4><i class='icon-search'></i> Confront!</h4>
+		  Outmaneuver the monster by using your <strong>clues (<%= current_character.clues %>)</strong>
+        <% end %> 
+      </li>
+	</ul>	
+  </div>
+</section>
+
+
+<div style='display:none'>
 <h1>
   <%= image_tag 'placeholder75x75.png', :class => 'picture-frame tilt', :align => 'left' %> 
-  A <%= @monster.name%> appears!
+  A<%= @monster.name[0] == 'A' ? 'n' : '' %> <%= @monster.name %> appears!
 </h1>
 <p><%= @monster.description %></p>
 <p>You must choose how to deal with the threat before continuing.</p>
@@ -30,3 +80,4 @@
     </p>
   </li>
 </ul>
+</div>

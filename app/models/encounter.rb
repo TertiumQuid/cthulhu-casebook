@@ -17,6 +17,8 @@ class Encounter
   
   def self.cost; 1; end
   
+  def plot?; type == 'plot'; end
+  
   def play(character, path_id)
     if character.clues >= Encounter.cost && path = find_path(path_id)
       succeeded = path.challenge ? path.challenge.play(character) : true

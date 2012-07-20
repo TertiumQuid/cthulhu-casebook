@@ -38,8 +38,7 @@
 
   <div class="tab-content">
     <div class="tab-pane active" id='skills'>
-      <div class='well well-condensed'>		
-        <h3>Skills</h3>
+      <div class='well well-condensed'>
         <dl class="dl-horizontal">
           <% @character.profile.find_tagging('skills').tags.each do |tag| %>
             <dt><%= tag._id.titleize  %>: <big>0<%= tag.value %></big></dt> 
@@ -54,8 +53,7 @@
     </div>	
 
     <div class="tab-pane" id='belongings'>
-      <div class='well well-condensed'>		
-        <h3>Belongings</h3>
+      <div class='well well-condensed'>
         <ul class="thumbnails">
           <% @character.profile.find_tagging('belongings').tags.each do |tag| %>
             <li>
@@ -71,7 +69,6 @@
 
     <div class="tab-pane fade" id='equipment'>
       <div class='well well-condensed'>
-        <h3>Gear</h3>
         <ul class="thumbnails">
           <% @character.profile.find_tagging('equipment').tags.each do |tag| %>
             <li>
@@ -95,12 +92,18 @@
     </div>
 
     <div class="tab-pane fade" id='knowledge'>
-        <dl class="dl-horizontal">
+      <div class='well well-condensed'>	
+        <ul class="thumbnails">
           <% @character.profile.find_tagging('knowledge').tags.each do |tag| %>
-            <dt><%= tag._id.titleize  %>: </dt> 
-            <dd><big>0<%= tag.value %></big></dd>
+            <li>
+              <div class="thumbnail">                
+                <h5><%= simple_format word_wrap("#{tag.value} #{tag._id.titleize}", :line_width => 15) %>	</h5>
+                <%= image_tag 'placeholder64x64.png', :class => 'picture-frame', :width => 32, :height => 32 %>
+              </div>
+            </li>	
           <% end %>
-        </dl>
+        </ul>
+      </div>	
     </div>	
   </div>
 </section>

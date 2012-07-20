@@ -1,10 +1,14 @@
-<h1>Messages from people as well as Other Things</h1>
+<section>
+  <div>
+    <h1>
+      <%= @message.title %><br/> <small>from <%= @message.sender %></small>
+    </h1>
+    <br />
+  </div>
 
-<div>
-  <big>Subject: <%= @message.title %></big><br />
-  <small>From: <%= @message.sender %></small>
+  <p class='well'><%= raw @message.text %></p>
 
-  <p><%= raw @message.text %></p>
-  <br />
-  <p><%= link_to 'return to other concerns', messages_path %></p>
-</div>
+  <%= link_to messages_path, :class => 'btn btn-default input-medium' do %>
+    Back to Lodgings
+  <% end %>
+<section>

@@ -11,16 +11,20 @@
 <hr />
 <section>
   <% @encounter.paths.each do |path| %>
-    <% if path.available_for?(current_character) %>
-      <blockquote>
+    <blockquote>
+      <% if path.available_for?(current_character) %>
         <p><%= path.text %></p>
         <br />
-        <%= link_to encounter_path_path(@encounter, path), :class => 'btn btn-info input-large' do %>
+        <%= link_to encounter_path_path(@encounter, path), :class => 'btn btn-info input-large', :data => { 'clue-cost' => 1 } do %>
           <%= path.title %> <i class='icon-play'></i>
         <% end %>
-      </blockquote>	
-      <hr />
-    <% end %>
+      <% else %>
+        <p>Requires: <%= raw path.requirement_display(true).titleize.split(", ").map{ |t| "<span class='label label-important'>#{t}</span>" }.join(" ") %></p>
+        <br  >
+        <%= link_to path.title, 'javascript:void(0)', :class => 'btn btn-info input-large disabled' %>
+      <% end %>
+    </blockquote>	
+    <hr />
   <% end %>
   <blockquote>
     <p>Perhaps another time</p>
@@ -32,39 +36,3 @@
   <% unless params[:id] == 'homecoming' %>	
   <% end %>	
 </section>	
-
-
-
-
-
-
-
-
-	
-<div style='display:none'>	
-<% @encounter.paths.each do |path| %>
-  <% if path.available_for?(current_character) %>
-    <%= link_to encounter_path_path(@encounter, path), :class => 'copperplate' do %>
-      <strong><%= path.title %></strong>
-      <br />
-      <span><%= truncate(path.text, :length => 40) %></span>
-      <% unless path.challenge.blank? %>
-        <span><em><small><%= "#{path.challenge.difficulty_text} #{path.challenge.tag.titleize}" %> challenge</small></em></span>
-      <% end %>  	 
-      <br />
-
-      <span class='button continue'>Continue</span>
-    <% end %>
-  <% else %>
-    <%= link_to '', :class => 'copperplate disabled' do %>
-      <strong><%= path.title %></strong>
-      <br />
-      <p>Requires: <%= path.requirement_display(true).titleize %></p>
-      <span class='button continue'>UNAVAILABLE</span>
-    <% end %>
-  <% end %>  
-<% end %>
-
-<br /><br /><br />
-<p>Perhaps another time<br /><%= link_to 'Cancel', location_path, :class => 'button cancel' %></p>
-</div>

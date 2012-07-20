@@ -18,9 +18,11 @@
   </div>	
 	
   <div class="tab-content">
-    <div class="tab-pane active" id='plots'>			
-      <% unless plot_encounters.blank? %>
+    <div class="tab-pane active" id='plots'>
         <p>Mysteries branching like a weald above the circumstances of your soul; explore them through mazy boughs that intrigue to the vanishing point yet promise no retracing steps.</p>
+      <% if plot_encounters.blank? %>
+        <p>. . . and yet, there are no plot threads for you to follow right now at this location. Explore <%= link_to 'the map', locations_path %> to unravel new plot threads.</p>
+      <% else %>
         <ul class="thumbnails">
           <% plot_encounters.each do |encounter| %>	
             <li>
