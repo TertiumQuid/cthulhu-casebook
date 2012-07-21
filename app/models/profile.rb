@@ -82,7 +82,7 @@ class Profile
     belongings.tags << Tag.new(:_id => 'timepiece', :value => 1)
 
     plots = Tagging.new(:_id => 'plots')
-    plots.tags << Tag.new(:_id => 'a_hapless_stranger_comes_to_arkham', :value => 5)
+    plots.tags << Tag.new(:_id => 'a_hapless_stranger_comes_to_arkham', :value => 1)
     
     equipment = Tagging.new(:_id => 'equipment')  
     if character && character.gender == 'male'
@@ -90,6 +90,8 @@ class Profile
     elsif character && character.gender == 'female'
       equipment.tags << Tag.new(:_id => 'parasol', :value => 1)      
     end
+    
+    affiliations = Tagging.new(:_id => 'affiliations')
     
     taggings << skills
     taggings << traits
@@ -103,6 +105,7 @@ class Profile
     taggings << belongings     
     taggings << plots
     taggings << equipment
+    taggings << affiliations
     
     self.trappings = Trappings.new
   end  

@@ -57,3 +57,9 @@ text-align:center;
 big.label {
 font-size:150%;
 }
+
+/* Layout */
+
+#main {
+min-height:200px;
+}

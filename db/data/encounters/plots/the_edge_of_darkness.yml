@@ -144,9 +144,6 @@ encounters:
                   - 
                     _id: plots.the_edge_of_darkness
                     value: 1
-                  - 
-                    _id: plots.a_hapless_stranger_comes_to_arkham
-                    value: -1
          -  _id: 2
             title: Die in Fear (Then Pursue his Leads in Secret)
             text: Nullam condimentum vehicula enim, ut venenatis libero hendrerit sit amet. Suspendisse in eros nisl. Mauris vitae odio tellus.                        
@@ -155,9 +152,6 @@ encounters:
                   - 
                     _id: plots.the_edge_of_darkness
                     value: 1
-                  - 
-                    _id: plots.a_hapless_stranger_comes_to_arkham
-                    value: -1
     requirements: 
                 - 
                   _id: plots.the_edge_of_darkness
@@ -637,9 +631,6 @@ encounters:
                   - 
                     _id: plots.the_edge_of_darkness
                     value: 1
-                  - 
-                    _id: plots.a_hapless_stranger_comes_to_arkham
-                    value: -1                    
             challenge:
                      _id: skills.adventure
                      difficulty: 4
@@ -650,9 +641,6 @@ encounters:
                   - 
                     _id: plots.the_edge_of_darkness
                     value: 1
-                  - 
-                    _id: plots.a_hapless_stranger_comes_to_arkham
-                    value: -1                    
             challenge:
                      _id: skills.sorcery
                      difficulty: 4
@@ -665,9 +653,6 @@ encounters:
                   - 
                     _id: plots.the_edge_of_darkness
                     value: 1
-                  - 
-                    _id: plots.a_hapless_stranger_comes_to_arkham
-                    value: -1
             challenge:
                      _id: skills.clandestinity
                      difficulty: 4
@@ -680,9 +665,6 @@ encounters:
                   - 
                     _id: plots.the_edge_of_darkness
                     value: 1
-                  - 
-                    _id: plots.a_hapless_stranger_comes_to_arkham
-                    value: -1
             challenge:
                      _id: skills.scholarship
                      difficulty: 4

@@ -96,7 +96,8 @@ locations:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.a_hapless_stranger_comes_to_arkham
+                            _id: affiliations.miskatonic_university
+                            is: gt
                             value: 0
             - _id: arkham_northside
             - _id: arkham_downtown
@@ -133,7 +134,8 @@ locations:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.a_hapless_stranger_comes_to_arkham
+                            _id: affiliations.miskatonic_university
+                            is: gt
                             value: 0
             - _id: arkham_uptown
             - _id: arkham_rivertown
@@ -154,7 +156,8 @@ locations:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.a_hapless_stranger_comes_to_arkham
+                            _id: affiliations.miskatonic_university
+                            is: gt
                             value: 0
             - _id: arkham_french_hill
             - _id: arkham_uptown
@@ -173,7 +176,8 @@ locations:
             - _id: miskatonic_university
               requirements: 
                           - 
-                            _id: plots.a_hapless_stranger_comes_to_arkham
+                            _id: affiliations.miskatonic_university
+                            is: gt
                             value: 0
             - _id: arkham_outskirts
               requirements: 

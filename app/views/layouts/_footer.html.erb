@@ -9,7 +9,7 @@
           <li><h4>Gameplay</h4></li>	
           <li><i class='icon-info-sign'></i> <%= link_to 'The Basics', help_path(:basics) %></li>	
           <li><i class='icon-info-sign'></i> <%= link_to 'Traveling the Map', help_path(:map) %></li>
-          <li><i class='icon-info-sign'></i> <%= link_to 'Random Encounters', help_path(:random_encounters) %></li>	
+          <li><i class='icon-info-sign'></i> <%= link_to 'Encounters', help_path(:encounters) %></li>	
           <li><i class='icon-info-sign'></i> <%= link_to 'Demise and Revival', help_path(:demise) %></li>
         </ul>
       </td>
@@ -18,7 +18,7 @@
           <li><h4>&nbsp;</h4></li>
           <li><i class='icon-info-sign'></i> <%= link_to 'Your Character', help_path(:character) %></li>
           <li><i class='icon-info-sign'></i> <%= link_to 'Wandering Monsters', help_path(:monsters) %></li>
-          <li><i class='icon-info-sign'></i> <%= link_to 'Story Encounters', help_path(:story_encounters) %></li>
+          <li><i class='icon-info-sign'></i> <%= link_to 'Plots', help_path(:plots) %></li>
           <li><i class='icon-info-sign'></i> <%= link_to 'Keeping Up Friends', help_path(:friends) %></li>
         </ul>
       </td>
@@ -32,14 +32,23 @@
       <td width="33%">
         <ul class="unstyled">
 	      <li><h4>Community</h4></li>
-	      <li><i class='icon-globe'></i> <%= link_to 'Fan Page', 'https://www.facebook.com/trailofsecrets' %></li>
-	      <li><i class='icon-globe'></i> <%= link_to 'yog-sothoth.com', 'http://www.yog-sothoth.com' %></li>
-	      <li><i class='icon-globe'></i> <%= link_to 'Support / Issue Tracker', 'https://bitbucket.org/tdunn/cthulhu-casebook/issues' %></li>
+	      <li>
+            <i class='icon-globe'></i> 
+            <%= link_to 'Fan Page', 'https://www.facebook.com/trailofsecrets', :data => {'skip-pjax' => true} %>
+          </li>
+	      <li>
+            <i class='icon-globe'></i> 
+            <%= link_to 'yog-sothoth.com', 'http://www.yog-sothoth.com', :data => {'skip-pjax' => true} %>
+          </li>
+	      <li>
+            <i class='icon-globe'></i> 
+            <%= link_to 'Support / Issue Tracker', 'https://bitbucket.org/tdunn/cthulhu-casebook/issues', :data => {'skip-pjax' => true} %>
+          </li>
         </ul>
       </td>
       <td width='33%'>
         <ul class="unstyled">
-          <li><h4>Copyright © 2012 <%= link_to 'Bellwether Inc.', 'https://www.facebook.com/BellwetherInc' %></h4></li>	
+          <li><h4>Copyright © 2012 <%= link_to 'Bellwether Inc.', 'https://www.facebook.com/BellwetherInc', :data => {'skip-pjax' => true} %></h4></li>	
           <li> Cthulhu Casebook is in PRE-ALPHA</li>	
           <li> Release: v0.0.1 (July 14, 2012)</li>
         </ul>
