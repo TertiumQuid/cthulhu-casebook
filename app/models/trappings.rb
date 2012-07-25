@@ -1,16 +1,20 @@
 class Trappings
   include MongoMapper::EmbeddedDocument  
-
+  
+  key :head, Object
+  key :body, Object
+  key :hands, Object  
   key :left_hand, Object
   key :right_hand, Object
+  key :feet, Object
   
-  def locations; ['left_hand','right_hand']; end
+  def locations; ['head','body','left_hand','right_hand','feet']; end
   
   def get(location)
     Equipment.new(send(location)) if respond_to?(location) && !send(location).blank?
   end
   
-  def equip!(equipment, location=nil)
+  def equip!(equipment)
     left = self.left_hand
     right = self.right_hand
         
@@ -24,6 +28,8 @@ class Trappings
         self.left_hand = right
         self.right_hand = equipment.to_mongo
       end
+    else
+      self.send("#{equipment.location}=", equipment.to_mongo) if self.respond_to?(equipment.location)
     end
     save
   end

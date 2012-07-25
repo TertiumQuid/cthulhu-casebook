@@ -4,11 +4,49 @@
       <span class='pull-left'><%= image_tag 'placeholder300x300.png', :width => 64, :height => 64 %>&nbsp;</span>
       <span><%= @character.formal_name %></span>
     </h1>
-    <p>Case # <strong><%= @character.user_id %></strong> (share with friends)</p>
-    <p>Currently at: <strong><%= @character.location.value.titleize %></strong></p>
+    <p>
+      Case # <strong><%= @character.user_id %></strong> (share with friends)
+      <br/>
+      Currently at: <strong><%= @character.location.value.titleize %></strong>
+    </p>
+
+	<div class="btn-group">
+	  <button class="btn">Trappings</button>
+	  <button class="btn dropdown-toggle" data-toggle="dropdown">
+	    <span class="caret"></span>
+	  </button>
+	  <ul id="trappings-tabs" class="dropdown-menu dropdown-menu-table">
+        <li>
+          <strong>Headwear:</strong> 
+          <%= raw trapping_label('head') %>
+        </li>
+        <li>
+          <strong>Overwear:</strong> 
+          <%= raw trapping_label('body') %>
+        </li>
+        <li>
+          <strong>Handwear:</strong> 
+          <%= raw trapping_label('hands') %>
+        </li>
+        <li>
+          <strong>R. Hand:</strong>
+          <%= raw trapping_label('right_hand') %>
+        </li>
+        <li>
+          <strong>L. Hand:</strong> 
+          <%= raw trapping_label('left_hand') %>
+        </li>
+        <li>
+          <strong>Footwear:</strong> 
+          <%= raw trapping_label('feet') %>
+        </li>
+	  </ul>
+	</div>
+	
   </div>	
 
-  <div class="span5">	
+  <div class="span5">
+    <br />
     <div class='well well-condensed'>
       <h3>Pathology</h3>
       <dl class="dl-horizontal">
@@ -28,16 +66,16 @@
 
 <section>
   <div class="tabbable">
-    <ul class="nav nav-tabs">
-      <li class="active"><a href="#skills" data-toggle="tab">Skills</a></li>
-      <li><a href="#belongings" data-toggle="tab">Items</a></li>
-      <li><a href="#equipment" data-toggle="tab">Gear</a></li>
-      <li><a href="#knowledge" data-toggle="tab">Knowledge</a></li>
+    <ul class="nav nav-tabs" data-tabs="tabs">
+      <li class="active"><a href="#skills-panel" data-toggle="tab">Skills</a></li>
+      <li><a href="#belongings-panel" data-toggle="tab">Items</a></li>
+      <li><a href="#equipment-panel" data-toggle="tab">Gear</a></li>
+      <li><a href="#knowledge-panel" data-toggle="tab">Knowledge</a></li>
     </ul>
   </div>	
 
   <div class="tab-content">
-    <div class="tab-pane active" id='skills'>
+    <div class="tab-pane active" id='skills-panel'>
       <div class='well well-condensed'>
         <dl class="dl-horizontal">
           <% @character.profile.find_tagging('skills').tags.each do |tag| %>
@@ -52,13 +90,13 @@
       </div>	
     </div>	
 
-    <div class="tab-pane" id='belongings'>
+    <div class="tab-pane" id='belongings-panel'>
       <div class='well well-condensed'>
         <ul class="thumbnails">
           <% @character.profile.find_tagging('belongings').tags.each do |tag| %>
             <li>
               <div class="thumbnail">                
-                <h5><%= simple_format word_wrap("#{tag.value} #{tag._id.titleize}", :line_width => 15) %>	</h5>
+                <h5><%= simple_format word_wrap("#{tag.value} #{tag._id.titleize}", :line_width => 15) %></h5>
                 <%= image_tag 'placeholder64x64.png', :class => 'picture-frame' %>
               </div>
             </li>	
@@ -67,7 +105,7 @@
       </div>	
     </div>
 
-    <div class="tab-pane fade" id='equipment'>
+    <div class="tab-pane fade" id='equipment-panel'>
       <div class='well well-condensed'>
         <ul class="thumbnails">
           <% @character.profile.find_tagging('equipment').tags.each do |tag| %>

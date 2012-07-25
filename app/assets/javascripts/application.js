@@ -4,6 +4,7 @@
 //= require facebook
 //= require bootstrap-button
 //= require bootstrap-tab
+//= require bootstrap-dropdown
 //= require header
 //= require_self
 
@@ -17,4 +18,9 @@ $(document).on('pjax:start', function() {
 $(document).on('pjax:error', function() {
 });
 $(document).on('pjax:end', function() {
+});
+
+$(document).on('ready', function() {
+  $("[data-tabs='tabs'] li").first().tab();
+  $("[data-tabs='tabs'] li").last().tab();
 });

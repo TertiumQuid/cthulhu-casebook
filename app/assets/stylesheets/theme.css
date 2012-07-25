@@ -49,9 +49,23 @@ text-shadow: 1px 1px 0 #111,  1px -1px 0 #111,  -1px 1px 0 #111,  -1px -1px 0 #1
 padding: 5px;	
 }
 
+.well-condensed dl,
+.well-condensed .progress {
+margin-bottom:12px;
+}
+
 .well .thumbnails li {
 background:#fff;
 text-align:center;
+}
+
+.dropdown-menu {
+min-width:260px;
+}
+.dropdown-menu-table strong {
+display:inline-block;
+text-align:right;
+width:28%;
 }
 
 big.label {

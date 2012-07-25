@@ -1,4 +1,98 @@
 encounters:
+  hatties_boutique:
+    _id: hatties_boutique
+    title: Hattie's Boutique
+    location: arkham_merchant_district
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nunc arcu. Duis enim dui, aliquet in elementum sed, lobortis dictum quam. Donec nec sapien nisl, dictum porttitor justo. 
+
+
+                 Sed vel tellus in nulla hendrerit adipiscing. Morbi eleifend varius tempor. In at elementum risus. Nullam vitae lacinia justo. Duis vel orci sem.    
+    type: fixed      
+    paths:
+         -  _id: 1
+            title: Pumps
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: footwear.pumps
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -8
+         -  _id: 2
+            title: Venetian Loafers
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.venetian_loafers
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -22
+         -  _id: 3
+            title: Brogues
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.brogues
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -25
+         -  _id: 4
+            title: Silk Gauntlets
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.silk_gauntlets
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -40  
+         -  _id: 5
+            title: Evening Gloves
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.evening_gloves
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -34                                
+         -  _id: 6
+            title: Driving Gloves
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.driving_gloves
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -26
+         -  _id: 7
+            title: cloche Hat
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.cloche_hat
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -44
   manellis_music_store:
     _id: manellis_music_store
     title: Manelli's Music Store
@@ -191,3 +285,27 @@ encounters:
                     _id: belongings.american_dollars
                     cost: true
                     value: -1
+         -  _id: 4
+            title: Espadrilles
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.espadrilles
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -15
+         -  _id: 5
+            title: Skeleton Watch
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.skeleton_watch
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -60

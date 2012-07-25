@@ -1,0 +1,61 @@
+equipment:
+  surgical_gloves:
+    _id: surgical_gloves
+    title: Surgical Gloves
+    location: hands    
+  duellists_gloves:
+    _id: duellists_gloves
+    title: Duellist's Gloves
+    location: hands
+  silk_gauntlets:
+    _id: silk_gauntlets
+    title: Silk Gauntlets
+    location: hands
+  mechanical_watch:
+    _id: mechanical_watch
+    title: Mechanical Watch
+    location: hands
+  skeleton_watch:
+    _id: skeleton_watch
+    title: Skeleton Watch
+    location: hands
+  deerskin_gloves:
+    _id: deerskin_gloves
+    title: Deerskin Gloves
+    location: hands
+  sap_gloves:
+    _id: sap_gloves
+    title: Sap Gloves
+    location: hands
+  cowhide_gloves:
+    _id: cowhide_gloves
+    title: Cowhide Gloves
+    location: hands
+  peccary_gloves:
+    _id: peccary_gloves
+    title: Peccary Gloves
+    location: hands
+  riding_gloves:
+    _id: riding_gloves
+    title: Riding Gloves
+    location: hands
+  mittons:
+    _id: mittons
+    title: Mittons
+    location: hands
+  driving_gloves:
+    _id: driving_gloves
+    title: Driving Gloves
+    location: hands
+  evening_gloves:
+    _id: evening_gloves
+    title: Evening Gloves
+    location: hands    
+  opera_gloves:
+    _id: opera_gloves
+    title: Opera Gloves
+    location: hands    
+  mousquetaire:
+    _id: mousquetaire
+    title: mousquetaire
+    location: hands

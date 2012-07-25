@@ -1,0 +1,37 @@
+equipment:
+  fedora:
+    _id: fedora
+    title: Fedora
+    location: head    
+  slouch_hat:
+    _id: slouch_hat
+    title: Slouch Hat
+    location: head    
+  derby_hat:
+    _id: derby_hat
+    title: Derby Hat
+    location: head    
+  bandeau:
+    _id: bandeau
+    title: Bandeau
+    location: head
+  peaked_cap:
+    _id: peaked_cap
+    title: Peaked Cap
+    location: head
+  beret:
+    _id: beret
+    title: Beret
+    location: head
+  flat_cap:
+    _id: flat_cap
+    title: Flat Cap
+    location: head
+  opera_mask:
+    _id: opera_mask
+    title: Opera Mask
+    location: head
+  cloche_hat:
+    _id: cloche_hat
+    title: Cloche Hat
+    location: head

@@ -90,6 +90,7 @@ class Profile
     elsif character && character.gender == 'female'
       equipment.tags << Tag.new(:_id => 'parasol', :value => 1)      
     end
+    equipment.tags << Tag.new(:_id => 'threadbare_garments', :value => 1)
     
     affiliations = Tagging.new(:_id => 'affiliations')
     

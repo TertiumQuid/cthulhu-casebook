@@ -54,6 +54,13 @@ class TrappingsTest < ActiveModel::TestCase
     assert_equal e1, @trappings.get('left_hand'), 'expected right hand equipment moved to left hand'
   end
   
+  def test_equip_head
+    e1 = Equipment.create! :_id => 't1', :title => 't1', :location => 'head'
+    @trappings.equip! e1
+    @profile.reload
+    assert_equal e1, @trappings.get('head'), 'expected equipment assigned to head'    
+  end
+  
   def test_location_of
     assert_nil @trappings.location_of('fail'), 'expected nil for missing equipment'
     @trappings.equip! Equipment.create! :_id => 'test', :title => 'test', :location => 'hand'

@@ -1,0 +1,69 @@
+equipment:
+  pumps:
+    _id: pumps
+    title: Pumps
+    location: feet
+  hobnailed_jackboot:
+    _id: hobnailed_jackboot
+    title: Hobnailed Jackboot
+    location: feet    
+  boat_shoes:
+    _id: boat_shoes
+    title: Boat Shoes
+    location: feet    
+  cowboy_boots:
+    _id: cowboy_boots
+    title: Cowboy Boots
+    location: feet
+  ballet_flats:
+    _id: ballet_flats
+    title: Ballet Flats
+    location: feet    
+  ammunition_boots:
+    _id: ammunition_boots
+    title: Ammunition Boots
+    location: feet    
+  slippers:
+    _id: slippers
+    title: Slippers
+    location: feet
+  espadrilles:
+    _id: espadrilles
+    title: Espadrilles
+    location: feet
+  plimsolls:
+    _id: plimsolls
+    title: Plimsolls
+    location: feet
+  chelsea_boots:
+    _id: chelsea_boots
+    title: Chelsea Boots
+    location: feet    
+  wellington_boots:
+    _id: wellington_boots
+    title: Wellington Boots
+    location: feet    
+  venetian_loafers:
+    _id: venetian_loafers
+    title: Venetian Loafers
+    location: feet
+  brogues:
+    _id: brogues
+    title: Brogues
+    location: feet
+  riding_boots:
+    _id: riding_boots
+    title: Riding Boots
+    location: feet
+  buster_browns:
+    _id: buster_browns
+    title: Buster Browns
+    location: feet    
+  mary_janes:
+    _id: mary_janes
+    title: Mary Janes
+    location: feet
+  oxford_shoes:
+    _id: oxford_shoes
+    title: Oxford Shoes
+    location: feet

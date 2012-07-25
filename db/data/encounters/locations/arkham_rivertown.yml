@@ -69,3 +69,39 @@ encounters:
                     _id: belongings.american_dollars
                     cost: true
                     value: -3
+         -  _id: 6
+            title: Union Suit
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.union_suit
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -22
+         -  _id: 7
+            title: Overalls
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.overalls
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -32
+         -  _id: 8
+            title: Cowhide Gloves
+            success_text: Ut quis massa a velit malesuada mollis. Phasellus quis mauris felis, sed mollis sapien.             
+            awards: 
+                  - 
+                    _id: equipment.cowhide_gloves
+                    value: 1
+            requirements: 
+                  - 
+                    _id: belongings.american_dollars
+                    cost: true
+                    value: -14

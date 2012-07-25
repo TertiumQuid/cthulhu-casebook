@@ -1,0 +1,129 @@
+equipment:
+  threadbare_garments:
+    _id: threadbare_garments
+    title: Threadbare Garments
+    location: body
+  chanel_suit:
+    _id: chanel_suit
+    title: Chanel Suit
+    location: body    
+  robe_de_style:
+    _id: robe_de_style
+    title: Robe de Stle
+    location: body
+  laboratory_coat:
+    _id: laboratory_coat
+    title: Laboratory Coat
+    location: body    
+  opera_cloak:
+    _id: opera_cloak
+    title: Opera Cloak
+    location: body
+  riding_habit:
+    _id: riding_habit
+    title: Riding Habit
+    location: body    
+  oxford_bags:
+    _id: oxford_bags
+    title: Oxford Bags
+    location: body
+  tailcoat:
+    _id: tailcoat
+    title: Tailcoat
+    location: body    
+  military_full_dress:
+    _id: military_full_dress
+    title: Military Full Dress
+    location: body
+  service_dress:
+    _id: service_dress
+    title: Service Dress
+    location: body    
+  khaki_drill:
+    _id: khaki_drill
+    title: Khaki Drill
+    location: body
+  hobble_skirt:
+    _id: hobble_skirt
+    title: Hobble Skirt
+    location: body    
+  sailor_suit:
+    _id: sailor_suit
+    title: Sailor Suit
+    location: body    
+  domestic_livery:
+    _id: domestic_livery
+    title: Domestic Livery
+    location: body    
+  ulster_coat:
+    _id: ulster_coat
+    title: Ulster Coat
+    location: body
+  corsetted_dress:
+    _id: corsetted_dress
+    title: Corsetted Dress
+    location: body
+  tailleur:
+    _id: tailleur
+    title: Tailleur
+    location: body    
+  norfolk_suit:
+    _id: norfolk_suit
+    title: Norfolk Suit
+    location: body    
+  bloomers:
+    _id: bloomers
+    title: Bloomers
+    location: body    
+  tea_gown:
+    _id: tea_gown
+    title: Tea Gown
+    location: body    
+  overalls:
+    _id: overalls
+    title: Overalls
+    location: body    
+  boilersuit:
+    _id: boilersuit
+    title: Boilersuit
+    location: body
+  evening_gown:
+    _id: evening_gown
+    title: Evening Gown
+    location: body    
+  academicals:
+    _id: academicals
+    title: Academicals
+    location: body    
+  trench_coat:
+    _id: trench_coat
+    title: Tench Coat
+    location: body    
+  dinner_suit:
+    _id: dinner_suit
+    title: Dinner Suit
+    location: body    
+  frock_coat:
+    _id: frock_coat
+    title: Frock Coat
+    location: body    
+  union_suit:
+    _id: union_suit
+    title: Union Suit
+    location: body    
+  tuxedo:
+    _id: tuxedo
+    title: Tuxedo
+    location: body
+  blazer:
+    _id: blazer
+    title: Blazer
+    location: body    
+  shooting_jacket:
+    _id: shooting_jacket
+    title: Shooting Jacket
+    location: body
+  cardigan:
+    _id: cardigan
+    title: Cardigan
+    location: body
